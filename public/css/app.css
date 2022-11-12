@@ -1,0 +1,448 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  color: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body, a {
+  font-family: "Pretendard";
+  color: #222;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+.font-bold {
+  font-weight: 600 !important;
+}
+
+.color-primary {
+  color: #0957C3;
+}
+
+#login {
+  display: flex;
+  height: 100vh;
+}
+#login section.login-left {
+  max-width: 830px;
+  width: 50vw;
+  background-color: #0957C3;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-image: url(/public/img/login-bg.jpg);
+  padding: 110px;
+}
+#login section.login-left .logo {
+  max-width: 100%;
+  height: 72px;
+  text-align: center;
+}
+#login section.login-left .logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#login section.login-left strong {
+  text-align: center;
+  font-size: 25px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 400;
+  width: 100%;
+  margin-top: 35px;
+}
+#login section.login-right {
+  flex: 1;
+  padding: 150px 16px 150px 140px;
+  height: 100vh;
+  overflow: scroll;
+}
+#login section.login-right h1 {
+  font-size: 35px;
+  font-weight: 700;
+  color: #0957C3;
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+#login section.login-right h1::before {
+  content: "";
+  width: 5px;
+  height: 40px;
+  display: inline-block;
+  background-color: #0957C3;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+#login section .form-login {
+  max-width: 530px;
+}
+#login section .form-register {
+  max-width: 820px;
+}
+#login section .form-register .two-flex-input {
+  display: flex;
+  flex-wrap: wrap;
+}
+#login section .form-register .two-flex-input .input-wrap {
+  width: calc(50% - 20px);
+}
+#login section .form-register .two-flex-input .input-wrap:nth-child(even) {
+  margin-left: 20px;
+}
+#login section .form-register .input-add {
+  width: 100%;
+}
+#login section .form-register .input-add .input-with-btn {
+  margin-bottom: 10px;
+}
+#login section .form-register .input-with-btn {
+  display: flex;
+  align-items: center;
+}
+#login section .form-register .input-with-btn button {
+  max-width: 100px;
+  margin-left: 10px;
+}
+#login section .form-register .register-corporate-details {
+  padding-top: 30px;
+}
+#login section .form-register .register-corporate-details strong {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  display: block;
+}
+#login section form .input-wrap {
+  margin-bottom: 20px;
+}
+#login section form .input-wrap label {
+  font-size: 14px;
+  color: #222;
+  display: block;
+  margin-bottom: 10px;
+}
+#login section form .input-wrap input {
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+#login section form .btn-wrap {
+  padding-top: 10px;
+}
+#login section form .btn-wrap > * {
+  margin-bottom: 30px;
+}
+#login section form .btn-wrap .login-extra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: #666;
+}
+#login section form .btn-wrap .login-extra a {
+  color: inherit;
+}
+#login section form .btn-wrap .forget-lists {
+  display: flex;
+  align-content: center;
+}
+#login section form .btn-wrap .forget-lists li:nth-child(1)::after {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background-color: #666;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+#login section form .btn-wrap .login-devider {
+  position: relative;
+  text-align: center;
+}
+#login section form .btn-wrap .login-devider .or {
+  padding: 0 10px;
+  background-color: #fff;
+  text-align: center;
+  color: #aaa;
+  font-size: 16px;
+  text-transform: uppercase;
+  z-index: 10;
+  position: relative;
+}
+#login section form .btn-wrap .login-devider .line {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#login section form button {
+  width: 100%;
+  padding: 16px;
+  outline: none;
+  font-weight: 700;
+  font-size: 18px;
+  border: 1px solid #0957C3;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#login section form button.fill {
+  background-color: #0957C3;
+  color: #fff;
+}
+#login section form button.line {
+  background-color: transparent;
+  color: #0957C3;
+}
+#login section form .custom-checkbox {
+  position: relative;
+  width: 120px;
+}
+#login section form .custom-checkbox .label-txt {
+  padding-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#login section form .custom-checkbox .label-txt small {
+  font-size: 16px;
+  font-weight: 400;
+  color: #0957C3;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 25px;
+}
+#login section form .custom-checkbox .label-txt .btn {
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #888;
+  text-decoration: underline;
+  font-weight: 400;
+  box-shadow: none;
+  color: #888 !important;
+}
+#login section form .custom-checkbox input[type=checkbox] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  cursor: pointer;
+}
+#login section form .custom-checkbox input[type=checkbox] + label {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  font-size: 15px;
+  width: 100%;
+}
+#login section form .custom-checkbox input[type=checkbox] + label {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border: 1px solid #0957C3;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+}
+#login section form .custom-checkbox input[type=checkbox] + label:before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 10px;
+  border-right: 3px solid #0957C3;
+  border-bottom: 3px solid #0957C3;
+  line-height: 3px;
+  font-size: 17px;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  left: 7px;
+  top: 37%;
+  transform: translateY(-50%) rotate(45deg);
+  z-index: 5;
+}
+#login section form .custom-checkbox input[type=checkbox]:checked + label {
+  background-color: #0957C3;
+}
+#login section form .custom-checkbox input[type=checkbox]:checked + label:before {
+  border-color: #fff;
+}
+
+@media (max-width: 1200px) {
+  #login section.login-left .logo {
+    height: 55px;
+  }
+  #login section.login-left strong {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  #login section.login-right {
+    padding: 120px 16px 120px 50px;
+  }
+  #login section.login-right h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 1000px) {
+  #login {
+    background-color: #0957C3;
+    display: block;
+    padding: 0 16px;
+  }
+  #login section.login-left {
+    max-width: 100%;
+    width: 100%;
+    padding: 50px;
+    background-image: none;
+  }
+  #login section.login-left .logo {
+    height: 35px;
+  }
+  #login section.login-left strong {
+    font-size: 16px;
+  }
+  #login section.login-right {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 25px;
+  }
+  #login section.login-right h1 {
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+  #login section.login-right h1::before {
+    height: 30px;
+  }
+  #login section.login-right .form-login {
+    max-width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  #login section.login-left {
+    padding: 50px 16px;
+  }
+  #login section.login-right {
+    padding: 30px 16px;
+  }
+  #login section.login-right h1 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  #login section.login-right h1::before {
+    height: 25px;
+  }
+  #login section form .input-wrap input {
+    padding: 15px;
+    font-size: 14px;
+  }
+  #login section form button {
+    font-size: 16px;
+    padding: 14px;
+  }
+  #login section form .btn-wrap .login-extra {
+    font-size: 14px !important;
+  }
+  #login section form .btn-wrap .login-extra small {
+    font-size: 14px !important;
+  }
+  #login section form .btn-wrap .login-devider .or {
+    font-size: 12px;
+  }
+  #login section form .custom-checkbox input[type=checkbox] + label {
+    width: 20px;
+    height: 20px;
+  }
+  #login section form .custom-checkbox input[type=checkbox] + label:before {
+    width: 3px;
+    height: 9px;
+    border-right: 2px solid #0957C3;
+    border-bottom: 2px solid #0957C3;
+    top: 39%;
+  }
+}/*# sourceMappingURL=app.css.map */
