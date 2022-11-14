@@ -2,6 +2,7 @@
 #login{
     display: flex;
     height: 100vh;
+    overflow: hidden;
     section{
         &.login-left{
             max-width: 830px;
@@ -340,6 +341,16 @@
                     }
                 }
             }
+            .form-register {
+                .two-flex-input {
+                    .input-wrap{
+                        width: 100%;
+                        &:nth-child(even){
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
             form {
                 .input-wrap {
                     input{
@@ -352,6 +363,7 @@
                     padding: 14px;
                 }
                 .btn-wrap {
+                    padding-bottom: 150px;
                     .login-extra{
                         small{
                             font-size: 14px!important;

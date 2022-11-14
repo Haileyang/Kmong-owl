@@ -83,6 +83,7 @@ body, a {
 #login {
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
 #login section.login-left {
   max-width: 830px;
@@ -417,6 +418,12 @@ body, a {
   #login section.login-right h1::before {
     height: 25px;
   }
+  #login section .form-register .two-flex-input .input-wrap {
+    width: 100%;
+  }
+  #login section .form-register .two-flex-input .input-wrap:nth-child(even) {
+    margin-left: 0;
+  }
   #login section form .input-wrap input {
     padding: 15px;
     font-size: 14px;
@@ -424,6 +431,9 @@ body, a {
   #login section form button {
     font-size: 16px;
     padding: 14px;
+  }
+  #login section form .btn-wrap {
+    padding-bottom: 150px;
   }
   #login section form .btn-wrap .login-extra {
     font-size: 14px !important;
