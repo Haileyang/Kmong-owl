@@ -87,7 +87,7 @@ body, a {
 }
 #login section.login-left {
   max-width: 830px;
-  width: 50vw;
+  width: 45vw;
   background-color: #0957C3;
   background-repeat: no-repeat;
   background-size: cover;
@@ -115,9 +115,11 @@ body, a {
 }
 #login section.login-right {
   flex: 1;
-  padding: 150px 16px 150px 140px;
+  padding: 100px 50px 50px 50px;
   height: 100vh;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #login section.login-right h1 {
   font-size: 35px;
@@ -126,6 +128,8 @@ body, a {
   display: flex;
   align-items: center;
   margin-bottom: 80px;
+  width: 100%;
+  max-width: 530px;
 }
 #login section.login-right h1::before {
   content: "";
@@ -138,9 +142,19 @@ body, a {
 }
 #login section .form-login {
   max-width: 530px;
+  width: 100%;
+  overflow: scroll;
+  height: 100vh;
+}
+#login section .form-login::-webkit-scrollbar {
+  display: none;
 }
 #login section .form-register {
   max-width: 820px;
+  overflow-y: scroll;
+}
+#login section .form-register::-webkit-scrollbar {
+  display: none;
 }
 #login section .form-register .two-flex-input {
   display: flex;
@@ -354,6 +368,9 @@ body, a {
 #login section form .custom-checkbox input[type=checkbox]:checked + label:before {
   border-color: #fff;
 }
+#login.register .login-right h1 {
+  max-width: 820px;
+}
 
 @media (max-width: 1200px) {
   #login section.login-left .logo {
@@ -364,7 +381,7 @@ body, a {
     margin-top: 15px;
   }
   #login section.login-right {
-    padding: 120px 16px 120px 50px;
+    padding: 120px 50px 120px 50px;
   }
   #login section.login-right h1 {
     font-size: 30px;
@@ -379,7 +396,7 @@ body, a {
   #login section.login-left {
     max-width: 100%;
     width: 100%;
-    padding: 50px;
+    padding: 30px 16px;
     background-image: none;
   }
   #login section.login-left .logo {
@@ -390,12 +407,13 @@ body, a {
   }
   #login section.login-right {
     background-color: #fff;
-    padding: 50px;
+    padding: 30px 16px;
     border-radius: 25px;
   }
   #login section.login-right h1 {
     font-size: 25px;
     margin-bottom: 50px;
+    max-width: 100%;
   }
   #login section.login-right h1::before {
     height: 30px;
@@ -407,9 +425,6 @@ body, a {
 @media (max-width: 767px) {
   #login section.login-left {
     padding: 50px 16px;
-  }
-  #login section.login-right {
-    padding: 30px 16px;
   }
   #login section.login-right h1 {
     font-size: 20px;
