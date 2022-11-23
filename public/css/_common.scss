@@ -21,6 +21,9 @@ select,
 input{
     outline: none;
 }
+.mobile-hidden{
+    display: none;
+}
 
 // HEADER
 #dashboard-header{
@@ -212,7 +215,7 @@ input{
     .mobile-hamberger-menu{
         display: block;
         transition: all 0.3s;
-        &.active{
+    &.active{
             left: 200px;
         }
     }
@@ -224,6 +227,12 @@ input{
             left: 0;
         }
     }
+    .mobile-hidden{
+        display: block;
+    }
+    .pc-hidden{
+        display: none;
+    }
 }
 @media(max-width: 767px){
     .mobile-hamberger-menu{
@@ -232,4 +241,6 @@ input{
             max-height: 30px;
         }
     }
+    
+    
 }

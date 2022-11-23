@@ -86,6 +86,10 @@ input {
   outline: none;
 }
 
+.mobile-hidden {
+  display: none;
+}
+
 #dashboard-header {
   z-index: 100;
   width: 255px;
@@ -279,6 +283,12 @@ input {
   #dashboard-header.active {
     left: 0;
   }
+  .mobile-hidden {
+    display: block;
+  }
+  .pc-hidden {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   .mobile-hamberger-menu {
@@ -396,6 +406,7 @@ input {
   font-weight: 400;
   margin-bottom: 30px;
   display: block;
+  text-align: left;
 }
 #login section form .input-wrap {
   margin-bottom: 20px;
@@ -576,8 +587,48 @@ input {
 #login section form .custom-checkbox input[type=checkbox]:checked + label:before {
   border-color: #fff;
 }
+#login.register {
+  height: 100% !important;
+  display: block !important;
+}
+#login.register .login-left {
+  background: none;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 0;
+}
+#login.register .login-left strong {
+  color: #0957C3;
+}
+#login.register form {
+  height: 100%;
+  overflow: visible;
+}
+#login.register .login-right {
+  height: 100%;
+}
 #login.register .login-right h1 {
   max-width: 820px;
+}
+#login.register .logo {
+  max-width: 100%;
+  height: 72px;
+  text-align: center;
+}
+#login.register .logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#login.register strong {
+  text-align: center;
+  font-size: 25px;
+  display: inline-block;
+  font-weight: 400;
+  width: 100%;
+  margin-top: 35px;
+}
+#login.register label {
+  text-align: left;
 }
 
 #dashboard-body {
@@ -937,6 +988,10 @@ input {
     display: block;
     padding: 0 16px;
   }
+  #login .logo {
+    display: flex;
+    justify-content: center;
+  }
   #login section.login-left {
     max-width: 100%;
     width: 100%;
@@ -952,7 +1007,7 @@ input {
   #login section.login-right {
     background-color: #fff;
     padding: 30px 16px;
-    border-radius: 25px;
+    border-radius: 25px 25px 0 0;
   }
   #login section.login-right h1 {
     font-size: 25px;
@@ -964,6 +1019,9 @@ input {
   }
   #login section.login-right .form-login {
     max-width: 100%;
+  }
+  #login.register {
+    padding-top: 0;
   }
 }
 @media (max-width: 767px) {
@@ -1113,7 +1171,7 @@ input {
     height: 35px;
   }
   #login section.login-left {
-    padding: 50px 16px;
+    padding: 50px 16px !important;
   }
   #login section.login-right h1 {
     font-size: 20px;
@@ -1137,9 +1195,6 @@ input {
     padding: 14px;
     cursor: pointer;
   }
-  #login section form .btn-wrap {
-    padding-bottom: 150px;
-  }
   #login section form .btn-wrap .login-extra {
     font-size: 14px !important;
   }
@@ -1159,5 +1214,8 @@ input {
     border-right: 2px solid #0957C3;
     border-bottom: 2px solid #0957C3;
     top: 39%;
+  }
+  #login.register .login-left strong {
+    color: #fff;
   }
 }/*# sourceMappingURL=app.css.map */
