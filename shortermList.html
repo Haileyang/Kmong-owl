@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단기렌트 목록</title>
+    <link rel="stylesheet" href="/public/css/app.css">
+    <script src="/public/js/common.js"></script>
+
+</head>
+<body>
+    <main id="dashboard">
+        <header id="dashboard-header">
+            <figure class="logo"><img src="/public/img/login-logo.png" alt="logo"></figure>
+            <nav>
+                <strong class="nav-category">general</strong>
+                <ul class="nav-lists">
+                    <li class="nav-list">
+                        <a href="">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-home.png" alt="Dashboard">
+                                <img class="active-icon" src="/public/img/icon-header-home-active.png" alt="Dashboard">
+                            </figure>
+                            <strong class="nav-title">Dashboard</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header" onclick="dropdownOpener()">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-rider-manage.png" alt="라이더 관리">
+                                <img class="active-icon" src="/public/img/icon-header-rider-manage-active.png" alt="라이더 관리">
+                            </figure>
+                            <strong class="nav-title">라이더 관리</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-rider.png" alt="라이더 정보">
+                                        <img class="active-icon" src="/public/img/icon-header-rider-active.png" alt="라이더 정보">
+                                    </figure>
+                                    <strong class="nav-title">라이더 정보</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-form.png" alt="라이더 신규 신청">
+                                        <img class="active-icon" src="/public/img/icon-header-form-active.png" alt="라이더 신규 신청">
+                                    </figure>
+                                    <strong class="nav-title">라이더 신규 신청</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list">
+                        <a href="">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-setting.png" alt="업체설정">
+                                <img class="active-icon" src="/public/img/icon-header-setting-active.png" alt="업체설정">
+                            </figure>
+                            <strong class="nav-title">업체설정</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-profile-wrap">
+                <figure class="profile-img-wrap"><img src="/public/img/img-sample-profile.png" alt="sample-profile"></figure>
+                <span>
+                    <strong class="profile-name">Harrison Smith</strong>
+                    <a href="" class="logout">Logout</a>
+                </span>
+            </div>
+        </header>
+        <span class="mobile-hamberger-menu" onclick="mobileMenuHandler()">
+            <img src="/public/img/icon-mobile-menu.png" alt="mobile-hamberger-menu">
+        </span>
+        <section id="dashboard-body" class="shortermList">
+            <div class="dashboard-title">
+                <h1>계약관리</h1>
+                <ul class="bread-scrumbs">
+                    <li class="bread-scrumb">Home</li>
+                    <li class="bread-scrumb">계약관리</li>
+                    <li class="bread-scrumb">단기렌트 목록</li>
+                </ul>
+            </div>
+            <div class="dashboard-content">
+                <ul class="dashboard-summary-cards">
+                    <li class="dashboard-summary-card">
+                        <figure><img src="/public/img/summary-card-dashboard.png" alt="dashboard"></figure>
+                        <span>
+                            <small>전체</small>
+                            <strong><span class="num">200</span>건</strong>
+                        </span>
+                    </li>
+                    <li class="dashboard-summary-card">
+                        <figure><img src="/public/img/summary-card-contract.png" alt="summary-card-contract.png"></figure>
+                        <span>
+                            <small>단기렌트</small>
+                            <strong><span class="num">150</span>건</strong>
+                        </span>
+                    </li>
+                    <li class="dashboard-summary-card">
+                        <figure><img src="/public/img/summary-card-done.png" alt="done"></figure>
+                        <span>
+                            <small>완료</small>
+                            <strong><span class="num">50</span>건</strong>
+                        </span>
+                    </li>
+                    <li class="dashboard-summary-card">
+                        <figure><img src="/public/img/summary-card-cancel.png" alt="cancel"></figure>
+                        <span>
+                            <small>취소</small>
+                            <strong><span class="num">50</span>건</strong>
+                        </span>
+                    </li>
+                </ul>
+                <div class="dashboard-filter-wrap">
+                    <div class="dashboard-filter-content">
+                        <div class="filter-element-wrap car-num">
+                            <span class="filter-title">
+                                <strong>차량번호</strong>
+                            </span>
+                            <div>
+                                <select name="" id="">
+                                    <option value="">전체</option>
+                                    <option value="">옵션 1</option>
+                                    <option value="">옵션 2</option>
+                                </select>
+                                <div class="datapickers-wrap">
+                                    <div class="datapicker-wrap">
+                                        <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
+                                        <input type="text" name="start-date" value="2022-12-01" />
+                                    </div>
+                                    <span>~</span>
+                                    <div class="datapicker-wrap">
+                                        <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
+                                        <input type="text" name="end-date" value="2022-12-01" />
+                                    </div>
+                                </div>
+                                <ul class="filtering-lists">
+                                    <li class="filtering-list">오늘</li>
+                                    <li class="filtering-list">최근 1일</li>
+                                    <li class="filtering-list">당월</li>
+                                    <li class="filtering-list">전월</li>
+                                    <li class="filtering-list">3개월</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="filter-element-wrap contract-status">
+                            <span class="filter-title">
+                                <strong>계약상태</strong>
+                            </span>
+                            <div>
+                                <select name="" id="">
+                                    <option value="">전체</option>
+                                    <option value="">옵션 1</option>
+                                    <option value="">옵션 2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter-element-wrap search">
+                            <span class="filter-title">
+                                <strong>검색어</strong>
+                            </span>
+                            <div>
+                                <select name="" id="">
+                                    <option value="">차량번호</option>
+                                    <option value="">옵션 1</option>
+                                    <option value="">옵션 2</option>
+                                </select>
+                                <input type="text" placeholder="검색어를 입력하세요.">
+                            </div>
+                        </div>
+                    </div>
+                    <button>조회</button>
+                </div>
+                <div class="dashboard-table-wrap">
+                    <div class="dashboard-table-header">
+                        <p class="dashboard-table-summary">총 <span class="color-primary">1,234,566,890</span> 개의 목록이 있습니다.</p>
+                        <div class="dashboard-right-contents">
+                            <span class="btn fill primary">
+                                <a href="">단기렌트추가</a>
+                            </span>
+                            <select name="" id="">
+                                <option value="">20개씩</option>
+                                <option value="">옵션 1</option>
+                                <option value="">옵션 2</option>
+                            </select>
+                            <span class="btn fill grey">
+                                <a href="">엑셀다운</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="dashboard-table-contents">
+                        <table class="dashboard-table-list">
+                            <thead>
+                                <tr>
+                                    <th>선택</th>
+                                    <th>NO</th>
+                                    <th>리스키</th>
+                                    <th>계약유형</th>
+                                    <th>계약자</th>
+                                    <th>업체</th>
+                                    <th>계약상태</th>
+                                    <th>번호판</th>
+                                    <th>차량정보</th>
+                                    <th>계약금액</th>
+                                    <th>
+                                        적립포인트
+                                        <small>(단위 :P)</small>
+                                    </th>
+                                    <th>남은일/계약일</th>
+                                    <th>계약 마감 날짜</th>
+                                    <th>최종 수정 일시</th>
+                                    <th>상세보기</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>장기리스</td>
+                                    <td>홍길동</td>
+                                    <td>ABC정비소</td>
+                                    <td>리스 정상</td>
+                                    <td>가7777</td>
+                                    <td>차량명</td>
+                                    <td>1,000,000</td>
+                                    <td>370</td>
+                                    <td>0 / 24회</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>2022.10.28 00:00:00</td>
+                                    <td>
+                                        <a href="" class="more">상세보기</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="dashboard-pagination-wrap">
+                        <div>
+                            <span class="p-prev">
+                                <figure><img src="/public/img/icon-p-prev.png" alt="p prev"></figure>
+                            </span>
+                            <span class="prev">
+                                <figure><img src="/public/img/icon-prev.png" alt="prev"></figure>
+                            </span>
+                            <ul class="pagination-nums">
+                                <li class="pagination-num">1</li>
+                                <li class="pagination-num">2</li>
+                                <li class="pagination-num">3</li>
+                                <li class="pagination-num">4</li>
+                                <li class="pagination-num">5</li>
+                            </ul>
+                            <span class="next">
+                                <figure><img src="/public/img/icon-p-prev.png" alt="next"></figure>
+                            </span>
+                            <span class="n-next">
+                                <figure><img src="/public/img/icon-prev.png" alt="n next"></figure>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

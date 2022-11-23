@@ -289,7 +289,356 @@
         }
     }
 }
+// DASHBOARD BODY
+#dashboard-body{
+    margin-left: 255px;
+    padding: 56px 40px 0;
+    background-color: #F3F7FC;
+    .dashboard-title{
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 40px;
+        h1{
+            font-size: 35px;
+            font-weight: 700;
+            margin-right: 25px;
+        }
+        .bread-scrumbs{
+            display: flex;
+            font-size: 18px;
+            li{
+                &:not(:last-child)::after{
+                    content:">";
+                    display: inline-block;
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+    .dashboard-summary-cards{
+        display: flex;
+        gap: 40px;
+        margin-bottom: 40px;
+        li{
+            flex: 1;
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 35px 30px;
+            img{
+                max-height: 65px;
+            }
+            >span{
+                margin-left: 20px;
+                small{
+                    display: block;
+                    font-size: 15px;
+                    margin-bottom: 5px;
+                }
+                strong{
+                    display: block;
+                    font-size: 20px;
+                    .num{
+                        font-size: 35px;
+                    }
+                }
+            }
+        }
+    }
+    .dashboard-filter-wrap{
+        display: flex;
+        margin-bottom: 40px;
+        button{
+            margin-left: 20px;
+            border: 1px solid $color-primary;
+            background-color: $color-primary;
+            font-size: 16px;
+            color: $color-white;
+            border-radius: 5px;
+            padding: 20px
+        }
+    }
+    .dashboard-filter-content{
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        input{
+            border: 1px solid #eee;
+            height: 46px;
+            padding: 0 10px 0 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        select{
+            width: 105px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            height: 46px;
+            padding: 0 5px;
+            font-size: 14px;
+        }
+        .datapickers-wrap,
+        .datapicker-wrap,
+        .filtering-lists{
+            display: flex;
+            align-items: center;
+        }
+        .datapickers-wrap{
+            >span{
+                display: inline-block;
+                margin: 0 10px;
+                font-size: 16px;
+            }
+        }
+        .datapicker-wrap{
+            position: relative;
+            figure{
+                position: absolute;
+                left: 10px; top: 12px;
+            }
+            img{
+                max-height: 25px;
+            }
+            input{
+                padding: 0 10px 0 45px;
+            }
+        }
+        .filter-element-wrap{
+            display: flex;
+            >div{
+                display: flex;
+                gap: 15px;
+                padding: 10px 20px;
+                background-color: #fff;
+                flex: 1;
+            }
+            &.car-num{
+                width: 100%;
+                >div{
+                    flex-wrap: wrap;
+                }
+            }
+            &.search{
+                flex: 1;
+                input{
+                    width: 100%;
+                }
+            }
+
+        }
+        .filter-title{
+            min-width: 175px;
+            display: inline-flex;
+            padding: 20px;
+            background-color: #eee;
+            font-size: 16px;
+            font-weight: 700;
+            align-items: center;
+        }
+        .filtering-list{
+            padding: 0 20px;
+            height: 38px;
+            display: inline-flex;
+            justify-content: center; align-items: center;
+            border: 1px solid #eee;
+            font-size: 14px;
+            color: $color-grey;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 5px;
+            & + .filtering-list{
+                margin-left: 10px;
+            }
+            &:hover{
+                background-color: $color-grey;
+                color: $color-white;
+            }
+        }
+    }
+}
+// SHORTERM LIST
+.dashboard-table-wrap{
+    padding: 25px 40px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    .dashboard-table-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+        p{
+            font-size: 16px;
+            color: $color-grey;
+            span{
+                font-weight: 500;
+            }
+        }
+        .dashboard-right-contents{
+            .btn{
+                font-size: 14px;
+                font-weight: 500;
+                color: $color-white;
+                padding: 15px 15px;
+                border-radius: 5px;
+                margin: 0 10px;
+                height: 46px;
+                display: inline-block;
+                a{
+                    color: $color-white;
+                }
+                &.primary{
+                    background-color: $color-primary;
+                }
+                &.grey{
+                    background-color: $color-grey;
+                }
+                &:nth-child(1){
+                    margin-left: 0;
+                }
+            }
+            select{
+                width: 105px;
+                border: 1px solid #eee;
+                border-radius: 5px;
+                height: 46px;
+                padding: 0 5px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+.dashboard-pagination-wrap{
+    margin-top: 40px;
+    div,
+    ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    img{
+        max-height: 45px;
+    }
+    .next,
+    .n-next{
+        transform: rotate(180deg);
+        cursor: pointer;
+    }
+    .pagination-num{
+        width: 45px;
+        height: 45px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        border-radius: 5px;
+        color: #aaa;
+        cursor: pointer;
+        &:hover{
+            background-color: $color-primary;
+            color: $color-white
+        }
+    }
+}
+.shortermList{
+    .dashboard-table-contents{
+        overflow: scroll;
+    }
+    table{
+        td,
+        th{
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+        th{
+            font-weight: 500;
+            color: $color-white;
+            background-color: $color-primary;
+            min-width: 155px;
+            &:nth-child(1),
+            &:nth-child(2){
+                min-width: 75px;
+            }
+            small{
+                display: block;
+                font-size: 12px;
+                font-weight: 300;
+                margin-top: 5px;
+            }
+        }
+        thead{
+            width: 100%;
+            overflow-y: hidden;
+            overflow-x: scroll;
+        }
+        input[type=checkbox]{
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+        .more{
+            text-decoration: underline;
+        }
+    }
+}
+@media (max-width: 1400px){
+    #dashboard-body {
+        .dashboard-summary-cards{
+            gap: 20px;
+            li{
+                padding: 25px 20px;
+                img{
+                    max-height: 50px;
+                }
+                span {
+                    strong{
+                        .num{
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        .dashboard-summary-cards,
+        .dashboard-filter-wrap{
+            margin-bottom: 20px;
+        }
+    }
+}
 @media (max-width: 1200px){
+    #dashboard-body {
+        .dashboard-summary-cards{
+            li{
+                display: block;
+            }
+        }
+        .dashboard-filter-content {
+            .filter-title{
+                min-width: 100px;
+            }
+            .filter-element-wrap{
+                flex: auto;
+                width: 100%;
+            }
+        }
+        .dashboard-table-header {
+            .dashboard-right-contents {
+                .btn{
+                    height: auto;
+                    padding: 10px;
+                }
+                select{
+                    height: 34px;
+                }
+            }
+        }
+    }
+    
     #login {
         section{
             &.login-left{
@@ -311,6 +660,19 @@
     }
 }
 @media (max-width: 1000px){
+    #dashboard-body{
+        margin-left: 0;
+        padding: 100px 20px 50px 20px;
+        .dashboard-filter-wrap{
+            text-align: right;
+            display: block;
+            button{
+                margin: 10px 0 0 0;
+                padding: 10px 20px;
+            }
+        }
+    }
+    
     #login {
         background-color: $color-primary;
         display: block;
@@ -348,6 +710,197 @@
     }
 }
 @media (max-width: 767px){
+    #dashboard-body {
+        background-color: #fff;
+        .dashboard-summary-cards{
+            flex-wrap: wrap;
+            gap: 0;
+            li{
+                min-width: 50%;
+                display: flex;
+                padding: 0;
+                margin-bottom: 25px;
+                > span {
+                    small{
+                        font-size: 14px;
+                    }
+                    strong{
+                        font-size: 16px;
+                        .num{
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        }
+        .dashboard-filter-content{
+            select{
+                width: 100%;
+            }
+            .filter-element-wrap{
+                display: block;
+                width: 100%;
+                text-align: left;
+                &.search{
+                    select{
+                        width: 105px;
+                    }
+                }
+                > div{
+                    padding: 10px 0;
+                }
+                .filter-title{
+                    min-width: 100%;
+                    padding: 15px 20px;
+                }
+                .filtering-list{
+                    padding: 0 10px;
+                }
+            }
+        }
+        .dashboard-title{
+            display: block;
+            width: 100%;
+            h1{
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+            li{
+                font-size: 14px;
+            }
+        }
+        .dashboard-table-wrap{
+            padding: 20px 0;
+            .dashboard-table-header{
+                p{
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    .shortermList{
+        table{
+            width: 100%;
+            th{
+                display: none;
+            }
+            tbody{
+                tr{
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 35px;
+                    &::before{
+                        content:"Client";
+                        display: block;
+                        font-size: 14px;
+                        font-weight: 700;
+                        padding-bottom: 10px;
+                        margin-bottom: 10px;
+                        width: 100%;
+                        border-bottom: 1px solid #eee;
+                        text-transform: uppercase;
+                    }
+                    td{
+                        padding: 10px 0;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;  
+                        width: 100%;  
+
+
+                        &::before{
+                            display: inline-block;
+                            color: $color-primary;
+                        }
+                        &:nth-child(1){
+                            &::before{
+                                content:"선택"
+                            }
+                        }
+                        &:nth-child(2){
+                            &::before{
+                                content:"NO"
+                            }
+                        }
+                        &:nth-child(3){
+                            &::before{
+                                content:"리스키"
+                            }
+                        }
+                        &:nth-child(4){
+                            &::before{
+                                content:"계약유형"
+                            }
+                        }
+                        &:nth-child(5){
+                            &::before{
+                                content:"계약자"
+                            }
+                        }
+                        &:nth-child(6){
+                            &::before{
+                                content:"업체"
+                            }
+                        }
+                        &:nth-child(7){
+                            &::before{
+                                content:"계약상태"
+                            }
+                        }
+                        &:nth-child(8){
+                            &::before{
+                                content:"번호판"
+                            }
+                        }
+                        &:nth-child(9){
+                            &::before{
+                                content:"차량정보"
+                            }
+                        }
+                        &:nth-child(10){
+                            &::before{
+                                content:"계약금액"
+                            }
+                        }
+                        &:nth-child(11){
+                            &::before{
+                                content:"적립포인트 (단위 :P)"
+                            }
+                        }
+                        &:nth-child(12){
+                            &::before{
+                                content:"남은일/계약일"
+                            }
+                        }
+                        &:nth-child(13){
+                            &::before{
+                                content:"계약 마감 날짜"
+                            }
+                        }
+                        &:nth-child(14){
+                            &::before{
+                                content:"최종 수정 일시"
+                            }
+                        }
+                        &:nth-child(15){
+                            &::before{
+                                content:"상세보기"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .dashboard-pagination-wrap {
+        img{
+            max-height: 35px;
+        }
+        .pagination-num{
+            width: 35px;
+            height: 35px;
+        }
+    }
     #login {
         section{
             &.login-left{
@@ -382,6 +935,7 @@
                 button{
                     font-size: 16px;
                     padding: 14px;
+                    cursor: pointer;
                 }
                 .btn-wrap {
                     padding-bottom: 150px;
