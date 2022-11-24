@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라이더 신규신청</title>
+    <link rel="stylesheet" href="/public/css/app.css">
+    <script src="/public/js/common.js"></script>
+    <script src="/public/js/lib/moment-with-locales.js"></script>
+
+</head>
+<body>
+    <main id="dashboard">
+        <header id="dashboard-header">
+            <figure class="logo"><img src="/public/img/login-logo.png" alt="logo"></figure>
+            <nav>
+                <strong class="nav-category">general</strong>
+                <ul class="nav-lists">
+                    <li class="nav-list">
+                        <a href="">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-home.png" alt="Dashboard">
+                                <img class="active-icon" src="/public/img/icon-header-home-active.png" alt="Dashboard">
+                            </figure>
+                            <strong class="nav-title">Dashboard</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header" onclick="dropdownOpener()">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-rider-manage.png" alt="라이더 관리">
+                                <img class="active-icon" src="/public/img/icon-header-rider-manage-active.png" alt="라이더 관리">
+                            </figure>
+                            <strong class="nav-title">라이더 관리</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-rider.png" alt="라이더 정보">
+                                        <img class="active-icon" src="/public/img/icon-header-rider-active.png" alt="라이더 정보">
+                                    </figure>
+                                    <strong class="nav-title">라이더 정보</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-form.png" alt="라이더 신규 신청">
+                                        <img class="active-icon" src="/public/img/icon-header-form-active.png" alt="라이더 신규 신청">
+                                    </figure>
+                                    <strong class="nav-title">라이더 신규 신청</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list">
+                        <a href="">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-setting.png" alt="업체설정">
+                                <img class="active-icon" src="/public/img/icon-header-setting-active.png" alt="업체설정">
+                            </figure>
+                            <strong class="nav-title">업체설정</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-profile-wrap">
+                <figure class="profile-img-wrap"><img src="/public/img/img-sample-profile.png" alt="sample-profile"></figure>
+                <span>
+                    <strong class="profile-name">Harrison Smith</strong>
+                    <a href="" class="logout">Logout</a>
+                </span>
+            </div>
+        </header>
+        <span class="mobile-hamberger-menu" onclick="mobileMenuHandler()">
+            <img src="/public/img/icon-mobile-menu.png" alt="mobile-hamberger-menu">
+        </span>
+        <section id="dashboard-body" class="riderRegister">
+            <div class="dashboard-title">
+                <h1>라이더 신규신청</h1>
+                <ul class="bread-scrumbs">
+                    <li class="bread-scrumb">Home</li>
+                    <li class="bread-scrumb">라이더 관리</li>
+                    <li class="bread-scrumb">라이더 신규신청</li>
+                </ul>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-table-wrap">
+                    <div class="dashboard-table-header">
+                        <h2>라이더 신청하기</h2>
+                    </div>
+                    <div class="dashboard-table-contents">
+                        <table class="dashboard-table-list two-columns">
+                            <tbody class="table-flex">
+                                <tr>
+                                    <th>오토바이 브랜드</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">오토바이 브랜드</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>오토바이 이름 (차종)</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">오토바이 이름 (차종)</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>색상</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">색상</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>보험 회사</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">보험 회사</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>보험 연령</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">보험 연령</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>기본 부품 세트</th>
+                                    <td>
+                                        <ul class="radio-lists">
+                                            <li class="radio-list">
+                                                <input type="radio" name="acc" id="acc1">
+                                                <label for="">창작</label>
+                                            </li>
+                                            <li class="radio-list">
+                                                <input type="radio" name="acc" id="acc2">
+                                                <label for="">미창작</label>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>추가 튜닝 파츠</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">추가 튜닝 파츠</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>상품 종류</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">상품 종류</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>보험 종류</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">보험 종류</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>기타</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">기타</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul class="table-btn-lists">
+                            <li class="table-btn-list">
+                                <button class="fill primary">저장</button>
+                            </li>
+                            <li class="table-btn-list">
+                                <button class="fill light-grey">취소</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dashboard-table-wrap">
+                    <div class="dashboard-table-header">
+                        <h2>라이더 신청 목록</h2>
+                    </div>
+                    <div class="dashboard-table-contents">
+                        <table class="dashboard-table-list list-type">
+                            <thead>
+                                <tr>
+                                    <th>NO</th>
+                                    <th>신청번호</th>
+                                    <th>상품종류</th>
+                                    <th>오토바이 정보</th>
+                                    <th>색상</th>
+                                    <th>보험 정보</th>
+                                    <th>튜닝파츠</th>
+                                    <th>상태</th>
+                                    <th>수정일</th>
+                                    <th>등록일</th>
+                                    <th>비고</th>
+                                    <th>기능</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>리스/렌탈</td>
+                                    <td>혼다 (NMAX)</td>
+                                    <td>화이트</td>
+                                    <td>[KB] 종합 만 21세</td>
+                                    <td>(기본 신청)<br>
+                                        브레이크패드
+                                    </td>
+                                    <td>리스 정상</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td></td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill primary">상세</button>
+                                            </li>
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>리스/렌탈</td>
+                                    <td>혼다 (NMAX)</td>
+                                    <td>화이트</td>
+                                    <td>[KB] 종합 만 21세</td>
+                                    <td>(기본 신청)<br>
+                                        브레이크패드
+                                    </td>
+                                    <td>리스 정상</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td></td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill primary">상세</button>
+                                            </li>
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>리스/렌탈</td>
+                                    <td>혼다 (NMAX)</td>
+                                    <td>화이트</td>
+                                    <td>[KB] 종합 만 21세</td>
+                                    <td>(기본 신청)<br>
+                                        브레이크패드
+                                    </td>
+                                    <td>리스 정상</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td></td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill primary">상세</button>
+                                            </li>
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>리스/렌탈</td>
+                                    <td>혼다 (NMAX)</td>
+                                    <td>화이트</td>
+                                    <td>[KB] 종합 만 21세</td>
+                                    <td>(기본 신청)<br>
+                                        브레이크패드
+                                    </td>
+                                    <td>리스 정상</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td></td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill primary">상세</button>
+                                            </li>
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>리스/렌탈</td>
+                                    <td>혼다 (NMAX)</td>
+                                    <td>화이트</td>
+                                    <td>[KB] 종합 만 21세</td>
+                                    <td>(기본 신청)<br>
+                                        브레이크패드
+                                    </td>
+                                    <td>리스 정상</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td></td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill primary">상세</button>
+                                            </li>
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>리스/렌탈</td>
+                                    <td>혼다 (NMAX)</td>
+                                    <td>화이트</td>
+                                    <td>[KB] 종합 만 21세</td>
+                                    <td>(기본 신청)<br>
+                                        브레이크패드
+                                    </td>
+                                    <td>리스 정상</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td></td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill primary">상세</button>
+                                            </li>
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>리스/렌탈</td>
+                                    <td>혼다 (NMAX)</td>
+                                    <td>화이트</td>
+                                    <td>[KB] 종합 만 21세</td>
+                                    <td>(기본 신청)<br>
+                                        브레이크패드
+                                    </td>
+                                    <td>리스 정상</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td></td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill primary">상세</button>
+                                            </li>
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr><tr>
+                                    <td>9999</td>
+                                    <td>A101010</td>
+                                    <td>리스/렌탈</td>
+                                    <td>혼다 (NMAX)</td>
+                                    <td>화이트</td>
+                                    <td>[KB] 종합 만 21세</td>
+                                    <td>(기본 신청)<br>
+                                        브레이크패드
+                                    </td>
+                                    <td>리스 정상</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td></td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill primary">상세</button>
+                                            </li>
+                                            <li class="inrTable-btn-list">
+                                                <button class="fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        var localeData = moment.locale('de', {
+            calendar: {
+                sameDay: "[heute um] LT",
+                sameElse: "L",
+                nextDay: '[morgen um] LT',
+                nextWeek: 'dddd [um] LT',
+                lastDay: '[gestern um] LT',
+                lastWeek: '[letzten] dddd'
+            },
+        });
+        var m = moment().subtract(1, 'days').calendar();
+        
+    </script>
+</body>
+</html>

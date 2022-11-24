@@ -502,6 +502,20 @@
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
+    margin-bottom: 40px;
+    select{
+        -webkit-appearance: none;
+        background-image: url(/public/img/select-arrow.png);
+        background-repeat: no-repeat;
+        background-size: 12px 7px;
+        background-position: right center;
+        &.table-full-select{
+            width: 100%;
+            display: block;
+            border: none;
+            height: 100%;
+        }
+    }
     .dashboard-table-header{
         display: flex;
         justify-content: space-between;
@@ -547,45 +561,17 @@
                 font-size: 14px;
             }
         }
-    }
-}
-.dashboard-pagination-wrap{
-    margin-top: 40px;
-    div,
-    ul{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    img{
-        max-height: 45px;
-    }
-    .next,
-    .n-next{
-        transform: rotate(180deg);
-        cursor: pointer;
-    }
-    .pagination-num{
-        width: 45px;
-        height: 45px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-        border-radius: 5px;
-        color: #aaa;
-        cursor: pointer;
-        &:hover{
-            background-color: $color-primary;
-            color: $color-white
+        h2{
+            font-size: 25px;
+            font-weight: 500;
+            color: #444;
         }
     }
-}
-.shortermList{
     .dashboard-table-contents{
         overflow: scroll;
     }
     table{
+        width: 100%;
         td,
         th{
             padding: 15px;
@@ -622,6 +608,111 @@
         .more{
             text-decoration: underline;
         }
+        .radio-lists{
+            display: flex;
+            font-size: 14px;
+            input{
+                width: 18px;
+                height: 18px;
+                margin: 0 5px 0 0;
+            }
+            .radio-list{
+                display: inline-flex;
+                align-items: center;
+                & + .radio-list{
+                    margin-left: 20px;
+                }
+            }
+        }
+        &.two-columns{
+            .table-flex{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            tr{
+                width: 50%;
+                flex: 1 50%;
+                max-height: 75px;
+            }
+            th{
+                min-width: 225px;
+                text-align: left;
+                font-size: 14px;
+                padding: 30px 20px;
+            }
+            td{
+                flex: 1;
+                width: 100%;
+                text-align: left;
+                padding: 30px 20px;
+            }
+        }
+    }
+}
+.table-btn-lists{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    li{
+        button{
+            width: 150px;
+            height: 50px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+        }
+        & + li{
+            margin-left: 15px;
+        }
+    }
+}
+.inrTable-btn-lists{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li{
+        button{
+            padding: 10px 15px;
+        }
+        & + li{
+            margin-left: 5px;
+        }
+    }
+}
+.dashboard-pagination-wrap{
+    margin-top: 40px;
+    div,
+    ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    img{
+        max-height: 45px;
+    }
+    .next,
+    .n-next{
+        transform: rotate(180deg);
+        cursor: pointer;
+    }
+    .pagination-num{
+        width: 45px;
+        height: 45px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        border-radius: 5px;
+        color: #aaa;
+        cursor: pointer;
+        &:hover{
+            background-color: $color-primary;
+            color: $color-white
+        }
     }
 }
 @media (max-width: 1400px){
@@ -645,6 +736,16 @@
         .dashboard-summary-cards,
         .dashboard-filter-wrap{
             margin-bottom: 20px;
+        }
+        .dashboard-table-wrap{
+            margin-bottom: 20px;
+            table{
+                &.two-columns{
+                    th{
+                        min-width: 130px;
+                    }
+                }
+            }
         }
     }
 }
@@ -707,6 +808,34 @@
             button{
                 margin: 10px 0 0 0;
                 padding: 10px 20px;
+            }
+        }
+        .dashboard-table-wrap{
+            table{
+                &.two-columns{
+                   .table-flex{
+                        display: block;
+                        tr{
+                            width: 100%;
+                        }
+                        th,
+                        td{
+                            padding: 15px 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .table-btn-lists{
+            li{
+                button{
+                    width: 80px;
+                    height: 45px;
+                    font-size: 16px;
+                }
+                & + li{
+                    margin-left: 10px;
+                }
             }
         }
     }
@@ -802,6 +931,9 @@
                     padding: 0 10px;
                 }
             }
+        }
+        h2{
+            font-size: 20px;
         }
         .dashboard-title{
             display: block;
@@ -930,6 +1062,105 @@
                         &:nth-child(15){
                             &::before{
                                 content:"상세보기"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .riderRegister{
+        .list-type{
+            width: 100%;
+            th{
+                display: none;
+            }
+            tbody{
+                tr{
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 35px;
+                    &::before{
+                        content:"Client";
+                        display: block;
+                        font-size: 14px;
+                        font-weight: 700;
+                        padding-bottom: 10px;
+                        margin-bottom: 10px;
+                        width: 100%;
+                        border-bottom: 1px solid #eee;
+                        text-transform: uppercase;
+                    }
+                    td{
+                        padding: 10px 0;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;  
+                        width: 100%;  
+
+
+                        &::before{
+                            display: inline-block;
+                            color: $color-primary;
+                        }
+                        &:nth-child(1){
+                            &::before{
+                                content:"NO"
+                            }
+                        }
+                        &:nth-child(2){
+                            &::before{
+                                content:"신청번호"
+                            }
+                        }
+                        &:nth-child(3){
+                            &::before{
+                                content:"상품종류"
+                            }
+                        }
+                        &:nth-child(4){
+                            &::before{
+                                content:"오토바이 정보"
+                            }
+                        }
+                        &:nth-child(5){
+                            &::before{
+                                content:"색상"
+                            }
+                        }
+                        &:nth-child(6){
+                            &::before{
+                                content:"보험 정보"
+                            }
+                        }
+                        &:nth-child(7){
+                            &::before{
+                                content:"튜닝파츠"
+                            }
+                        }
+                        &:nth-child(8){
+                            &::before{
+                                content:"상태"
+                            }
+                        }
+                        &:nth-child(9){
+                            &::before{
+                                content:"수정일"
+                            }
+                        }
+                        &:nth-child(10){
+                            &::before{
+                                content:"등록일"
+                            }
+                        }
+                        &:nth-child(11){
+                            &::before{
+                                content:"비고"
+                            }
+                        }
+                        &:nth-child(12){
+                            &::before{
+                                content:"기능"
                             }
                         }
                     }
