@@ -94,6 +94,7 @@ input {
 button {
   cursor: pointer;
   border-radius: 5px;
+  transition: all 0.3s;
 }
 button.fill {
   border: none;
@@ -103,6 +104,29 @@ button.fill.primary {
   color: #fff;
 }
 button.fill.light-grey {
+  background-color: #aaa;
+  color: #666;
+}
+button.fill:hover {
+  opacity: 0.9;
+}
+button.line {
+  border: 1px solid #000;
+  background-color: #fff;
+}
+button.line.primary {
+  border-color: #0957C3;
+  color: #0957C3;
+}
+button.line.primary:hover {
+  background-color: #0957C3;
+  color: #fff;
+}
+button.line.light-grey {
+  border-color: #aaa;
+  color: #666;
+}
+button.line.light-grey:hover {
   background-color: #aaa;
   color: #666;
 }
@@ -215,10 +239,10 @@ button.fill.light-grey {
   background-color: #f7f7f7;
   border-radius: 5px;
 }
-.input-wrap .input-add {
+.input-wrap.input-add {
   width: 100%;
 }
-.input-wrap .input-add .input-with-btn {
+.input-wrap.input-add .input-with-btn {
   margin-bottom: 10px;
 }
 .input-wrap .input-with-btn {
