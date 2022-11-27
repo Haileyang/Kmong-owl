@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배달대행사 상세 - 기본정보</title>
+    <link rel="stylesheet" href="/public/css/app.css">
+    <script src="/public/js/common.js"></script>
+    <script src="/public/js/lib/moment-with-locales.js"></script>
+
+</head>
+<body>
+    <main id="dashboard">
+        <header id="dashboard-header">
+            <figure class="logo"><img src="/public/img/login-logo.png" alt="logo"></figure>
+            <nav>
+                <strong class="nav-category">general</strong>
+                <ul class="nav-lists">
+                    <li class="nav-list">
+                        <a href="">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-home.png" alt="Dashboard">
+                                <img class="active-icon" src="/public/img/icon-header-home-active.png" alt="Dashboard">
+                            </figure>
+                            <strong class="nav-title">Dashboard</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header" onclick="dropdownOpener()">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-rider-manage.png" alt="라이더 관리">
+                                <img class="active-icon" src="/public/img/icon-header-rider-manage-active.png" alt="라이더 관리">
+                            </figure>
+                            <strong class="nav-title">라이더 관리</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-rider.png" alt="라이더 정보">
+                                        <img class="active-icon" src="/public/img/icon-header-rider-active.png" alt="라이더 정보">
+                                    </figure>
+                                    <strong class="nav-title">라이더 정보</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-form.png" alt="라이더 신규 신청">
+                                        <img class="active-icon" src="/public/img/icon-header-form-active.png" alt="라이더 신규 신청">
+                                    </figure>
+                                    <strong class="nav-title">라이더 신규 신청</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list">
+                        <a href="">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-setting.png" alt="업체설정">
+                                <img class="active-icon" src="/public/img/icon-header-setting-active.png" alt="업체설정">
+                            </figure>
+                            <strong class="nav-title">업체설정</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-profile-wrap">
+                <figure class="profile-img-wrap"><img src="/public/img/img-sample-profile.png" alt="sample-profile"></figure>
+                <span>
+                    <strong class="profile-name">Harrison Smith</strong>
+                    <a href="" class="logout">Logout</a>
+                </span>
+            </div>
+        </header>
+        <span class="mobile-hamberger-menu" onclick="mobileMenuHandler()">
+            <img src="/public/img/icon-mobile-menu.png" alt="mobile-hamberger-menu">
+        </span>
+        <section id="dashboard-body" class="riderRegister">
+            <div class="dashboard-title">
+                <h1>배달 대행사 상세</h1>
+                <ul class="bread-scrumbs">
+                    <li class="bread-scrumb">Home</li>
+                    <li class="bread-scrumb">거래처 관리</li>
+                    <li class="bread-scrumb">배달 대행사 상세</li>
+                </ul>
+            </div>
+            <div class="dashboard-content">
+                <ul class="dashboard-tab-lists mb-0">
+                    <li class="dashboard-tab-list active">
+                        <a href="">기본정보</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">사업자</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">정산</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">담당자</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">메모</a>
+                    </li>
+                </ul>
+                <div class="dashboard-table-wrap">
+                    <div class="dashboard-table-header">
+                        <h2>기본정보</h2>
+                    </div>
+                    <div class="dashboard-table-contents">
+                        <table class="dashboard-table-list two-columns">
+                            <tbody class="table-flex">
+                                <tr>
+                                    <th>대행사 상태</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">활성</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>비고</th>
+                                    <td>
+                                        <input type="text" placeholder="상세 설명을 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>통장사본</th>
+                                    <td>
+                                        <div class="input-wrap">
+                                            <span class="input-with-btn">
+                                                <input type="text" placeholder="사본을 첨부해주세요.">
+                                                <button class="btn line">첨부하기</button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>대행사 아이디</th>
+                                    <td>
+                                        <input type="text" placeholder="이메일을 입력하세요.">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dashboard-table-wrap">
+                    <div class="dashboard-table-header">
+                        <h2>추가정보</h2>
+                    </div>
+                    <div class="dashboard-table-contents">
+                        <table class="dashboard-table-list two-columns">
+                            <tbody class="table-flex">
+                                <tr>
+                                    <th>이름</th>
+                                    <td>
+                                        <input type="text" placeholder="이름을 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>성별</th>
+                                    <td>
+                                        <ul class="radio-lists">
+                                            <li class="radio-list">
+                                                <input type="radio" name="acc" id="acc1">
+                                                <label for="">남자</label>
+                                            </li>
+                                            <li class="radio-list">
+                                                <input type="radio" name="acc" id="acc2">
+                                                <label for="">여자</label>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>주민등록번호</th>
+                                    <td>
+                                        <input type="text" placeholder="주민등록번호를 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>주민등록증</th>
+                                    <td>
+                                        <div class="input-wrap">
+                                            <span class="input-with-btn">
+                                                <input type="text" placeholder="사본을 첨부해주세요.">
+                                                <button class="btn line">첨부하기</button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="table-address" colspan="2">
+                                    <th>주소</th>
+                                    <td>
+                                        <div class="input-wrap input-add">
+                                            <label for="">업체주소</label>
+                                            <span class="input-with-btn">
+                                                <input type="text" placeholder="우편검색을 통해 주소를 입력해주세요.">
+                                                <button class="btn fill">우편검색</button>
+                                            </span>
+                                            <input type="text" placeholder="상세 주소를 입력해주세요.">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>생년월일</th>
+                                    <td>
+                                        <div class="datapicker-wrap">
+                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
+                                            <input type="text" name="start-date" value="2022-12-01" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>비고</th>
+                                    <td>
+                                        <input type="text" placeholder="상세 설명을 입력하세요">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <ul class="table-btn-lists">
+                    <li class="table-btn-list">
+                        <button class="fill primary">저장</button>
+                    </li>
+                    <li class="table-btn-liLst">
+                        <button class="fill light-grey">취소</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

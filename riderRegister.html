@@ -444,19 +444,5 @@
             </div>
         </section>
     </main>
-    <script>
-        var localeData = moment.locale('de', {
-            calendar: {
-                sameDay: "[heute um] LT",
-                sameElse: "L",
-                nextDay: '[morgen um] LT',
-                nextWeek: 'dddd [um] LT',
-                lastDay: '[gestern um] LT',
-                lastWeek: '[letzten] dddd'
-            },
-        });
-        var m = moment().subtract(1, 'days').calendar();
-        
-    </script>
 </body>
 </html>

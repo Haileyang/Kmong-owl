@@ -107,9 +107,140 @@ button.fill.light-grey {
   color: #666;
 }
 
+.custom-checkbox {
+  position: relative;
+  width: 120px;
+}
+.custom-checkbox .label-txt {
+  padding-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.custom-checkbox .label-txt small {
+  font-size: 16px;
+  font-weight: 400;
+  color: #0957C3;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 25px;
+}
+.custom-checkbox .label-txt .btn {
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #888;
+  text-decoration: underline;
+  font-weight: 400;
+  box-shadow: none;
+  color: #888 !important;
+}
+.custom-checkbox input[type=checkbox] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  cursor: pointer;
+}
+.custom-checkbox input[type=checkbox] + label {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  font-size: 15px;
+  width: 100%;
+}
+.custom-checkbox input[type=checkbox] + label {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border: 1px solid #0957C3;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+}
+.custom-checkbox input[type=checkbox] + label:before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 10px;
+  border-right: 3px solid #0957C3;
+  border-bottom: 3px solid #0957C3;
+  line-height: 3px;
+  font-size: 17px;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  left: 7px;
+  top: 37%;
+  transform: translateY(-50%) rotate(45deg);
+  z-index: 5;
+}
+.custom-checkbox input[type=checkbox]:checked + label {
+  background-color: #0957C3;
+}
+.custom-checkbox input[type=checkbox]:checked + label:before {
+  border-color: #fff;
+}
+
+.input-wrap {
+  margin-bottom: 20px;
+}
+.input-wrap label {
+  font-size: 14px;
+  color: #222;
+  display: block;
+  margin-bottom: 10px;
+}
+.input-wrap input {
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+.input-wrap .input-add {
+  width: 100%;
+}
+.input-wrap .input-add .input-with-btn {
+  margin-bottom: 10px;
+}
+.input-wrap .input-with-btn {
+  display: flex;
+  align-items: center;
+}
+.input-wrap .input-with-btn button {
+  max-width: 100px;
+  margin-left: 10px;
+  width: 100%;
+  padding: 16px;
+  outline: none;
+  font-weight: 700;
+  font-size: 18px;
+  border: 1px solid #0957C3;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 #dashboard-header {
   z-index: 100;
-  width: 255px;
+  width: 230px;
   height: 100vh;
   background-color: #0957C3;
   padding: 55px 0 45px;
@@ -401,20 +532,6 @@ button.fill.light-grey {
 #login section .form-register .two-flex-input .input-wrap:nth-child(even) {
   margin-left: 20px;
 }
-#login section .form-register .input-add {
-  width: 100%;
-}
-#login section .form-register .input-add .input-with-btn {
-  margin-bottom: 10px;
-}
-#login section .form-register .input-with-btn {
-  display: flex;
-  align-items: center;
-}
-#login section .form-register .input-with-btn button {
-  max-width: 100px;
-  margin-left: 10px;
-}
 #login section .form-register .register-corporate-details {
   padding-top: 30px;
 }
@@ -424,24 +541,6 @@ button.fill.light-grey {
   margin-bottom: 30px;
   display: block;
   text-align: left;
-}
-#login section form .input-wrap {
-  margin-bottom: 20px;
-}
-#login section form .input-wrap label {
-  font-size: 14px;
-  color: #222;
-  display: block;
-  margin-bottom: 10px;
-}
-#login section form .input-wrap input {
-  width: 100%;
-  padding: 20px;
-  font-size: 16px;
-  outline: none;
-  border: none;
-  background-color: #f7f7f7;
-  border-radius: 5px;
 }
 #login section form .btn-wrap {
   padding-top: 10px;
@@ -506,103 +605,6 @@ button.fill.light-grey {
   border: 1px solid #0957C3;
   border-radius: 5px;
   cursor: pointer;
-}
-#login section form button.fill {
-  background-color: #0957C3;
-  color: #fff;
-}
-#login section form button.line {
-  background-color: transparent;
-  color: #0957C3;
-}
-#login section form .custom-checkbox {
-  position: relative;
-  width: 120px;
-}
-#login section form .custom-checkbox .label-txt {
-  padding-left: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#login section form .custom-checkbox .label-txt small {
-  font-size: 16px;
-  font-weight: 400;
-  color: #0957C3;
-  display: inline-block;
-  white-space: nowrap;
-  line-height: 25px;
-}
-#login section form .custom-checkbox .label-txt .btn {
-  background-color: transparent;
-  border-radius: 0;
-  border: none;
-  outline: none;
-  font-size: 14px;
-  color: #888;
-  text-decoration: underline;
-  font-weight: 400;
-  box-shadow: none;
-  color: #888 !important;
-}
-#login section form .custom-checkbox input[type=checkbox] {
-  width: 0;
-  height: 0;
-  opacity: 0;
-  position: relative;
-  left: 0;
-  top: 0;
-  z-index: 10000;
-  cursor: pointer;
-}
-#login section form .custom-checkbox input[type=checkbox] + label {
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  font-size: 15px;
-  width: 100%;
-}
-#login section form .custom-checkbox input[type=checkbox] + label {
-  content: "";
-  width: 22px;
-  height: 22px;
-  background-color: #fff;
-  border: 1px solid #0957C3;
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-}
-#login section form .custom-checkbox input[type=checkbox] + label:before {
-  content: "";
-  display: inline-block;
-  width: 3px;
-  height: 10px;
-  border-right: 3px solid #0957C3;
-  border-bottom: 3px solid #0957C3;
-  line-height: 3px;
-  font-size: 17px;
-  text-align: center;
-  vertical-align: middle;
-  position: absolute;
-  left: 7px;
-  top: 37%;
-  transform: translateY(-50%) rotate(45deg);
-  z-index: 5;
-}
-#login section form .custom-checkbox input[type=checkbox]:checked + label {
-  background-color: #0957C3;
-}
-#login section form .custom-checkbox input[type=checkbox]:checked + label:before {
-  border-color: #fff;
 }
 #login.register {
   height: 100% !important;
@@ -671,6 +673,30 @@ button.fill.light-grey {
   content: ">";
   display: inline-block;
   margin: 0 5px;
+}
+#dashboard-body .dashboard-tab-lists {
+  display: flex;
+}
+#dashboard-body .dashboard-tab-lists li {
+  font-size: 18px;
+  color: #666;
+  border-radius: 10px 10px 0 0;
+  transition: all 0.3s;
+}
+#dashboard-body .dashboard-tab-lists li a {
+  padding: 12px 60px;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+#dashboard-body .dashboard-tab-lists li:hover {
+  background-color: #666;
+  color: #fff;
+}
+#dashboard-body .dashboard-tab-lists li.active {
+  background-color: #0957C3;
+  color: #fff;
 }
 #dashboard-body .dashboard-summary-cards {
   display: flex;
@@ -821,6 +847,9 @@ button.fill.light-grey {
   overflow: hidden;
   margin-bottom: 40px;
 }
+.dashboard-table-wrap .input-wrap {
+  margin-bottom: 0;
+}
 .dashboard-table-wrap select {
   -webkit-appearance: none;
   background-image: url(/public/img/select-arrow.png);
@@ -940,6 +969,9 @@ button.fill.light-grey {
 .dashboard-table-wrap table .radio-lists .radio-list + .radio-list {
   margin-left: 20px;
 }
+.dashboard-table-wrap table.two-columns {
+  overflow: hidden;
+}
 .dashboard-table-wrap table.two-columns .table-flex {
   display: flex;
   flex-wrap: wrap;
@@ -974,7 +1006,7 @@ button.fill.light-grey {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   text-align: center;
 }
