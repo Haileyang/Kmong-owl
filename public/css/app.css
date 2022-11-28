@@ -95,6 +95,7 @@ button {
   cursor: pointer;
   border-radius: 5px;
   transition: all 0.3s;
+  color: #0957C3;
 }
 button.fill {
   border: none;
@@ -221,16 +222,46 @@ button.line.light-grey:hover {
   border-color: #fff;
 }
 
-.input-wrap {
+#login input[type=text],
+#dashboard input[type=text] {
+  border: 1px solid #eee;
+  height: 55px;
+  padding: 0 10px 0 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 100%;
+}
+#login input[type=checkbox],
+#dashboard input[type=checkbox] {
+  width: 18px;
+  height: 18px;
+}
+#login select,
+#dashboard select {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  height: 55px;
+  padding: 0 15px;
+  font-size: 16px;
+}
+#login select.table-full-select,
+#dashboard select.table-full-select {
+  width: 100%;
+  border: none;
+}
+#login .input-wrap,
+#dashboard .input-wrap {
   margin-bottom: 20px;
 }
-.input-wrap label {
+#login .input-wrap label,
+#dashboard .input-wrap label {
   font-size: 14px;
   color: #222;
   display: block;
   margin-bottom: 10px;
 }
-.input-wrap input {
+#login .input-wrap input[type=text],
+#dashboard .input-wrap input[type=text] {
   width: 100%;
   padding: 20px;
   font-size: 16px;
@@ -239,27 +270,52 @@ button.line.light-grey:hover {
   background-color: #f7f7f7;
   border-radius: 5px;
 }
-.input-wrap.input-add {
+#login .input-wrap.input-add,
+#dashboard .input-wrap.input-add {
   width: 100%;
 }
-.input-wrap.input-add .input-with-btn {
+#login .input-wrap.input-add .input-with-btn,
+#dashboard .input-wrap.input-add .input-with-btn {
   margin-bottom: 10px;
 }
-.input-wrap .input-with-btn {
+#login .input-wrap .input-with-btn,
+#dashboard .input-wrap .input-with-btn {
   display: flex;
   align-items: center;
 }
-.input-wrap .input-with-btn button {
+#login .input-wrap .input-with-btn button,
+#dashboard .input-wrap .input-with-btn button {
   max-width: 100px;
   margin-left: 10px;
   width: 100%;
   padding: 16px;
   outline: none;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
+  height: 55px;
   border: 1px solid #0957C3;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.radio-lists {
+  display: flex;
+  font-size: 16px;
+  height: 55px;
+}
+.radio-lists input[type=radio] {
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 5px 0 0;
+  cursor: pointer;
+}
+.radio-lists .radio-list {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.radio-lists .radio-list + .radio-list {
+  margin-left: 20px;
 }
 
 #dashboard-header {
@@ -465,6 +521,8 @@ button.line.light-grey:hover {
 @media (max-width: 767px) {
   .mobile-hamberger-menu {
     padding: 5px;
+    width: 40px;
+    height: 40px;
   }
   .mobile-hamberger-menu img {
     max-height: 30px;
@@ -675,8 +733,9 @@ button.line.light-grey:hover {
 }
 
 #dashboard-body {
-  margin-left: 255px;
-  padding: 56px 40px 0;
+  margin-left: 230px;
+  padding: 56px 40px;
+  min-height: 100vh;
   background-color: #F3F7FC;
 }
 #dashboard-body .dashboard-title {
@@ -708,7 +767,7 @@ button.line.light-grey:hover {
   transition: all 0.3s;
 }
 #dashboard-body .dashboard-tab-lists li a {
-  padding: 12px 60px;
+  padding: 12px 50px;
   color: inherit;
   width: 100%;
   height: 100%;
@@ -770,22 +829,6 @@ button.line.light-grey:hover {
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-}
-#dashboard-body .dashboard-filter-content input {
-  border: 1px solid #eee;
-  height: 46px;
-  padding: 0 10px 0 10px;
-  font-size: 14px;
-  border-radius: 5px;
-  width: 100%;
-}
-#dashboard-body .dashboard-filter-content select {
-  width: 105px;
-  border: 1px solid #eee;
-  border-radius: 5px;
-  height: 46px;
-  padding: 0 5px;
-  font-size: 14px;
 }
 #dashboard-body .dashboard-filter-content .datapickers-wrap,
 #dashboard-body .dashboard-filter-content .datapicker-wrap,
@@ -872,7 +915,20 @@ button.line.light-grey:hover {
   margin-bottom: 40px;
 }
 .dashboard-table-wrap .input-wrap {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
+}
+.dashboard-table-wrap .input-wrap input {
+  padding: 20px !important;
+  font-size: 16px !important;
+  max-height: 55px;
+}
+.dashboard-table-wrap .input-wrap button {
+  padding: 10px 10px !important;
+  max-width: -webkit-fit-content !important;
+  max-width: -moz-fit-content !important;
+  max-width: fit-content !important;
+  white-space: nowrap;
+  height: 45px !important;
 }
 .dashboard-table-wrap select {
   -webkit-appearance: none;
@@ -880,12 +936,13 @@ button.line.light-grey:hover {
   background-repeat: no-repeat;
   background-size: 12px 7px;
   background-position: right center;
+  font-size: 16px;
 }
 .dashboard-table-wrap select.table-full-select {
   width: 100%;
   display: block;
   border: none;
-  height: 100%;
+  height: 55px;
 }
 .dashboard-table-wrap .dashboard-table-header {
   display: flex;
@@ -905,10 +962,10 @@ button.line.light-grey:hover {
   font-size: 14px;
   font-weight: 500;
   color: #fff;
-  padding: 15px 15px;
+  padding: 10px 15px;
   border-radius: 5px;
   margin: 0 10px;
-  height: 46px;
+  height: 40px;
   display: inline-block;
 }
 .dashboard-table-wrap .dashboard-table-header .dashboard-right-contents .btn a {
@@ -927,7 +984,7 @@ button.line.light-grey:hover {
   width: 105px;
   border: 1px solid #eee;
   border-radius: 5px;
-  height: 46px;
+  height: 40px;
   padding: 0 5px;
   font-size: 14px;
 }
@@ -938,6 +995,107 @@ button.line.light-grey:hover {
 }
 .dashboard-table-wrap .dashboard-table-contents {
   overflow: scroll;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns {
+  overflow: visible;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns input {
+  border: none !important;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .account-info {
+  display: flex;
+  align-items: center;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .pay-date {
+  white-space: nowrap;
+  position: relative;
+  padding-bottom: 30px;
+  color: #666;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .pay-date select {
+  margin: 0 10px;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .pay-date button {
+  max-width: 100px;
+  margin-left: 10px;
+  width: 100%;
+  padding: 0 16px;
+  outline: none;
+  font-weight: 700;
+  font-size: 16px;
+  border: 1px solid #0957C3;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 45px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .pay-date small {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  color: #DB0808;
+  font-size: 14px;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .add-representative {
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .datapicker-wrap {
+  display: flex;
+  border: none;
+  align-items: center;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .datapicker-wrap input {
+  margin-left: 10px;
+  color: #666;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .datapicker-wrap img {
+  max-height: 25px;
+  vertical-align: middle;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns table {
+  width: 100%;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .table-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns tr {
+  width: 50%;
+  flex: 1 50%;
+  max-height: 75px;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns tr.table-address {
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  display: flex !important;
+  vertical-align: middle;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns tr.table-address th {
+  display: inline-flex;
+  align-items: center;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns th {
+  min-width: 225px;
+  text-align: left;
+  font-size: 16px;
+  padding: 15px 20px;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns td {
+  flex: 1;
+  width: 100%;
+  text-align: left;
+  padding: 15px 20px;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns input {
+  width: 100%;
+  border: none;
+  height: 55px;
+  font-size: 16px;
 }
 .dashboard-table-wrap table {
   width: 100%;
@@ -976,46 +1134,6 @@ button.line.light-grey:hover {
 }
 .dashboard-table-wrap table .more {
   text-decoration: underline;
-}
-.dashboard-table-wrap table .radio-lists {
-  display: flex;
-  font-size: 14px;
-}
-.dashboard-table-wrap table .radio-lists input {
-  width: 18px;
-  height: 18px;
-  margin: 0 5px 0 0;
-}
-.dashboard-table-wrap table .radio-lists .radio-list {
-  display: inline-flex;
-  align-items: center;
-}
-.dashboard-table-wrap table .radio-lists .radio-list + .radio-list {
-  margin-left: 20px;
-}
-.dashboard-table-wrap table.two-columns {
-  overflow: hidden;
-}
-.dashboard-table-wrap table.two-columns .table-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-.dashboard-table-wrap table.two-columns tr {
-  width: 50%;
-  flex: 1 50%;
-  max-height: 75px;
-}
-.dashboard-table-wrap table.two-columns th {
-  min-width: 225px;
-  text-align: left;
-  font-size: 14px;
-  padding: 30px 20px;
-}
-.dashboard-table-wrap table.two-columns td {
-  flex: 1;
-  width: 100%;
-  text-align: left;
-  padding: 30px 20px;
 }
 
 .table-btn-lists {
@@ -1103,8 +1221,8 @@ button.line.light-grey:hover {
   #dashboard-body .dashboard-table-wrap {
     margin-bottom: 20px;
   }
-  #dashboard-body .dashboard-table-wrap table.two-columns th {
-    min-width: 130px;
+  #dashboard-body .two-columns th {
+    min-width: 145px;
   }
 }
 @media (max-width: 1200px) {
@@ -1117,6 +1235,16 @@ button.line.light-grey:hover {
   #dashboard-body .dashboard-filter-content .filter-element-wrap {
     flex: auto;
     width: 100%;
+  }
+  #dashboard-body .two-columns .table-flex {
+    display: block;
+  }
+  #dashboard-body .two-columns .table-flex tr {
+    width: 100%;
+  }
+  #dashboard-body .two-columns .table-flex th,
+#dashboard-body .two-columns .table-flex td {
+    padding: 15px 20px;
   }
   #dashboard-body .dashboard-table-header .dashboard-right-contents .btn {
     height: auto;
@@ -1152,19 +1280,9 @@ button.line.light-grey:hover {
     margin: 10px 0 0 0;
     padding: 10px 20px;
   }
-  #dashboard-body .dashboard-table-wrap table.two-columns .table-flex {
-    display: block;
-  }
-  #dashboard-body .dashboard-table-wrap table.two-columns .table-flex tr {
-    width: 100%;
-  }
-  #dashboard-body .dashboard-table-wrap table.two-columns .table-flex th,
-#dashboard-body .dashboard-table-wrap table.two-columns .table-flex td {
-    padding: 15px 20px;
-  }
   #dashboard-body .table-btn-lists li button {
-    width: 80px;
-    height: 45px;
+    width: 120px;
+    height: 55px;
     font-size: 16px;
   }
   #dashboard-body .table-btn-lists li + li {
@@ -1234,6 +1352,10 @@ button.line.light-grey:hover {
   #dashboard-body .dashboard-summary-cards li > span strong .num {
     font-size: 25px;
   }
+  #dashboard-body .dashboard-tab-lists li a {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
   #dashboard-body .dashboard-filter-content select {
     width: 100%;
   }
@@ -1255,6 +1377,61 @@ button.line.light-grey:hover {
   #dashboard-body .dashboard-filter-content .filter-element-wrap .filtering-list {
     padding: 0 10px;
   }
+  #dashboard-body .two-columns input,
+#dashboard-body .two-columns select,
+#dashboard-body .two-columns button {
+    max-height: 45px;
+    height: 45px;
+  }
+  #dashboard-body .two-columns .input-with-btn {
+    display: block;
+  }
+  #dashboard-body .two-columns .input-with-btn button {
+    margin-left: 0;
+    margin-top: 5px;
+    min-width: 100%;
+    height: 40px;
+    padding: 0 !important;
+  }
+  #dashboard-body .two-columns .account-info {
+    display: block;
+  }
+  #dashboard-body .two-columns .account-info select {
+    border: none;
+    width: 100%;
+    padding: 0;
+  }
+  #dashboard-body .two-columns .pay-date {
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #dashboard-body .two-columns .pay-date select {
+    margin: 5px 0;
+    padding: 0;
+  }
+  #dashboard-body .two-columns .pay-date button {
+    position: static;
+    margin: 20px 0;
+    min-width: 100%;
+  }
+  #dashboard-body .two-columns .table-flex {
+    display: block;
+  }
+  #dashboard-body .two-columns .table-flex tr {
+    width: 100%;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+  #dashboard-body .two-columns .table-flex th,
+#dashboard-body .two-columns .table-flex td {
+    padding: 10px 0 10px 20px;
+  }
+  #dashboard-body .two-columns .table-flex th {
+    min-width: 130px;
+  }
   #dashboard-body h2 {
     font-size: 20px;
   }
@@ -1274,6 +1451,9 @@ button.line.light-grey:hover {
   }
   #dashboard-body .dashboard-table-wrap .dashboard-table-header p {
     margin-bottom: 20px;
+  }
+  #dashboard-body .two-columns tr {
+    display: block;
   }
   .shortermList table {
     width: 100%;

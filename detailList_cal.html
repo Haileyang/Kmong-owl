@@ -111,13 +111,13 @@
                     <div class="dashboard-table-header">
                         <h2>정산정보</h2>
                     </div>
-                    <div class="dashboard-table-contents">
+                    <div class="dashboard-table-contents two-columns">
                         <table class="dashboard-table-list">
                             <tbody class="table-flex">
-                                <tr>
+                                <tr class="table-address">
                                     <th>정산 계좌 정보</th>
-                                    <td>
-                                        <select name="" id="" class="table-full-select">
+                                    <td class="account-info">
+                                        <select name="" id="">
                                             <option value="">은행 선택</option>
                                             <option value="">옵션 1</option>
                                             <option value="">옵션 2</option>
@@ -169,31 +169,35 @@
                                         <input type="checkbox">
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="table-address">
                                     <th>정산일</th>
-                                    <td>
+                                    <td class="account-info pay-date">
                                         매월
-                                        <select name="" id="" class="table-full-select">
+                                        <select name="" id="">
                                             <option value="">결제완료</option>
                                             <option value="">옵션 1</option>
                                             <option value="">옵션 2</option>
                                         </select>
-                                        <select name="" id="" class="table-full-select">
+                                        <select name="" id="">
                                             <option value="">10일</option>
                                             <option value="">옵션 1</option>
                                             <option value="">옵션 2</option>
                                         </select>
                                         일 이후 정산
-                                        <button class="btn line">정산내역</button>
-                                        <small class="color-rec">정산일 변경 시, 익월부터 적용</small>
+                                        <button class="btn fill primary">정산내역</button>
+                                        <small>정산일 변경 시, 익월부터 적용</small>
                                     </td>
                                 </tr>
                             </tbody>
-                            <button class="line primary">담당자 추가하기</button>
                         </table>
+                        <button class="line primary add-representative">담당자 추가하기</button>
                     </div>
                 </div>
-                <button class="fill primary">결제완료</button>
+                <ul class="table-btn-lists">
+                    <li class="table-btn-list">
+                        <button class="fill primary">결제완료</button>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
