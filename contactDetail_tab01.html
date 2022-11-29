@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계약 상세 내역 - 계약</title>
+    <link rel="stylesheet" href="/public/css/app.css">
+    <script src="/public/js/common.js"></script>
+    <script src="/public/js/lib/moment-with-locales.js"></script>
+
+</head>
+<body>
+    <main id="dashboard">
+        <header id="dashboard-header">
+            <figure class="logo"><img src="/public/img/login-logo.png" alt="logo"></figure>
+            <nav>
+                <strong class="nav-category">general</strong>
+                <ul class="nav-lists">
+                    <li class="nav-list">
+                        <a href="">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-home.png" alt="Dashboard">
+                                <img class="active-icon" src="/public/img/icon-header-home-active.png" alt="Dashboard">
+                            </figure>
+                            <strong class="nav-title">Dashboard</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header" onclick="dropdownOpener()">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-rider-manage.png" alt="라이더 관리">
+                                <img class="active-icon" src="/public/img/icon-header-rider-manage-active.png" alt="라이더 관리">
+                            </figure>
+                            <strong class="nav-title">라이더 관리</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-rider.png" alt="라이더 정보">
+                                        <img class="active-icon" src="/public/img/icon-header-rider-active.png" alt="라이더 정보">
+                                    </figure>
+                                    <strong class="nav-title">라이더 정보</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-form.png" alt="라이더 신규 신청">
+                                        <img class="active-icon" src="/public/img/icon-header-form-active.png" alt="라이더 신규 신청">
+                                    </figure>
+                                    <strong class="nav-title">라이더 신규 신청</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list">
+                        <a href="">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-setting.png" alt="업체설정">
+                                <img class="active-icon" src="/public/img/icon-header-setting-active.png" alt="업체설정">
+                            </figure>
+                            <strong class="nav-title">업체설정</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-profile-wrap">
+                <figure class="profile-img-wrap"><img src="/public/img/img-sample-profile.png" alt="sample-profile"></figure>
+                <span>
+                    <strong class="profile-name">Harrison Smith</strong>
+                    <a href="" class="logout">Logout</a>
+                </span>
+            </div>
+        </header>
+        <span class="mobile-hamberger-menu" onclick="mobileMenuHandler()">
+            <img src="/public/img/icon-mobile-menu.png" alt="mobile-hamberger-menu">
+        </span>
+        <section id="dashboard-body" class="riderRegister">
+            <div class="dashboard-title">
+                <h1>계약 상세 내역</h1>
+                <ul class="bread-scrumbs">
+                    <li class="bread-scrumb">Home</li>
+                    <li class="bread-scrumb">계약 상세 내역</li>
+                </ul>
+            </div>
+            <div class="dashboard-content">
+                <ul class="dashboard-tab-lists mb-0">
+                    <li class="dashboard-tab-list active">
+                        <a href="/detailList_basic.html">계약</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">청구</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="/detailList_cal.html">보험</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">게약종료</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">업체이전</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">중도인수</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">중도반납</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">만기인수/폐지</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">입금이력</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">리스이력</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">청구수정</a>
+                    </li>
+                </ul>
+                <div class="dashboard-table-wrap">
+                    <div class="dashboard-table-header">
+                        <h2>계약 정보</h2>
+                    </div>
+                    <div class="dashboard-table-contents two-columns">
+                        <table class="dashboard-table-list">
+                            <tbody class="table-flex">
+                                <tr>
+                                    <th>게약 정보</th>
+                                    <td>
+                                        <input type="text" placeholder="계약정보를 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>보증금 상태</th>
+                                    <td>
+                                        <ul class="select-lists">
+                                            <li class="select-list">
+                                                <select name="" id="" class="table-full-select">
+                                                    <option value="">환급</option>
+                                                    <option value="">옵션 1</option>
+                                                    <option value="">옵션 2</option>
+                                                </select>
+                                            </li>
+                                            <li class="select-list">
+                                                <select name="" id="" class="table-full-select">
+                                                    <option value="">50만원</option>
+                                                    <option value="">옵션 1</option>
+                                                    <option value="">옵션 2</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>계약일</th>
+                                    <td>
+                                        <div class="datapicker-wrap">
+                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
+                                            <input type="text" name="start-date" value="2022-12-01" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>핸드폰 번호</th>
+                                    <td>
+                                        <input type="text" placeholder="핸드폰 번호를 입력하세요.">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>청구 시작일</th>
+                                    <td>
+                                        <div class="datapicker-wrap">
+                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
+                                            <input type="text" name="start-date" value="2022-12-01" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>문자 전송 번호</th>
+                                    <td>
+                                        <div class="input-wrap">
+                                            <span class="input-with-btn">
+                                                <input type="text" placeholder="문자를 받을 연락처를 입력하세요.">
+                                                <button class="btn line">변경하기</button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>주민등록증</th>
+                                    <td>
+                                        <div class="input-wrap">
+                                            <span class="input-with-btn">
+                                                <input type="text" placeholder="파일 첨부">
+                                                <button class="btn line">첨부하기</button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>운전면허증</th>
+                                    <td>
+                                        <div class="input-wrap">
+                                            <span class="input-with-btn">
+                                                <input type="text" placeholder="파일 첨부">
+                                                <button class="btn line">첨부하기</button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>사용증 신고필증</th>
+                                    <td>
+                                        <div class="input-wrap">
+                                            <span class="input-with-btn">
+                                                <input type="text" placeholder="파일 첨부">
+                                                <button class="btn line">첨부하기</button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>주민등록번호</th>
+                                    <td>
+                                        <input type="text" placeholder="주민등록번호를 입력하세요.">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>상품 유형</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">인수형</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>정비유부</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">미포함</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>업체정보</th>
+                                    <td>
+                                        <div class="input-wrap">
+                                            <span class="input-with-btn">
+                                                <input type="text" placeholder="업체명을 입력하세요">
+                                                <button class="btn line">첨부하기</button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>오토바이 정보</th>
+                                    <td>
+                                        <div class="input-wrap">
+                                            <span class="input-with-btn">
+                                                <input type="text" placeholder="오토바이 정보를 입력하세요.">
+                                                <button class="btn line">차종 검색</button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>차량정보</th>
+                                    <td>
+                                        <input type="text" placeholder="차량정보를 입력하세요.">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>청구여부</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">청구</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>방법</th>
+                                    <td>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">탁송</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>탁송장소</th>
+                                    <td>
+                                        <input type="text" placeholder="탁송장소를 입력하세요.">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <ul class="table-btn-lists">
+                    <li class="table-btn-list">
+                        <button class="fill primary">저장</button>
+                    </li>
+                    <li class="table-btn-liLst">
+                        <button class="fill light-grey">취소</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

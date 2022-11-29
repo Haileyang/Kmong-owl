@@ -426,18 +426,6 @@ button.line.light-grey:hover {
 #dashboard-header nav .nav-list .active-icon {
   display: none;
 }
-#dashboard-header nav .nav-list:hover {
-  background-color: #fff;
-}
-#dashboard-header nav .nav-list:hover .nav-title {
-  color: #0957C3;
-}
-#dashboard-header nav .nav-list:hover .default-icon {
-  display: none;
-}
-#dashboard-header nav .nav-list:hover .active-icon {
-  display: block;
-}
 #dashboard-header nav .nav-dropdowns .nav-dropdown-header {
   padding: 15px 20px;
   display: flex;

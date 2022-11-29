@@ -327,18 +327,18 @@ button{
             .active-icon{
                display: none;
             }
-            &:hover{
-                background-color: $color-white;
-                .nav-title{
-                    color: $color-primary;
-                }
-                .default-icon{
-                    display: none;
-                }
-                .active-icon{
-                    display: block;
-                }
-            }
+            // &:hover{
+            //     background-color: $color-white;
+            //     .nav-title{
+            //         color: $color-primary;
+            //     }
+            //     .default-icon{
+            //         display: none;
+            //     }
+            //     .active-icon{
+            //         display: block;
+            //     }
+            // }
         }
         .nav-dropdowns{
             .nav-dropdown-header{
