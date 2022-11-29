@@ -223,7 +223,9 @@ button.line.light-grey:hover {
 }
 
 #login input[type=text],
-#dashboard input[type=text] {
+#login input[type=password],
+#dashboard input[type=text],
+#dashboard input[type=password] {
   border: 1px solid #eee;
   height: 55px;
   padding: 0 10px 0 10px;
@@ -252,6 +254,7 @@ button.line.light-grey:hover {
 #login .input-wrap,
 #dashboard .input-wrap {
   margin-bottom: 20px;
+  position: relative;
 }
 #login .input-wrap label,
 #dashboard .input-wrap label {
@@ -260,8 +263,42 @@ button.line.light-grey:hover {
   display: block;
   margin-bottom: 10px;
 }
+#login .input-wrap small,
+#dashboard .input-wrap small {
+  font-size: 14px;
+  color: #DB0808;
+  display: block;
+  margin-top: 5px;
+  display: none;
+}
+#login .input-wrap small.on,
+#dashboard .input-wrap small.on {
+  display: block;
+}
+#login .input-wrap .icon-password,
+#dashboard .input-wrap .icon-password {
+  position: absolute;
+  right: 15px;
+  top: 45px;
+  z-index: 10;
+  cursor: pointer;
+}
+#login .input-wrap .icon-password img,
+#dashboard .input-wrap .icon-password img {
+  max-height: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+#login .input-wrap .icon-password img.on,
+#dashboard .input-wrap .icon-password img.on {
+  display: block;
+}
 #login .input-wrap input[type=text],
-#dashboard .input-wrap input[type=text] {
+#login .input-wrap input[type=password],
+#dashboard .input-wrap input[type=text],
+#dashboard .input-wrap input[type=password] {
   width: 100%;
   padding: 20px;
   font-size: 16px;

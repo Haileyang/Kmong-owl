@@ -144,7 +144,8 @@ button{
 // INPUT
 #login,
 #dashboard{
-    input[type=text]{
+    input[type=text],
+    input[type=password]{
         border: 1px solid #eee;
         height: 55px;
         padding: 0 10px 0 10px;
@@ -169,13 +170,41 @@ button{
     }
     .input-wrap{
         margin-bottom: 20px;
+        position: relative;
         label{
             font-size: 14px;
             color: $color-black;
             display: block;
             margin-bottom: 10px;
         }
-        input[type=text]{
+        small{
+            font-size: 14px;
+            color: $color-error;
+            display: block;
+            margin-top: 5px;
+            display: none;
+            &.on{
+                display: block;
+            }
+        }
+        .icon-password{
+            position: absolute;
+            right: 15px;
+            top: 45px;
+            z-index: 10;
+            cursor: pointer;
+            img{
+                max-height: 24px;
+                position: absolute;
+                right: 0; top: 0;
+                display: none;
+                &.on{
+                    display: block;
+                }
+            }
+        }
+        input[type=text],
+        input[type=password]{
             width: 100%;
             padding: 20px;
             font-size: 16px;
