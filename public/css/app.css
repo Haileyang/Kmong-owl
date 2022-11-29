@@ -240,10 +240,16 @@ button.line.light-grey:hover {
 }
 #login select,
 #dashboard select {
+  -webkit-appearance: none;
+  background-repeat: no-repeat;
+  background-size: 12px 7px;
+  background-position: 90% center;
+  background-image: url(/public/img/select-arrow.png);
+  background-color: #fff;
   border: 1px solid #eee;
   border-radius: 5px;
   height: 55px;
-  padding: 0 15px;
+  padding: 0 35px 0 15px;
   font-size: 16px;
 }
 #login select.table-full-select,
@@ -968,11 +974,6 @@ button.line.light-grey:hover {
   height: 45px !important;
 }
 .dashboard-table-wrap select {
-  -webkit-appearance: none;
-  background-image: url(/public/img/select-arrow.png);
-  background-repeat: no-repeat;
-  background-size: 12px 7px;
-  background-position: right center;
   font-size: 16px;
 }
 .dashboard-table-wrap select.table-full-select {
@@ -980,6 +981,8 @@ button.line.light-grey:hover {
   display: block;
   border: none;
   height: 55px;
+  padding: 0 !important;
+  background-position: 100% center !important;
 }
 .dashboard-table-wrap .dashboard-table-header {
   display: flex;
@@ -1419,6 +1422,7 @@ button.line.light-grey:hover {
 #dashboard-body .two-columns button {
     max-height: 45px;
     height: 45px;
+    padding: 0;
   }
   #dashboard-body .two-columns .input-with-btn {
     display: block;

@@ -158,10 +158,16 @@ button{
     }
     select{
         // width: 105px;
+        -webkit-appearance: none;
+        background-repeat: no-repeat;
+        background-size: 12px 7px;
+        background-position: 90% center;
+        background-image: url(/public/img/select-arrow.png);
+        background-color: #fff;
         border: 1px solid #eee;
         border-radius: 5px;
         height: 55px;
-        padding: 0 15px;
+        padding: 0 35px 0 15px ;
         font-size: 16px;
         &.table-full-select{
             width: 100%;

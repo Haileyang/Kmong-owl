@@ -411,17 +411,14 @@
         }
     }
     select{
-        -webkit-appearance: none;
-        background-image: url(/public/img/select-arrow.png);
-        background-repeat: no-repeat;
-        background-size: 12px 7px;
-        background-position: right center;
         font-size: 16px;
         &.table-full-select{
             width: 100%;
             display: block;
             border: none;
             height: 55px;
+            padding: 0!important;
+            background-position: 100% center!important;
         }
     }
     .dashboard-table-header{
@@ -908,6 +905,7 @@
             button{
                 max-height: 45px;
                 height: 45px;
+                padding: 0;
             }
             .input-with-btn{
                 display: block;
