@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>배달대행사 상세 - 기본정보</title>
+    <title>계약 상세 내역 - 업체이전</title>
     <link rel="stylesheet" href="/public/css/app.css">
     <script src="/public/js/common.js"></script>
     <script src="/public/js/lib/moment-with-locales.js"></script>
@@ -82,122 +82,74 @@
         </span>
         <section id="dashboard-body" class="riderRegister">
             <div class="dashboard-title">
-                <h1>배달 대행사 상세</h1>
+                <h1>계약 상세 내역</h1>
                 <ul class="bread-scrumbs">
                     <li class="bread-scrumb">Home</li>
-                    <li class="bread-scrumb">거래처 관리</li>
-                    <li class="bread-scrumb">배달 대행사 상세</li>
+                    <li class="bread-scrumb">계약 상세 내역</li>
                 </ul>
             </div>
             <div class="dashboard-content">
                 <ul class="dashboard-tab-lists mb-0">
+                    <li class="dashboard-tab-list">
+                        <a href="/detailList_basic.html">계약</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">청구</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="/detailList_cal.html">보험</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">게약종료</a>
+                    </li>
                     <li class="dashboard-tab-list active">
-                        <a href="/detailList_basic.html">기본정보</a>
+                        <a href="">업체이전</a>
                     </li>
                     <li class="dashboard-tab-list">
-                        <a href="">사업자</a>
+                        <a href="">중도인수</a>
                     </li>
                     <li class="dashboard-tab-list">
-                        <a href="/detailList_cal.html">정산</a>
+                        <a href="">중도반납</a>
                     </li>
                     <li class="dashboard-tab-list">
-                        <a href="">담당자</a>
+                        <a href="">만기인수/폐지</a>
                     </li>
                     <li class="dashboard-tab-list">
-                        <a href="">메모</a>
+                        <a href="">입금이력</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">리스이력</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">청구수정</a>
                     </li>
                 </ul>
                 <div class="dashboard-table-wrap">
                     <div class="dashboard-table-header">
-                        <h2>기본정보</h2>
+                        <h2>업체이전 정보</h2>
                     </div>
                     <div class="dashboard-table-contents two-columns">
                         <table class="dashboard-table-list">
                             <tbody class="table-flex">
                                 <tr>
-                                    <th>대행사 상태</th>
-                                    <td>
-                                        <select name="" id="" class="table-full-select">
-                                            <option value="">활성</option>
-                                            <option value="">옵션 1</option>
-                                            <option value="">옵션 2</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>비고</th>
-                                    <td>
-                                        <input type="text" placeholder="상세 설명을 입력하세요">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>통장사본</th>
+                                    <th>업체정보</th>
                                     <td>
                                         <div class="input-wrap">
                                             <span class="input-with-btn">
-                                                <input type="text" placeholder="사본을 첨부해주세요.">
-                                                <button class="btn fill primary">첨부하기</button>
+                                                <input type="text" placeholder="업체명을 입력하세요">
+                                                <button class="btn fill primary">업체검색</button>
                                             </span>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>대행사 아이디</th>
+                                    <th>대표번호</th>
                                     <td>
-                                        <input type="text" placeholder="이메일을 입력하세요.">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="dashboard-table-wrap">
-                    <div class="dashboard-table-header">
-                        <h2>추가정보</h2>
-                    </div>
-                    <div class="dashboard-table-contents two-columns">
-                        <table class="dashboard-table-list">
-                            <tbody class="table-flex">
-                                <tr>
-                                    <th>이름</th>
-                                    <td>
-                                        <input type="text" placeholder="이름을 입력하세요">
+                                        <input type="text" placeholder="대표 번호를 입력하세요.">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>성별</th>
-                                    <td>
-                                        <ul class="radio-lists">
-                                            <li class="radio-list">
-                                                <input type="radio" name="acc" id="acc1">
-                                                <label for="">남자</label>
-                                            </li>
-                                            <li class="radio-list">
-                                                <input type="radio" name="acc" id="acc2">
-                                                <label for="">여자</label>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>주민등록번호</th>
-                                    <td>
-                                        <input type="text" placeholder="주민등록번호를 입력하세요">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>주민등록증</th>
-                                    <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn">
-                                                <input type="file" placeholder="사본을 첨부해주세요.">
-                                                <button class="btn fill primary">첨부하기</button>
-                                            </span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>생년월일</th>
+                                    <th>업체정보</th>
                                     <td>
                                         <div class="datapicker-wrap">
                                             <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
@@ -205,26 +157,11 @@
                                         </div>
                                     </td>
                                 </tr>
-                                 <tr>
-                                    <th>비고</th>
-                                    <td>
-                                        <input type="text" placeholder="상세 설명을 입력하세요">
-                                    </td>
-                                </tr>
-                                <tr class="table-address">
-                                    <th>주소</th>
-                                    <td>
-                                        <div class="input-wrap input-add">
-                                            <label for="">업체주소</label>
-                                            <span class="input-with-btn">
-                                                <input type="text" placeholder="우편검색을 통해 주소를 입력해주세요.">
-                                                <button class="btn fill primary">우편검색</button>
-                                            </span>
-                                            <input type="text" placeholder="상세 주소를 입력해주세요.">
-                                        </div>
-                                    </td>
-                                </tr>
                                 <tr>
+                                    <th>설명</th>
+                                    <td>
+                                        <input type="text" placeholder="설명을 입력하세요.">
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

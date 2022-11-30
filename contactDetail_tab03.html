@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계약 상세 내역 - 보험</title>
+    <link rel="stylesheet" href="/public/css/app.css">
+    <script src="/public/js/common.js"></script>
+    <script src="/public/js/lib/moment-with-locales.js"></script>
+
+</head>
+<body>
+    <main id="dashboard">
+        <header id="dashboard-header">
+            <figure class="logo"><img src="/public/img/login-logo.png" alt="logo"></figure>
+            <nav>
+                <strong class="nav-category">general</strong>
+                <ul class="nav-lists">
+                    <li class="nav-list">
+                        <a href="">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-home.png" alt="Dashboard">
+                                <img class="active-icon" src="/public/img/icon-header-home-active.png" alt="Dashboard">
+                            </figure>
+                            <strong class="nav-title">Dashboard</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header" onclick="dropdownOpener()">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-rider-manage.png" alt="라이더 관리">
+                                <img class="active-icon" src="/public/img/icon-header-rider-manage-active.png" alt="라이더 관리">
+                            </figure>
+                            <strong class="nav-title">라이더 관리</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-rider.png" alt="라이더 정보">
+                                        <img class="active-icon" src="/public/img/icon-header-rider-active.png" alt="라이더 정보">
+                                    </figure>
+                                    <strong class="nav-title">라이더 정보</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-form.png" alt="라이더 신규 신청">
+                                        <img class="active-icon" src="/public/img/icon-header-form-active.png" alt="라이더 신규 신청">
+                                    </figure>
+                                    <strong class="nav-title">라이더 신규 신청</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list">
+                        <a href="">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-setting.png" alt="업체설정">
+                                <img class="active-icon" src="/public/img/icon-header-setting-active.png" alt="업체설정">
+                            </figure>
+                            <strong class="nav-title">업체설정</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-profile-wrap">
+                <figure class="profile-img-wrap"><img src="/public/img/img-sample-profile.png" alt="sample-profile"></figure>
+                <span>
+                    <strong class="profile-name">Harrison Smith</strong>
+                    <a href="" class="logout">Logout</a>
+                </span>
+            </div>
+        </header>
+        <span class="mobile-hamberger-menu" onclick="mobileMenuHandler()">
+            <img src="/public/img/icon-mobile-menu.png" alt="mobile-hamberger-menu">
+        </span>
+        <section id="dashboard-body" class="riderRegister">
+            <div class="dashboard-title">
+                <h1>계약 상세 내역</h1>
+                <ul class="bread-scrumbs">
+                    <li class="bread-scrumb">Home</li>
+                    <li class="bread-scrumb">계약 상세 내역</li>
+                </ul>
+            </div>
+            <div class="dashboard-content">
+                <ul class="dashboard-tab-lists mb-0">
+                    <li class="dashboard-tab-list">
+                        <a href="">계약</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">청구</a>
+                    </li>
+                    <li class="dashboard-tab-list active">
+                        <a href="">보험</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">게약종료</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">업체이전</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">중도인수</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">중도반납</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">만기인수/폐지</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">입금이력</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">리스이력</a>
+                    </li>
+                    <li class="dashboard-tab-list">
+                        <a href="">청구수정</a>
+                    </li>
+                </ul>
+                <div class="dashboard-table-wrap">
+                    <div class="dashboard-table-header">
+                        <h2>보험 정보</h2>
+                    </div>
+                    <div class="dashboard-table-contents two-columns">
+                        <table class="dashboard-table-list">
+                            <tbody class="table-flex">
+                                <tr>
+                                    <th>보험 대리점</th>
+                                    <td>
+                                        <input type="text" placeholder="보험대리점을 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>보험 대리점 검색</th>
+                                    <td>
+                                        <div class="input-wrap">
+                                            <span class="input-with-btn">
+                                                <input type="text" placeholder="업체명을 입력하세요.">
+                                                <button class="btn fill primary">업체검색</button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>보험료</th>
+                                    <td>
+                                        <input type="text" placeholder="보험료를 입력하세요.">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>수수료</th>
+                                    <td>
+                                        <input type="text" placeholder="수수료를 입력하세요.">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>절감보험료</th>
+                                    <td>
+                                        <input type="text" placeholder="절감보험료를 입력하세요.">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>절감수수료</th>
+                                    <td>
+                                        <input type="text" placeholder="절감수수료를 입력하세요.">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="dashboard-table-contents">
+                        <table class="dashboard-table-list">
+                            <thead>
+                                <tr>
+                                    <th>NO</th>
+                                    <th>보험사</th>
+                                    <th>연령</th>
+                                    <th>보험유형</th>
+                                    <th>시작일</th>
+                                    <th>종료일</th>
+                                    <th>청구금액</th>
+                                    <th>기능</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>ABC 보험</td>
+                                    <td>만 26세</td>
+                                    <td>책임보험</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td>400,000</td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="btn fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>ABC 보험</td>
+                                    <td>만 26세</td>
+                                    <td>책임보험</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td>400,000</td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="btn fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>ABC 보험</td>
+                                    <td>만 26세</td>
+                                    <td>책임보험</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td>400,000</td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="btn fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>ABC 보험</td>
+                                    <td>만 26세</td>
+                                    <td>책임보험</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td>400,000</td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="btn fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>ABC 보험</td>
+                                    <td>만 26세</td>
+                                    <td>책임보험</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td>400,000</td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="btn fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>ABC 보험</td>
+                                    <td>만 26세</td>
+                                    <td>책임보험</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td>400,000</td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="btn fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>ABC 보험</td>
+                                    <td>만 26세</td>
+                                    <td>책임보험</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td>400,000</td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="btn fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>ABC 보험</td>
+                                    <td>만 26세</td>
+                                    <td>책임보험</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td>400,000</td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="btn fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>ABC 보험</td>
+                                    <td>만 26세</td>
+                                    <td>책임보험</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td>400,000</td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="btn fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td>ABC 보험</td>
+                                    <td>만 26세</td>
+                                    <td>책임보험</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
+                                    <td>400,000</td>
+                                    <td>
+                                        <ul class="inrTable-btn-lists">
+                                            <li class="inrTable-btn-list">
+                                                <button class="btn fill light-grey">삭제</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dashboard-pagination-wrap">
+                    <div>
+                        <span class="p-prev">
+                            <figure><img src="/public/img/icon-p-prev.png" alt="p prev"></figure>
+                        </span>
+                        <span class="prev">
+                            <figure><img src="/public/img/icon-prev.png" alt="prev"></figure>
+                        </span>
+                        <ul class="pagination-nums">
+                            <li class="pagination-num">1</li>
+                            <li class="pagination-num">2</li>
+                            <li class="pagination-num">3</li>
+                            <li class="pagination-num">4</li>
+                            <li class="pagination-num">5</li>
+                        </ul>
+                        <span class="next">
+                            <figure><img src="/public/img/icon-p-prev.png" alt="next"></figure>
+                        </span>
+                        <span class="n-next">
+                            <figure><img src="/public/img/icon-prev.png" alt="n next"></figure>
+                        </span>
+                    </div>
+                </div>
+                <ul class="table-btn-lists">
+                    <li class="table-btn-list">
+                        <button class="btn fill primary">저장</button>
+                    </li>
+                    <li class="table-btn-liLst">
+                        <button class="btn fill light-grey">취소</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

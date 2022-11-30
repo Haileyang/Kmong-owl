@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>계약 상세 내역 - 계약종료</title>
+    <title>계약 상세 내역 - 입금이력</title>
     <link rel="stylesheet" href="/public/css/app.css">
     <script src="/public/js/common.js"></script>
     <script src="/public/js/lib/moment-with-locales.js"></script>
@@ -91,15 +91,15 @@
             <div class="dashboard-content">
                 <ul class="dashboard-tab-lists mb-0">
                     <li class="dashboard-tab-list">
-                        <a href="/detailList_basic.html">계약</a>
+                        <a href="">계약</a>
                     </li>
                     <li class="dashboard-tab-list">
                         <a href="">청구</a>
                     </li>
                     <li class="dashboard-tab-list">
-                        <a href="/detailList_cal.html">보험</a>
+                        <a href="">보험</a>
                     </li>
-                    <li class="dashboard-tab-list active">
+                    <li class="dashboard-tab-list">
                         <a href="">게약종료</a>
                     </li>
                     <li class="dashboard-tab-list">
@@ -114,7 +114,7 @@
                     <li class="dashboard-tab-list">
                         <a href="">만기인수/폐지</a>
                     </li>
-                    <li class="dashboard-tab-list">
+                    <li class="dashboard-tab-list active">
                         <a href="">입금이력</a>
                     </li>
                     <li class="dashboard-tab-list">
@@ -126,33 +126,55 @@
                 </ul>
                 <div class="dashboard-table-wrap">
                     <div class="dashboard-table-header">
-                        <h2>계약종료 정보</h2>
+                        <h2>입금이력 정보</h2>
                     </div>
-                    <div class="dashboard-table-contents two-columns">
+                    <div class="dashboard-table-contents">
                         <table class="dashboard-table-list">
-                            <tbody class="table-flex">
+                            <thead>
                                 <tr>
-                                    <th>게약 종료일</th>
-                                    <td>
-                                        <div class="datapicker-wrap">
-                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
-                                            <input type="text" name="start-date" value="2022-12-01" />
-                                        </div>
-                                    </td>
+                                    <th>NO</th>
+                                    <th>리스키</th>
+                                    <th>청구일</th>
+                                    <th>청구 금액</th>
+                                    <th>입금 금액</th>
+                                    <th>입금일</th>
+                                    <th>등록일</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
-                                    <th>종료 사유</th>
-                                    <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn">
-                                                <input type="text" placeholder="종료사유">
-                                                <button class="btn fill primary">계약종료</button>
-                                            </span>
-                                        </div>
-                                    </td>
+                                    <td>9999</td>
+                                    <td>A101010101</td>
+                                    <td>2022.10.28</td>
+                                    <td>100,000</td>
+                                    <td>2022.10.28</td>
+                                    <td>2022.10.28</td>
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                </div>
+                <div class="dashboard-pagination-wrap">
+                    <div>
+                        <span class="p-prev">
+                            <figure><img src="/public/img/icon-p-prev.png" alt="p prev"></figure>
+                        </span>
+                        <span class="prev">
+                            <figure><img src="/public/img/icon-prev.png" alt="prev"></figure>
+                        </span>
+                        <ul class="pagination-nums">
+                            <li class="pagination-num">1</li>
+                            <li class="pagination-num">2</li>
+                            <li class="pagination-num">3</li>
+                            <li class="pagination-num">4</li>
+                            <li class="pagination-num">5</li>
+                        </ul>
+                        <span class="next">
+                            <figure><img src="/public/img/icon-p-prev.png" alt="next"></figure>
+                        </span>
+                        <span class="n-next">
+                            <figure><img src="/public/img/icon-prev.png" alt="n next"></figure>
+                        </span>
                     </div>
                 </div>
                 <ul class="table-btn-lists">

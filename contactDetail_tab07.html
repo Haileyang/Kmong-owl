@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>계약 상세 내역 - 계약</title>
+    <title>계약 상세 내역 - 중도반납</title>
     <link rel="stylesheet" href="/public/css/app.css">
     <script src="/public/js/common.js"></script>
     <script src="/public/js/lib/moment-with-locales.js"></script>
@@ -90,7 +90,7 @@
             </div>
             <div class="dashboard-content">
                 <ul class="dashboard-tab-lists mb-0">
-                    <li class="dashboard-tab-list active">
+                    <li class="dashboard-tab-list">
                         <a href="/detailList_basic.html">계약</a>
                     </li>
                     <li class="dashboard-tab-list">
@@ -108,7 +108,7 @@
                     <li class="dashboard-tab-list">
                         <a href="">중도인수</a>
                     </li>
-                    <li class="dashboard-tab-list">
+                    <li class="dashboard-tab-list active">
                         <a href="">중도반납</a>
                     </li>
                     <li class="dashboard-tab-list">
@@ -126,55 +126,25 @@
                 </ul>
                 <div class="dashboard-table-wrap">
                     <div class="dashboard-table-header">
-                        <h2>계약 정보</h2>
+                        <h2>중도반납 정보</h2>
                     </div>
                     <div class="dashboard-table-contents two-columns">
                         <table class="dashboard-table-list">
                             <tbody class="table-flex">
                                 <tr>
-                                    <th>게약 정보</th>
+                                    <th>차량번호</th>
                                     <td>
-                                        <input type="text" placeholder="계약정보를 입력하세요">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>보증금 상태</th>
-                                    <td>
-                                        <ul class="select-lists">
-                                            <li class="select-list">
-                                                <select name="" id="" class="table-full-select">
-                                                    <option value="">환급</option>
-                                                    <option value="">옵션 1</option>
-                                                    <option value="">옵션 2</option>
-                                                </select>
-                                            </li>
-                                            <li class="select-list">
-                                                <select name="" id="" class="table-full-select">
-                                                    <option value="">50만원</option>
-                                                    <option value="">옵션 1</option>
-                                                    <option value="">옵션 2</option>
-                                                </select>
-                                            </li>
-                                        </ul>
+                                        <input type="text" placeholder="차량번호를 입력하세요">
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>계약일</th>
                                     <td>
-                                        <div class="datapicker-wrap">
-                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
-                                            <input type="text" name="start-date" value="2022-12-01" />
-                                        </div>
+                                        <input type="text" placeholder="계약일을 입력하세요">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>핸드폰 번호</th>
-                                    <td>
-                                        <input type="text" placeholder="핸드폰 번호를 입력하세요.">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>청구 시작일</th>
+                                    <th>등록일</th>
                                     <td>
                                         <div class="datapicker-wrap">
                                             <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
@@ -183,131 +153,63 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>문자 전송 번호</th>
+                                    <th>최종 정산일</th>
                                     <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn">
-                                                <input type="text" placeholder="문자를 받을 연락처를 입력하세요.">
-                                                <button class="btn fill primary">변경하기</button>
-                                            </span>
+                                        <div class="datapicker-wrap">
+                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
+                                            <input type="text" name="start-date" value="2022-12-01" />
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>주민등록증</th>
+                                    <th>실 사용일</th>
                                     <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn">
-                                                <input type="file" placeholder="사본을 첨부해주세요.">
-                                                <button class="btn fill primary">첨부하기</button>
-                                            </span>
-                                        </div>
+                                        <input type="text" placeholder="실 사용일을 입력하세요.">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>운전면허증</th>
+                                    <th>일 사용료</th>
                                     <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn">
-                                                <input type="file" placeholder="사본을 첨부해주세요.">
-                                                <button class="btn fill primary">첨부하기</button>
-                                            </span>
-                                        </div>
+                                        <input type="text" placeholder="일 사용료을 입력하세요.">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>사용증 신고필증</th>
+                                    <th>납부기준 사용일</th>
                                     <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn">
-                                                <input type="file" placeholder="사본을 첨부해주세요.">
-                                                <button class="btn fill primary">첨부하기</button>
-                                            </span>
-                                        </div>
+                                        <input type="text" placeholder="납부기준 사용일을 입력하세요.">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>주민등록번호</th>
+                                    <th>납부기준 잔여일</th>
                                     <td>
-                                        <input type="text" placeholder="주민등록번호를 입력하세요.">
+                                        <input type="text" placeholder="납부기준 잔여일을 입력하세요.">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>상품 유형</th>
+                                    <th>기존 총 매출채권</th>
                                     <td>
-                                        <select name="" id="" class="table-full-select">
-                                            <option value="">인수형</option>
-                                            <option value="">옵션 1</option>
-                                            <option value="">옵션 2</option>
-                                        </select>
+                                        <input type="text" placeholder="기존 총 매출채권을 입력하세요.">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>정비유부</th>
+                                    <th>회수된 채권</th>
                                     <td>
-                                        <select name="" id="" class="table-full-select">
-                                            <option value="">미포함</option>
-                                            <option value="">옵션 1</option>
-                                            <option value="">옵션 2</option>
-                                        </select>
+                                        <input type="text" placeholder="회수된 채권을 입력하세요.">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>업체정보</th>
+                                    <th>잔여금액</th>
                                     <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn">
-                                                <input type="text" placeholder="업체명을 입력하세요">
-                                                <button class="btn fill primary">업체검색</button>
-                                            </span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>오토바이 정보</th>
-                                    <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn">
-                                                <input type="text" placeholder="오토바이 정보를 입력하세요.">
-                                                <button class="btn fill primary">차종 검색</button>
-                                            </span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>차량정보</th>
-                                    <td>
-                                        <input type="text" placeholder="차량정보를 입력하세요.">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>청구여부</th>
-                                    <td>
-                                        <select name="" id="" class="table-full-select">
-                                            <option value="">청구</option>
-                                            <option value="">옵션 1</option>
-                                            <option value="">옵션 2</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>방법</th>
-                                    <td>
-                                        <select name="" id="" class="table-full-select">
-                                            <option value="">탁송</option>
-                                            <option value="">옵션 1</option>
-                                            <option value="">옵션 2</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>탁송장소</th>
-                                    <td>
-                                        <input type="text" placeholder="탁송장소를 입력하세요.">
+                                        <input type="text" placeholder="잔여금액을 입력하세요.">
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
+                        <ul class="line-btn-lists table-add-btn">
+                            <li class="line-btn-list">
+                                <button class="btn line primary">중도 반납 처리</button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <ul class="table-btn-lists">
