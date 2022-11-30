@@ -388,6 +388,17 @@
             }
         }
     }
+    &.contactDetail_tab{
+        .dashboard-tab-lists{
+            overflow: scroll;
+            li {
+                white-space: nowrap;
+                a{
+                    padding: 12px 30px;
+                }
+            }
+        }
+    }
 }
 // SHORTERM LIST
 .dashboard-table-wrap{
@@ -407,7 +418,6 @@
             padding: 10px 10px!important;
             max-width: fit-content!important;
             white-space: nowrap;
-            height: 45px!important;
         }
     }
     select{
@@ -474,6 +484,7 @@
     }
     .dashboard-table-contents{
         overflow: scroll;
+        margin-bottom: 40px;
         &.two-columns{
             overflow: visible;
             input{
@@ -513,11 +524,7 @@
                     font-size: 14px;
                 }
             }
-            .add-representative{
-                margin-top: 50px;
-                padding: 10px 20px;
-                font-size: 16px;
-            }
+            
             .datapicker-wrap{
                 display: flex;
                 border: none;
@@ -569,6 +576,28 @@
                 border: none;
                 height: 55px;
                 font-size: 16px;
+            }
+        }
+    }
+    .select-lists{
+        display: flex;
+        li{
+            flex: 1;
+            & + li{
+                margin-left: 20px;
+            }
+        }
+    }
+    .table-add-btn{
+        display: flex;
+        margin-top: 50px;
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        li{
+            & + li{
+                margin-left: 10px;
             }
         }
     }

@@ -87,6 +87,10 @@ input {
   outline: none;
 }
 
+.d-flex {
+  display: flex;
+}
+
 .mobile-hidden {
   display: none;
 }
@@ -303,8 +307,10 @@ button.line.light-grey:hover {
 }
 #login .input-wrap input[type=text],
 #login .input-wrap input[type=password],
+#login .input-wrap input[type=file],
 #dashboard .input-wrap input[type=text],
-#dashboard .input-wrap input[type=password] {
+#dashboard .input-wrap input[type=password],
+#dashboard .input-wrap input[type=file] {
   width: 100%;
   padding: 20px;
   font-size: 16px;
@@ -325,6 +331,7 @@ button.line.light-grey:hover {
 #dashboard .input-wrap .input-with-btn {
   display: flex;
   align-items: center;
+  position: relative;
 }
 #login .input-wrap .input-with-btn button,
 #dashboard .input-wrap .input-with-btn button {
@@ -339,6 +346,33 @@ button.line.light-grey:hover {
   border: 1px solid #0957C3;
   border-radius: 5px;
   cursor: pointer;
+}
+#login .input-wrap .input-with-btn.input-file-wrap label,
+#dashboard .input-wrap .input-with-btn.input-file-wrap label {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+}
+#login .input-wrap .input-with-btn.input-file-wrap input[type=file],
+#dashboard .input-wrap .input-with-btn.input-file-wrap input[type=file] {
+  color: transparent;
+  height: 55px;
+  cursor: pointer;
+}
+#login .input-wrap .input-with-btn.input-file-wrap input[type=file]::-webkit-file-upload-button,
+#dashboard .input-wrap .input-with-btn.input-file-wrap input[type=file]::-webkit-file-upload-button {
+  width: 100%;
+  height: 55px;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  opacity: 0;
+  z-index: 10;
+  cursor: pointer;
+  color: transparent;
 }
 
 .radio-lists {
@@ -937,6 +971,15 @@ button.line.light-grey:hover {
   background-color: #666;
   color: #fff;
 }
+#dashboard-body.contactDetail_tab .dashboard-tab-lists {
+  overflow: scroll;
+}
+#dashboard-body.contactDetail_tab .dashboard-tab-lists li {
+  white-space: nowrap;
+}
+#dashboard-body.contactDetail_tab .dashboard-tab-lists li a {
+  padding: 12px 30px;
+}
 
 .dashboard-table-wrap {
   padding: 25px 40px;
@@ -959,7 +1002,6 @@ button.line.light-grey:hover {
   max-width: -moz-fit-content !important;
   max-width: fit-content !important;
   white-space: nowrap;
-  height: 45px !important;
 }
 .dashboard-table-wrap select {
   font-size: 16px;
@@ -1023,6 +1065,7 @@ button.line.light-grey:hover {
 }
 .dashboard-table-wrap .dashboard-table-contents {
   overflow: scroll;
+  margin-bottom: 40px;
 }
 .dashboard-table-wrap .dashboard-table-contents.two-columns {
   overflow: visible;
@@ -1065,11 +1108,6 @@ button.line.light-grey:hover {
   bottom: 0;
   color: #DB0808;
   font-size: 14px;
-}
-.dashboard-table-wrap .dashboard-table-contents.two-columns .add-representative {
-  margin-top: 50px;
-  padding: 10px 20px;
-  font-size: 16px;
 }
 .dashboard-table-wrap .dashboard-table-contents.two-columns .datapicker-wrap {
   display: flex;
@@ -1124,6 +1162,26 @@ button.line.light-grey:hover {
   border: none;
   height: 55px;
   font-size: 16px;
+}
+.dashboard-table-wrap .select-lists {
+  display: flex;
+}
+.dashboard-table-wrap .select-lists li {
+  flex: 1;
+}
+.dashboard-table-wrap .select-lists li + li {
+  margin-left: 20px;
+}
+.dashboard-table-wrap .table-add-btn {
+  display: flex;
+  margin-top: 50px;
+}
+.dashboard-table-wrap .table-add-btn button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.dashboard-table-wrap .table-add-btn li + li {
+  margin-left: 10px;
 }
 .dashboard-table-wrap table {
   width: 100%;
