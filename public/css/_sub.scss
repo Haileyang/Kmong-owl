@@ -41,7 +41,7 @@
             align-items: center;
             h1{
                 font-size: 35px;
-                font-weight: 700;
+                font-weight: 500;
                 color: $color-primary;
                 display: flex;
                 align-items: center;
@@ -158,7 +158,7 @@
                 width: 100%;
                 padding: 16px;
                 outline: none;
-                font-weight: 700;
+                font-weight: 500;
                 font-size: 18px;
                 border: 1px solid $color-primary;
                 border-radius: 5px;
@@ -223,7 +223,7 @@
         margin-bottom: 40px;
         h1{
             font-size: 35px;
-            font-weight: 700;
+            font-weight: 500;
             margin-right: 25px;
         }
         .bread-scrumbs{
@@ -310,6 +310,13 @@
         display: flex;
         flex-wrap: wrap;
         flex: 1;
+        &.two-colum-filter{
+            display: flex;
+            flex-wrap: wrap;
+            .filter-element-wrap{
+                width: 50%;
+            }
+        }
         .datapickers-wrap,
         .datapicker-wrap,
         .filtering-lists{
@@ -336,6 +343,7 @@
                 padding: 0 10px 0 45px;
             }
         }
+       
         .filter-element-wrap{
             display: flex;
             >div{
@@ -365,7 +373,7 @@
             padding: 20px;
             background-color: #eee;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 500;
             align-items: center;
         }
         .filtering-list{
@@ -508,7 +516,7 @@
                     width: 100%;
                     padding: 0 16px;
                     outline: none;
-                    font-weight: 700;
+                    font-weight: 500;
                     font-size: 16px;
                     border: 1px solid #0957C3;
                     border-radius: 5px;
@@ -656,7 +664,7 @@
             justify-content: center;
             align-items: center;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 500;
             text-align: center;
         }
         & + li{
@@ -672,9 +680,7 @@
         button{
             padding: 10px 15px;
         }
-        & + li{
-            margin-left: 5px;
-        }
+        margin-left: 10px;
     }
 }
 .dashboard-pagination-wrap{
@@ -730,6 +736,12 @@
         .dashboard-summary-cards,
         .dashboard-filter-wrap{
             margin-bottom: 20px;
+            .two-colum-filter{
+                display: block;
+                .filter-element-wrap{
+                    width: 100%;
+                }
+            }
         }
         .dashboard-table-wrap{
             margin-bottom: 20px;
@@ -751,6 +763,7 @@
         .dashboard-filter-content {
             .filter-title{
                 min-width: 100px;
+                width: 145px;
             }
             .filter-element-wrap{
                 flex: auto;
@@ -896,10 +909,12 @@
             }
         }
         .dashboard-tab-lists{
+            padding: 0;
             li {
                 a{
                     padding: 10px 15px;
                     font-size: 16px;
+                    text-decoration: none;
                 }
             }
         }
@@ -980,10 +995,10 @@
                      padding: 10px 0 10px 20px;
                  }
                  th{
-                    min-width: 130px;
+                    min-width: 150px;
                  }
              }
-         }
+        }
         h2{
             font-size: 20px;
         }
@@ -1011,116 +1026,130 @@
                 display: block;
             }
         }
+        .dashboard-table-wrap {
+            .table-add-btn {
+                button{
+                    padding: 5px 10px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .dashboard-table-contents{
+        &:not(.two-columns){
+            table{
+                width: 100%;
+                th{
+                    display: none;
+                }
+                tbody{
+                    tr{
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 35px;
+                        &::before{
+                            content:"Client";
+                            display: block;
+                            font-size: 14px;
+                            font-weight: 500;
+                            padding-bottom: 10px;
+                            margin-bottom: 10px;
+                            width: 100%;
+                            border-bottom: 1px solid #eee;
+                            text-transform: uppercase;
+                        }
+                        td{
+                            padding: 10px 0;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;  
+                            width: 100%;  
+                            &::before{
+                                display: inline-block;
+                                color: $color-primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     .shortermList{
-        table{
-            width: 100%;
-            th{
-                display: none;
-            }
-            tbody{
-                tr{
-                    display: block;
-                    width: 100%;
-                    margin-bottom: 35px;
+        tbody{
+            td{
+                &:nth-child(1){
                     &::before{
-                        content:"Client";
-                        display: block;
-                        font-size: 14px;
-                        font-weight: 700;
-                        padding-bottom: 10px;
-                        margin-bottom: 10px;
-                        width: 100%;
-                        border-bottom: 1px solid #eee;
-                        text-transform: uppercase;
+                        content:"선택"
                     }
-                    td{
-                        padding: 10px 0;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;  
-                        width: 100%;  
-
-
-                        &::before{
-                            display: inline-block;
-                            color: $color-primary;
-                        }
-                        &:nth-child(1){
-                            &::before{
-                                content:"선택"
-                            }
-                        }
-                        &:nth-child(2){
-                            &::before{
-                                content:"NO"
-                            }
-                        }
-                        &:nth-child(3){
-                            &::before{
-                                content:"리스키"
-                            }
-                        }
-                        &:nth-child(4){
-                            &::before{
-                                content:"계약유형"
-                            }
-                        }
-                        &:nth-child(5){
-                            &::before{
-                                content:"계약자"
-                            }
-                        }
-                        &:nth-child(6){
-                            &::before{
-                                content:"업체"
-                            }
-                        }
-                        &:nth-child(7){
-                            &::before{
-                                content:"계약상태"
-                            }
-                        }
-                        &:nth-child(8){
-                            &::before{
-                                content:"번호판"
-                            }
-                        }
-                        &:nth-child(9){
-                            &::before{
-                                content:"차량정보"
-                            }
-                        }
-                        &:nth-child(10){
-                            &::before{
-                                content:"계약금액"
-                            }
-                        }
-                        &:nth-child(11){
-                            &::before{
-                                content:"적립포인트 (단위 :P)"
-                            }
-                        }
-                        &:nth-child(12){
-                            &::before{
-                                content:"남은일/계약일"
-                            }
-                        }
-                        &:nth-child(13){
-                            &::before{
-                                content:"계약 마감 날짜"
-                            }
-                        }
-                        &:nth-child(14){
-                            &::before{
-                                content:"최종 수정 일시"
-                            }
-                        }
-                        &:nth-child(15){
-                            &::before{
-                                content:"상세보기"
-                            }
-                        }
+                }
+                &:nth-child(2){
+                    &::before{
+                        content:"NO"
+                    }
+                }
+                &:nth-child(3){
+                    &::before{
+                        content:"리스키"
+                    }
+                }
+                &:nth-child(4){
+                    &::before{
+                        content:"계약유형"
+                    }
+                }
+                &:nth-child(5){
+                    &::before{
+                        content:"계약자"
+                    }
+                }
+                &:nth-child(6){
+                    &::before{
+                        content:"업체"
+                    }
+                }
+                &:nth-child(7){
+                    &::before{
+                        content:"계약상태"
+                    }
+                }
+                &:nth-child(8){
+                    &::before{
+                        content:"번호판"
+                    }
+                }
+                &:nth-child(9){
+                    &::before{
+                        content:"차량정보"
+                    }
+                }
+                &:nth-child(10){
+                    &::before{
+                        content:"계약금액"
+                    }
+                }
+                &:nth-child(11){
+                    &::before{
+                        content:"적립포인트 (단위 :P)"
+                    }
+                }
+                &:nth-child(12){
+                    &::before{
+                        content:"남은일/계약일"
+                    }
+                }
+                &:nth-child(13){
+                    &::before{
+                        content:"계약 마감 날짜"
+                    }
+                }
+                &:nth-child(14){
+                    &::before{
+                        content:"최종 수정 일시"
+                    }
+                }
+                &:nth-child(15){
+                    &::before{
+                        content:"상세보기"
                     }
                 }
             }
@@ -1133,92 +1162,321 @@
                 display: none;
             }
             tbody{
-                tr{
-                    display: block;
-                    width: 100%;
-                    margin-bottom: 35px;
+                td{
                     &::before{
-                        content:"Client";
-                        display: block;
-                        font-size: 14px;
-                        font-weight: 700;
-                        padding-bottom: 10px;
-                        margin-bottom: 10px;
-                        width: 100%;
-                        border-bottom: 1px solid #eee;
-                        text-transform: uppercase;
+                        display: inline-block;
+                        color: $color-primary;
                     }
-                    td{
-                        padding: 10px 0;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;  
-                        width: 100%;  
-
-
+                    &:nth-child(1){
                         &::before{
-                            display: inline-block;
-                            color: $color-primary;
+                            content:"NO"
                         }
-                        &:nth-child(1){
-                            &::before{
-                                content:"NO"
-                            }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:"신청번호"
                         }
-                        &:nth-child(2){
-                            &::before{
-                                content:"신청번호"
-                            }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:"상품종류"
                         }
-                        &:nth-child(3){
-                            &::before{
-                                content:"상품종류"
-                            }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            content:"오토바이 정보"
                         }
-                        &:nth-child(4){
-                            &::before{
-                                content:"오토바이 정보"
-                            }
+                    }
+                    &:nth-child(5){
+                        &::before{
+                            content:"색상"
                         }
-                        &:nth-child(5){
-                            &::before{
-                                content:"색상"
-                            }
+                    }
+                    &:nth-child(6){
+                        &::before{
+                            content:"보험 정보"
                         }
-                        &:nth-child(6){
-                            &::before{
-                                content:"보험 정보"
-                            }
+                    }
+                    &:nth-child(7){
+                        &::before{
+                            content:"튜닝파츠"
                         }
-                        &:nth-child(7){
-                            &::before{
-                                content:"튜닝파츠"
-                            }
+                    }
+                    &:nth-child(8){
+                        &::before{
+                            content:"상태"
                         }
-                        &:nth-child(8){
-                            &::before{
-                                content:"상태"
-                            }
+                    }
+                    &:nth-child(9){
+                        &::before{
+                            content:"수정일"
                         }
-                        &:nth-child(9){
-                            &::before{
-                                content:"수정일"
-                            }
+                    }
+                    &:nth-child(10){
+                        &::before{
+                            content:"등록일"
                         }
-                        &:nth-child(10){
-                            &::before{
-                                content:"등록일"
-                            }
+                    }
+                    &:nth-child(11){
+                        &::before{
+                            content:"비고"
                         }
-                        &:nth-child(11){
-                            &::before{
-                                content:"비고"
-                            }
+                    }
+                    &:nth-child(12){
+                        &::before{
+                            content:"기능"
                         }
-                        &:nth-child(12){
-                            &::before{
-                                content:"기능"
-                            }
+                    }
+                }
+            }
+        }
+    }
+    .contactDetail_tab{
+        &.tab02{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:'NO'
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:'업체'
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:'시작일'
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            content:'종료일'
+                        }
+                    }
+                    &:nth-child(5){
+                        &::before{
+                            content:'청구일'
+                        }
+                    }
+                    &:nth-child(6){
+                        &::before{
+                            content:'청구일수'
+                        }
+                    }
+                    &:nth-child(7){
+                        &::before{
+                            content:'청구금액'
+                        }
+                    }
+                    &:nth-child(8){
+                        &::before{
+                            content:'상태'
+                        }
+                    }
+                    &:nth-child(9){
+                        &::before{
+                            content:'총입금액'
+                        }
+                    }
+                    &:nth-child(10){
+                        &::before{
+                            content:'입금액'
+                        }
+                    }
+                    &:nth-child(11){
+                        &::before{
+                            content:'입금일'
+                        }
+                    }
+                }
+            }
+        }
+        &.tab03{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:'NO'
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:'보험사'
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:'연령'
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            content:'보험유형'
+                        }
+                    }
+                    &:nth-child(5){
+                        &::before{
+                            content:'시작일'
+                        }
+                    }
+                    &:nth-child(6){
+                        &::before{
+                            content:'종료일'
+                        }
+                    }
+                    &:nth-child(7){
+                        &::before{
+                            content:'청구금액'
+                        }
+                    }
+                    &:nth-child(8){
+                        &::before{
+                            content:'기능'
+                        }
+                    }
+                }
+            }
+        }
+        &.tab09{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:'NO'
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:'리스키'
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:'청구일'
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            content:'청구 금액'
+                        }
+                    }
+                    &:nth-child(5){
+                        &::before{
+                            content:'입금 금액'
+                        }
+                    }
+                    &:nth-child(6){
+                        &::before{
+                            content:'입금일'
+                        }
+                    }
+                    &:nth-child(7){
+                        &::before{
+                            content:'등록일'
+                        }
+                    }
+                }
+            }
+        }
+        &.tab10{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:'NO'
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:'리스키'
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:'상태'
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            content:'수정일'
+                        }
+                    }
+                    &:nth-child(5){
+                        &::before{
+                            content:'등록일'
+                        }
+                    }
+                    &:nth-child(6){
+                        &::before{
+                            content:'설명'
+                        }
+                    }
+                }
+            }
+        }
+        &.tab11{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:'NO'
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:'업체'
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:'시작일'
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            content:'종료일'
+                        }
+                    }
+                    &:nth-child(5){
+                        &::before{
+                            content:'청구일'
+                        }
+                    }
+                    &:nth-child(6){
+                        &::before{
+                            content:'청구일수'
+                        }
+                    }
+                    &:nth-child(7){
+                        &::before{
+                            content:'청구 금액'
+                        }
+                    }
+                    &:nth-child(8){
+                        &::before{
+                            content:'입금'
+                        }
+                    }
+                    &:nth-child(8){
+                        &::before{
+                            content:'입금액'
+                        }
+                    }
+                    &:nth-child(9){
+                        &::before{
+                            content:'번호'
+                        }
+                    }
+                    &:nth-child(10){
+                        &::before{
+                            content:'회차'
+                        }
+                    }
+                    &:nth-child(11){
+                        &::before{
+                            content:'기능'
                         }
                     }
                 }

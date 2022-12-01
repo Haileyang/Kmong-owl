@@ -89,6 +89,7 @@ input {
 
 .d-flex {
   display: flex;
+  align-items: center;
 }
 
 .mobile-hidden {
@@ -340,7 +341,7 @@ button.line.light-grey:hover {
   width: 100%;
   padding: 16px;
   outline: none;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
   height: 55px;
   border: 1px solid #0957C3;
@@ -365,7 +366,7 @@ button.line.light-grey:hover {
 #login .input-wrap .input-with-btn.input-file-wrap input[type=file]::-webkit-file-upload-button,
 #dashboard .input-wrap .input-with-btn.input-file-wrap input[type=file]::-webkit-file-upload-button {
   width: 100%;
-  height: 55px;
+  height: 100%;
   position: absolute;
   right: 1px;
   top: 1px;
@@ -393,6 +394,148 @@ button.line.light-grey:hover {
 }
 .radio-lists .radio-list + .radio-list {
   margin-left: 20px;
+}
+
+#ui-datepicker-div {
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px 25px !important;
+  position: relative;
+  display: none;
+  border: none !important;
+}
+#ui-datepicker-div a {
+  text-decoration: none;
+}
+#ui-datepicker-div table {
+  width: 100%;
+}
+#ui-datepicker-div .ui-datepicker-header {
+  height: 40px;
+  background-color: #fff !important;
+  color: #666;
+  font-weight: 500;
+  line-height: 40px;
+  position: relative;
+  margin: 0 10px;
+  border: none !important;
+}
+#ui-datepicker-div .ui-datepicker-title {
+  text-align: center;
+  line-height: 40px !important;
+  display: flex;
+}
+#ui-datepicker-div .ui-datepicker-title select {
+  border: none !important;
+  -webkit-appearance: none;
+  background-repeat: no-repeat;
+  background-size: 12px 7px;
+  background-position: 90% center;
+  background-image: url(/public/img/select-arrow.png);
+  background-color: #fff;
+  margin: 0 5px;
+}
+#ui-datepicker-div .ui-datepicker-prev, #ui-datepicker-div .ui-datepicker-next {
+  display: inline-block;
+  width: 10px !important;
+  height: 10px !important;
+  text-align: center;
+  text-indent: -9999px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0 !important;
+  border-left: 1px solid #333;
+  border-top: 1px solid #333;
+  position: absolute;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+#ui-datepicker-div .ui-state-disabled.ui-datepicker-prev,
+#ui-datepicker-div .ui-datepicker-next.ui-state-disabled {
+  border-color: #ccc;
+}
+#ui-datepicker-div .ui-datepicker-prev {
+  left: 0;
+  transform: translateY(-50%) rotate(-45deg) !important;
+}
+#ui-datepicker-div .ui-datepicker-prev span {
+  visibility: hidden;
+}
+#ui-datepicker-div .ui-datepicker-next {
+  right: 0;
+  transform: translateY(-50%) rotate(135deg) !important;
+}
+#ui-datepicker-div .ui-datepicker-next span {
+  visibility: hidden;
+}
+#ui-datepicker-div .ui-datepicker-calendar th {
+  line-height: 50px !important;
+}
+#ui-datepicker-div .ui-datepicker-calendar td, #ui-datepicker-div .ui-datepicker-calendar th {
+  text-align: center;
+  line-height: 35px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  font-size: 13px;
+  font-weight: 400;
+}
+#ui-datepicker-div .ui-datepicker-calendar thead th span {
+  margin-bottom: 10px;
+}
+#ui-datepicker-div .ui-datepicker-calendar thead th:first-child {
+  color: #DB0808;
+}
+#ui-datepicker-div .ui-datepicker-calendar thead th:last-child {
+  color: #0957C3;
+}
+#ui-datepicker-div .ui-datepicker-calendar .ui-state-disabled {
+  color: #ccc !important;
+  font-weight: 300;
+}
+#ui-datepicker-div .ui-datepicker-calendar td a, #ui-datepicker-div .ui-datepicker-calendar td span {
+  width: 35px;
+  display: inline-block;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 400;
+  background-color: #fff;
+  border: none;
+  height: 35px;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+#ui-datepicker-div .ui-datepicker-calendar .ui-state-active {
+  background-color: #0957C3 !important;
+  color: #FFE !important;
+}
+#ui-datepicker-div .ui-datepicker-calendar .ui-state-hover {
+  background: #f7f7f7;
+  color: 333;
+}
+#ui-datepicker-div .ui-datepicker-current {
+  display: none;
+}
+#ui-datepicker-div .ui-datepicker-buttonpane {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 0;
+}
+#ui-datepicker-div .ui-datepicker-buttonpane button {
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  font-weight: 500;
+  border-radius: 5px;
+}
+#ui-datepicker-div .ui-datepicker-buttonpane button.ui-priority-primary {
+  background-color: #0957C3;
+  color: #fff;
 }
 
 #dashboard-header {
@@ -636,7 +779,7 @@ button.line.light-grey:hover {
 }
 #login section.login-right h1 {
   font-size: 35px;
-  font-weight: 700;
+  font-weight: 500;
   color: #0957C3;
   display: flex;
   align-items: center;
@@ -747,7 +890,7 @@ button.line.light-grey:hover {
   width: 100%;
   padding: 16px;
   outline: none;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 18px;
   border: 1px solid #0957C3;
   border-radius: 5px;
@@ -810,7 +953,7 @@ button.line.light-grey:hover {
 }
 #dashboard-body .dashboard-title h1 {
   font-size: 35px;
-  font-weight: 700;
+  font-weight: 500;
   margin-right: 25px;
 }
 #dashboard-body .dashboard-title .bread-scrumbs {
@@ -895,6 +1038,13 @@ button.line.light-grey:hover {
   flex-wrap: wrap;
   flex: 1;
 }
+#dashboard-body .dashboard-filter-content.two-colum-filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+#dashboard-body .dashboard-filter-content.two-colum-filter .filter-element-wrap {
+  width: 50%;
+}
 #dashboard-body .dashboard-filter-content .datapickers-wrap,
 #dashboard-body .dashboard-filter-content .datapicker-wrap,
 #dashboard-body .dashboard-filter-content .filtering-lists {
@@ -948,7 +1098,7 @@ button.line.light-grey:hover {
   padding: 20px;
   background-color: #eee;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   align-items: center;
 }
 #dashboard-body .dashboard-filter-content .filtering-list {
@@ -1092,7 +1242,7 @@ button.line.light-grey:hover {
   width: 100%;
   padding: 0 16px;
   outline: none;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
   border: 1px solid #0957C3;
   border-radius: 5px;
@@ -1235,7 +1385,7 @@ button.line.light-grey:hover {
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
 }
 .table-btn-lists li + li {
@@ -1247,11 +1397,11 @@ button.line.light-grey:hover {
   align-items: center;
   justify-content: center;
 }
+.inrTable-btn-lists li {
+  margin-left: 10px;
+}
 .inrTable-btn-lists li button {
   padding: 10px 15px;
-}
-.inrTable-btn-lists li + li {
-  margin-left: 5px;
 }
 
 .dashboard-pagination-wrap {
@@ -1304,6 +1454,14 @@ button.line.light-grey:hover {
 #dashboard-body .dashboard-filter-wrap {
     margin-bottom: 20px;
   }
+  #dashboard-body .dashboard-summary-cards .two-colum-filter,
+#dashboard-body .dashboard-filter-wrap .two-colum-filter {
+    display: block;
+  }
+  #dashboard-body .dashboard-summary-cards .two-colum-filter .filter-element-wrap,
+#dashboard-body .dashboard-filter-wrap .two-colum-filter .filter-element-wrap {
+    width: 100%;
+  }
   #dashboard-body .dashboard-table-wrap {
     margin-bottom: 20px;
   }
@@ -1317,6 +1475,7 @@ button.line.light-grey:hover {
   }
   #dashboard-body .dashboard-filter-content .filter-title {
     min-width: 100px;
+    width: 145px;
   }
   #dashboard-body .dashboard-filter-content .filter-element-wrap {
     flex: auto;
@@ -1438,9 +1597,13 @@ button.line.light-grey:hover {
   #dashboard-body .dashboard-summary-cards li > span strong .num {
     font-size: 25px;
   }
+  #dashboard-body .dashboard-tab-lists {
+    padding: 0;
+  }
   #dashboard-body .dashboard-tab-lists li a {
     padding: 10px 15px;
     font-size: 16px;
+    text-decoration: none;
   }
   #dashboard-body .dashboard-filter-content select {
     width: 100%;
@@ -1517,7 +1680,7 @@ button.line.light-grey:hover {
     padding: 10px 0 10px 20px;
   }
   #dashboard-body .two-columns .table-flex th {
-    min-width: 130px;
+    min-width: 150px;
   }
   #dashboard-body h2 {
     font-size: 20px;
@@ -1542,82 +1705,86 @@ button.line.light-grey:hover {
   #dashboard-body .two-columns tr {
     display: block;
   }
-  .shortermList table {
+  #dashboard-body .dashboard-table-wrap .table-add-btn button {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  .dashboard-table-contents:not(.two-columns) table {
     width: 100%;
   }
-  .shortermList table th {
+  .dashboard-table-contents:not(.two-columns) table th {
     display: none;
   }
-  .shortermList table tbody tr {
+  .dashboard-table-contents:not(.two-columns) table tbody tr {
     display: block;
     width: 100%;
     margin-bottom: 35px;
   }
-  .shortermList table tbody tr::before {
+  .dashboard-table-contents:not(.two-columns) table tbody tr::before {
     content: "Client";
     display: block;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     padding-bottom: 10px;
     margin-bottom: 10px;
     width: 100%;
     border-bottom: 1px solid #eee;
     text-transform: uppercase;
   }
-  .shortermList table tbody tr td {
+  .dashboard-table-contents:not(.two-columns) table tbody tr td {
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
   }
-  .shortermList table tbody tr td::before {
+  .dashboard-table-contents:not(.two-columns) table tbody tr td::before {
     display: inline-block;
     color: #0957C3;
   }
-  .shortermList table tbody tr td:nth-child(1)::before {
+  .shortermList tbody td:nth-child(1)::before {
     content: "선택";
   }
-  .shortermList table tbody tr td:nth-child(2)::before {
+  .shortermList tbody td:nth-child(2)::before {
     content: "NO";
   }
-  .shortermList table tbody tr td:nth-child(3)::before {
+  .shortermList tbody td:nth-child(3)::before {
     content: "리스키";
   }
-  .shortermList table tbody tr td:nth-child(4)::before {
+  .shortermList tbody td:nth-child(4)::before {
     content: "계약유형";
   }
-  .shortermList table tbody tr td:nth-child(5)::before {
+  .shortermList tbody td:nth-child(5)::before {
     content: "계약자";
   }
-  .shortermList table tbody tr td:nth-child(6)::before {
+  .shortermList tbody td:nth-child(6)::before {
     content: "업체";
   }
-  .shortermList table tbody tr td:nth-child(7)::before {
+  .shortermList tbody td:nth-child(7)::before {
     content: "계약상태";
   }
-  .shortermList table tbody tr td:nth-child(8)::before {
+  .shortermList tbody td:nth-child(8)::before {
     content: "번호판";
   }
-  .shortermList table tbody tr td:nth-child(9)::before {
+  .shortermList tbody td:nth-child(9)::before {
     content: "차량정보";
   }
-  .shortermList table tbody tr td:nth-child(10)::before {
+  .shortermList tbody td:nth-child(10)::before {
     content: "계약금액";
   }
-  .shortermList table tbody tr td:nth-child(11)::before {
+  .shortermList tbody td:nth-child(11)::before {
     content: "적립포인트 (단위 :P)";
   }
-  .shortermList table tbody tr td:nth-child(12)::before {
+  .shortermList tbody td:nth-child(12)::before {
     content: "남은일/계약일";
   }
-  .shortermList table tbody tr td:nth-child(13)::before {
+  .shortermList tbody td:nth-child(13)::before {
     content: "계약 마감 날짜";
   }
-  .shortermList table tbody tr td:nth-child(14)::before {
+  .shortermList tbody td:nth-child(14)::before {
     content: "최종 수정 일시";
   }
-  .shortermList table tbody tr td:nth-child(15)::before {
+  .shortermList tbody td:nth-child(15)::before {
     content: "상세보기";
   }
   .riderRegister .list-type {
@@ -1626,67 +1793,176 @@ button.line.light-grey:hover {
   .riderRegister .list-type th {
     display: none;
   }
-  .riderRegister .list-type tbody tr {
-    display: block;
-    width: 100%;
-    margin-bottom: 35px;
-  }
-  .riderRegister .list-type tbody tr::before {
-    content: "Client";
-    display: block;
-    font-size: 14px;
-    font-weight: 700;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    border-bottom: 1px solid #eee;
-    text-transform: uppercase;
-  }
-  .riderRegister .list-type tbody tr td {
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  .riderRegister .list-type tbody tr td::before {
+  .riderRegister .list-type tbody td::before {
     display: inline-block;
     color: #0957C3;
   }
-  .riderRegister .list-type tbody tr td:nth-child(1)::before {
+  .riderRegister .list-type tbody td:nth-child(1)::before {
     content: "NO";
   }
-  .riderRegister .list-type tbody tr td:nth-child(2)::before {
+  .riderRegister .list-type tbody td:nth-child(2)::before {
     content: "신청번호";
   }
-  .riderRegister .list-type tbody tr td:nth-child(3)::before {
+  .riderRegister .list-type tbody td:nth-child(3)::before {
     content: "상품종류";
   }
-  .riderRegister .list-type tbody tr td:nth-child(4)::before {
+  .riderRegister .list-type tbody td:nth-child(4)::before {
     content: "오토바이 정보";
   }
-  .riderRegister .list-type tbody tr td:nth-child(5)::before {
+  .riderRegister .list-type tbody td:nth-child(5)::before {
     content: "색상";
   }
-  .riderRegister .list-type tbody tr td:nth-child(6)::before {
+  .riderRegister .list-type tbody td:nth-child(6)::before {
     content: "보험 정보";
   }
-  .riderRegister .list-type tbody tr td:nth-child(7)::before {
+  .riderRegister .list-type tbody td:nth-child(7)::before {
     content: "튜닝파츠";
   }
-  .riderRegister .list-type tbody tr td:nth-child(8)::before {
+  .riderRegister .list-type tbody td:nth-child(8)::before {
     content: "상태";
   }
-  .riderRegister .list-type tbody tr td:nth-child(9)::before {
+  .riderRegister .list-type tbody td:nth-child(9)::before {
     content: "수정일";
   }
-  .riderRegister .list-type tbody tr td:nth-child(10)::before {
+  .riderRegister .list-type tbody td:nth-child(10)::before {
     content: "등록일";
   }
-  .riderRegister .list-type tbody tr td:nth-child(11)::before {
+  .riderRegister .list-type tbody td:nth-child(11)::before {
     content: "비고";
   }
-  .riderRegister .list-type tbody tr td:nth-child(12)::before {
+  .riderRegister .list-type tbody td:nth-child(12)::before {
+    content: "기능";
+  }
+  .contactDetail_tab.tab02 tbody td:nth-child(1)::before {
+    content: "NO";
+  }
+  .contactDetail_tab.tab02 tbody td:nth-child(2)::before {
+    content: "업체";
+  }
+  .contactDetail_tab.tab02 tbody td:nth-child(3)::before {
+    content: "시작일";
+  }
+  .contactDetail_tab.tab02 tbody td:nth-child(4)::before {
+    content: "종료일";
+  }
+  .contactDetail_tab.tab02 tbody td:nth-child(5)::before {
+    content: "청구일";
+  }
+  .contactDetail_tab.tab02 tbody td:nth-child(6)::before {
+    content: "청구일수";
+  }
+  .contactDetail_tab.tab02 tbody td:nth-child(7)::before {
+    content: "청구금액";
+  }
+  .contactDetail_tab.tab02 tbody td:nth-child(8)::before {
+    content: "상태";
+  }
+  .contactDetail_tab.tab02 tbody td:nth-child(9)::before {
+    content: "총입금액";
+  }
+  .contactDetail_tab.tab02 tbody td:nth-child(10)::before {
+    content: "입금액";
+  }
+  .contactDetail_tab.tab02 tbody td:nth-child(11)::before {
+    content: "입금일";
+  }
+  .contactDetail_tab.tab03 tbody td:nth-child(1)::before {
+    content: "NO";
+  }
+  .contactDetail_tab.tab03 tbody td:nth-child(2)::before {
+    content: "보험사";
+  }
+  .contactDetail_tab.tab03 tbody td:nth-child(3)::before {
+    content: "연령";
+  }
+  .contactDetail_tab.tab03 tbody td:nth-child(4)::before {
+    content: "보험유형";
+  }
+  .contactDetail_tab.tab03 tbody td:nth-child(5)::before {
+    content: "시작일";
+  }
+  .contactDetail_tab.tab03 tbody td:nth-child(6)::before {
+    content: "종료일";
+  }
+  .contactDetail_tab.tab03 tbody td:nth-child(7)::before {
+    content: "청구금액";
+  }
+  .contactDetail_tab.tab03 tbody td:nth-child(8)::before {
+    content: "기능";
+  }
+  .contactDetail_tab.tab09 tbody td:nth-child(1)::before {
+    content: "NO";
+  }
+  .contactDetail_tab.tab09 tbody td:nth-child(2)::before {
+    content: "리스키";
+  }
+  .contactDetail_tab.tab09 tbody td:nth-child(3)::before {
+    content: "청구일";
+  }
+  .contactDetail_tab.tab09 tbody td:nth-child(4)::before {
+    content: "청구 금액";
+  }
+  .contactDetail_tab.tab09 tbody td:nth-child(5)::before {
+    content: "입금 금액";
+  }
+  .contactDetail_tab.tab09 tbody td:nth-child(6)::before {
+    content: "입금일";
+  }
+  .contactDetail_tab.tab09 tbody td:nth-child(7)::before {
+    content: "등록일";
+  }
+  .contactDetail_tab.tab10 tbody td:nth-child(1)::before {
+    content: "NO";
+  }
+  .contactDetail_tab.tab10 tbody td:nth-child(2)::before {
+    content: "리스키";
+  }
+  .contactDetail_tab.tab10 tbody td:nth-child(3)::before {
+    content: "상태";
+  }
+  .contactDetail_tab.tab10 tbody td:nth-child(4)::before {
+    content: "수정일";
+  }
+  .contactDetail_tab.tab10 tbody td:nth-child(5)::before {
+    content: "등록일";
+  }
+  .contactDetail_tab.tab10 tbody td:nth-child(6)::before {
+    content: "설명";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(1)::before {
+    content: "NO";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(2)::before {
+    content: "업체";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(3)::before {
+    content: "시작일";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(4)::before {
+    content: "종료일";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(5)::before {
+    content: "청구일";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(6)::before {
+    content: "청구일수";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(7)::before {
+    content: "청구 금액";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(8)::before {
+    content: "입금";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(8)::before {
+    content: "입금액";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(9)::before {
+    content: "번호";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(10)::before {
+    content: "회차";
+  }
+  .contactDetail_tab.tab11 tbody td:nth-child(11)::before {
     content: "기능";
   }
   .dashboard-pagination-wrap img {
