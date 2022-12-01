@@ -101,6 +101,7 @@ button {
   border-radius: 5px;
   transition: all 0.3s;
   color: #0957C3;
+  white-space: nowrap;
 }
 button.fill {
   border: none;
@@ -403,6 +404,10 @@ table thead th {
   margin-left: 20px;
 }
 
+input.datepicker {
+  cursor: pointer;
+}
+
 #ui-datepicker-div {
   width: 100%;
   max-width: 300px;
@@ -428,6 +433,7 @@ table thead th {
   position: relative;
   margin: 0 10px;
   border: none !important;
+  padding: 0;
 }
 #ui-datepicker-div .ui-datepicker-title {
   text-align: center;
@@ -443,6 +449,8 @@ table thead th {
   background-image: url(/public/img/select-arrow.png);
   background-color: #fff;
   margin: 0 5px;
+  padding: 0;
+  height: auto;
 }
 #ui-datepicker-div .ui-datepicker-prev, #ui-datepicker-div .ui-datepicker-next {
   display: inline-block;
@@ -807,10 +815,12 @@ table thead th {
   .mobile-hamberger-menu img {
     max-height: 30px;
   }
+  .input-file-wrap label {
+    top: 14px !important;
+  }
 }
 #login {
   display: flex;
-  height: 100vh;
   overflow: hidden;
 }
 #login section.login-left {
@@ -1276,7 +1286,7 @@ table thead th {
   width: 105px;
   border: 1px solid #eee;
   border-radius: 5px;
-  height: 40px;
+  height: 40px !important;
   padding: 0 5px;
   font-size: 14px;
 }
@@ -1290,8 +1300,32 @@ table thead th {
   max-height: 700px;
   margin-bottom: 40px;
 }
+.dashboard-table-wrap .dashboard-table-contents .datapicker-wrap {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  max-width: 170px;
+  margin: 0 auto;
+}
+.dashboard-table-wrap .dashboard-table-contents .datapicker-wrap figure {
+  margin-right: 10px;
+}
+.dashboard-table-wrap .dashboard-table-contents .datapicker-wrap input {
+  color: #666;
+  border: none !important;
+}
+.dashboard-table-wrap .dashboard-table-contents .datapicker-wrap img {
+  max-height: 25px;
+  vertical-align: middle;
+}
 .dashboard-table-wrap .dashboard-table-contents.two-columns {
   overflow: visible;
+  max-height: none;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .datapicker-wrap {
+  max-width: none;
+  padding: 0;
+  margin: 0;
 }
 .dashboard-table-wrap .dashboard-table-contents.two-columns input {
   border: none !important;
@@ -1331,19 +1365,6 @@ table thead th {
   bottom: 0;
   color: #DB0808;
   font-size: 14px;
-}
-.dashboard-table-wrap .dashboard-table-contents.two-columns .datapicker-wrap {
-  display: flex;
-  border: none;
-  align-items: center;
-}
-.dashboard-table-wrap .dashboard-table-contents.two-columns .datapicker-wrap input {
-  margin-left: 10px;
-  color: #666;
-}
-.dashboard-table-wrap .dashboard-table-contents.two-columns .datapicker-wrap img {
-  max-height: 25px;
-  vertical-align: middle;
 }
 .dashboard-table-wrap .dashboard-table-contents.two-columns table {
   width: 100%;
@@ -1426,7 +1447,6 @@ table thead th {
   min-width: 75px;
 }
 .dashboard-table-wrap table th small {
-  display: block;
   font-size: 12px;
   font-weight: 300;
   margin-top: 5px;
@@ -1755,6 +1775,10 @@ table thead th {
   #dashboard-body .two-columns .table-flex th {
     min-width: 150px;
   }
+  #dashboard-body .two-columns .datapicker-wrap {
+    margin: 0 !important;
+    max-width: none;
+  }
   #dashboard-body h2 {
     font-size: 20px;
   }
@@ -1778,22 +1802,31 @@ table thead th {
   #dashboard-body .two-columns tr {
     display: block;
   }
-  #dashboard-body .dashboard-table-wrap .table-add-btn button {
-    padding: 5px 10px;
-    font-size: 16px;
+  #dashboard-body .dashboard-pagination-wrap {
+    margin-top: 0;
   }
-  .dashboard-table-contents:not(.two-columns) table {
+  #dashboard-body .dashboard-table-wrap .dashboard-table-contents {
+    margin: 0;
+  }
+  #dashboard-body .dashboard-table-wrap .dashboard-table-contents + .dashboard-table-contents {
+    margin-top: 40px;
+  }
+  #dashboard-body .dashboard-table-wrap .dashboard-table-contents .datapicker-wrap {
+    margin: 0 !important;
+    max-width: 130px !important;
+  }
+  #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table {
     width: 100%;
   }
-  .dashboard-table-contents:not(.two-columns) table th {
+  #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table th {
     display: none;
   }
-  .dashboard-table-contents:not(.two-columns) table tbody tr {
+  #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table tbody tr {
     display: block;
     width: 100%;
     margin-bottom: 35px;
   }
-  .dashboard-table-contents:not(.two-columns) table tbody tr::before {
+  #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table tbody tr::before {
     content: "Client";
     display: block;
     font-size: 14px;
@@ -1804,16 +1837,20 @@ table thead th {
     border-bottom: 1px solid #eee;
     text-transform: uppercase;
   }
-  .dashboard-table-contents:not(.two-columns) table tbody tr td {
+  #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table tbody tr td {
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
   }
-  .dashboard-table-contents:not(.two-columns) table tbody tr td::before {
+  #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table tbody tr td::before {
     display: inline-block;
     color: #0957C3;
+  }
+  #dashboard-body .dashboard-table-wrap .table-add-btn button {
+    padding: 5px 10px;
+    font-size: 16px;
   }
   .shortermList tbody td:nth-child(1)::before {
     content: "선택";
