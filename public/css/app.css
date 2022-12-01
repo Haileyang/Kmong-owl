@@ -1719,6 +1719,9 @@ input.datepicker {
   #dashboard-body .dashboard-filter-content .filter-element-wrap .filtering-list {
     padding: 0 10px;
   }
+  #dashboard-body .two-columns tr {
+    display: block;
+  }
   #dashboard-body .two-columns input,
 #dashboard-body .two-columns select,
 #dashboard-body .two-columns button {
@@ -1799,9 +1802,6 @@ input.datepicker {
   #dashboard-body .dashboard-table-wrap .dashboard-table-header p {
     margin-bottom: 20px;
   }
-  #dashboard-body .two-columns tr {
-    display: block;
-  }
   #dashboard-body .dashboard-pagination-wrap {
     margin-top: 0;
   }
@@ -1813,7 +1813,7 @@ input.datepicker {
   }
   #dashboard-body .dashboard-table-wrap .dashboard-table-contents .datapicker-wrap {
     margin: 0 !important;
-    max-width: 130px !important;
+    max-width: 140px !important;
   }
   #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table {
     width: 100%;

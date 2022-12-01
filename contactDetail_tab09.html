@@ -142,7 +142,7 @@
                                     <th>청구일</th>
                                     <th>청구 금액</th>
                                     <th>입금 금액</th>
-                                    <th>입금일</th>
+                                    <th style="min-width: 200px;">입금일</th>
                                     <th>등록일</th>
                                 </tr>
                             </thead>
@@ -153,7 +153,12 @@
                                     <td>2022.10.28</td>
                                     <td>100,000</td>
                                     <td>100,000</td>
-                                    <td>2022.10.28</td>
+                                    <td>
+                                        <div class="datapicker-wrap">
+                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
+                                            <input type="text" name="start-date" value="2022-12-01" />
+                                        </div>
+                                    </td>
                                     <td>2022.10.28</td>
                                 </tr>
                             </tbody>

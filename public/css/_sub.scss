@@ -954,6 +954,9 @@
             }
         }
         .two-columns{
+            tr{
+                display: block;
+            }
             input,
             select,
             button{
@@ -1035,11 +1038,6 @@
                 }
             }
         }
-        .two-columns{
-            tr{
-                display: block;
-            }
-        }
         .dashboard-pagination-wrap{
             margin-top: 0;
         }
@@ -1051,7 +1049,7 @@
                 }
                 .datapicker-wrap{
                     margin: 0!important;
-                    max-width: 130px!important;
+                    max-width: 140px!important;
                 }
                 &:not(.two-columns){
                     table{
