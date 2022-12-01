@@ -144,7 +144,7 @@
                                         <div class="input-wrap">
                                             <span class="input-with-btn">
                                                 <input type="text" placeholder="업체명을 입력하세요">
-                                                <button class="btn fill primary">업체검색</button>
+                                                <button class="btn fill primary" data-bs-toggle="modal" data-bs-target="#company">업체검색</button>
                                             </span>
                                         </div>
                                     </td>
@@ -185,5 +185,49 @@
             </div>
         </section>
     </main>
+    <!-- Modal -->
+    <div class="modal fade custom-modal-type01" id="company" tabindex="-1" aria-labelledby="companyLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="companyLabel">업체 검색</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-wrap modal-search">
+                        <span class="input-with-btn">
+                            <input type="text" placeholder="검색어를 입력하세요.">
+                            <button class="btn fill primary">검색</button>
+                        </span>
+                    </div>
+                    <div class="dashboard-table-wrap">
+                        <div class="dashboard-table-contents">
+                            <table class="dashboard-table-list">
+                                <thead>
+                                    <tr>
+                                        <th>NO</th>
+                                        <th>업체명</th>
+                                        <th>대표자</th>
+                                        <th>대표번호</th>
+                                        <th>청구횟수 (월)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>9999</td>
+                                        <td>바리고 용문 허브</td>
+                                        <td>홍길동</td>
+                                        <td>010-0000-0000</td>
+                                        <td>2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

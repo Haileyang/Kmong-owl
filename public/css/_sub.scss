@@ -491,7 +491,8 @@
         }
     }
     .dashboard-table-contents{
-        overflow: scroll;
+        overflow-x: scroll;
+        max-height: 700px;
         margin-bottom: 40px;
         &.two-columns{
             overflow: visible;

@@ -41,7 +41,7 @@
                                     .find(".ui-datepicker-buttonpane");
                                 btnWrap.append(
                                     '<button type="button" class="ui-datepicker-close ui-state-default ui-corner-all btn-datepick-cancel" data-handler="hide" data-event="click">Cancel</button>'
-                                    );
+                                );
                                 btnWrap.click(function () {
                                     $('#ui-datepicker-div').hide()
                                 })
@@ -60,16 +60,184 @@
     </script>
 </head>
 
-<body>
-    <div class="dashboard-table-wrap">
+<body id="dashboard">
+    <div class="dashboard-table-wrap" style="width: 500px;">
         <div class="dashboard-table-contents two-columns">
             <h2>Datepicker Sample Below</h2>
+            <!-- Datepicker Sample -->
             <div class="datapicker-wrap">
                 <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
-                <input type="text" id="datepicker1" class="datepicker" name="start-date"/>
+                <input type="text" id="datepicker1" class="datepicker" name="start-date" />
+            </div>
+        </div>
+        <div class="dashboard-table-contents">
+            <h2>Modal Sample Below</h2>
+            <div class="input-wrap">
+                <span class="input-with-btn">
+                    <input type="text" placeholder="정보를 입력하세요.">
+                    <button class="btn fill primary" data-bs-toggle="modal" data-bs-target="#motorCycle">모달
+                        버튼</button>
+                </span>
+            </div>
+           
+            <!-- Modal -->
+            <div class="modal fade custom-modal-type01" id="motorCycle" tabindex="-1" aria-labelledby="motorCycleLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="motorCycleLabel">오토바이 검색</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-wrap modal-search">
+                                <span class="input-with-btn">
+                                    <input type="text" placeholder="검색어를 입력하세요.">
+                                    <button class="btn fill primary">검색</button>
+                                </span>
+                            </div>
+                            <div class="dashboard-table-wrap">
+                                <div class="dashboard-table-contents">
+                                    <table class="dashboard-table-list">
+                                        <thead>
+                                            <tr>
+                                                <th>NO</th>
+                                                <th>이름</th>
+                                                <th>차대번호</th>
+                                                <th>차량번호</th>
+                                                <th>등록일</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>9999</td>
+                                                <td>홍길동</td>
+                                                <td>MLSDFKJIEFJOS</td>
+                                                <td>A101010</td>
+                                                <td>
+                                                    <ul class="inrTable-btn-lists">
+                                                        <li class="inrTable-btn-list">
+                                                            <button class="fill primary">선택</button>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9999</td>
+                                                <td>홍길동</td>
+                                                <td>MLSDFKJIEFJOS</td>
+                                                <td>A101010</td>
+                                                <td>
+                                                    <ul class="inrTable-btn-lists">
+                                                        <li class="inrTable-btn-list">
+                                                            <button class="fill primary">선택</button>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9999</td>
+                                                <td>홍길동</td>
+                                                <td>MLSDFKJIEFJOS</td>
+                                                <td>A101010</td>
+                                                <td>
+                                                    <ul class="inrTable-btn-lists">
+                                                        <li class="inrTable-btn-list">
+                                                            <button class="fill primary">선택</button>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9999</td>
+                                                <td>홍길동</td>
+                                                <td>MLSDFKJIEFJOS</td>
+                                                <td>A101010</td>
+                                                <td>
+                                                    <ul class="inrTable-btn-lists">
+                                                        <li class="inrTable-btn-list">
+                                                            <button class="fill primary">선택</button>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9999</td>
+                                                <td>홍길동</td>
+                                                <td>MLSDFKJIEFJOS</td>
+                                                <td>A101010</td>
+                                                <td>
+                                                    <ul class="inrTable-btn-lists">
+                                                        <li class="inrTable-btn-list">
+                                                            <button class="fill primary">선택</button>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9999</td>
+                                                <td>홍길동</td>
+                                                <td>MLSDFKJIEFJOS</td>
+                                                <td>A101010</td>
+                                                <td>
+                                                    <ul class="inrTable-btn-lists">
+                                                        <li class="inrTable-btn-list">
+                                                            <button class="fill primary">선택</button>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9999</td>
+                                                <td>홍길동</td>
+                                                <td>MLSDFKJIEFJOS</td>
+                                                <td>A101010</td>
+                                                <td>
+                                                    <ul class="inrTable-btn-lists">
+                                                        <li class="inrTable-btn-list">
+                                                            <button class="fill primary">선택</button>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9999</td>
+                                                <td>홍길동</td>
+                                                <td>MLSDFKJIEFJOS</td>
+                                                <td>A101010</td>
+                                                <td>
+                                                    <ul class="inrTable-btn-lists">
+                                                        <li class="inrTable-btn-list">
+                                                            <button class="fill primary">선택</button>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9999</td>
+                                                <td>홍길동</td>
+                                                <td>MLSDFKJIEFJOS</td>
+                                                <td>A101010</td>
+                                                <td>
+                                                    <ul class="inrTable-btn-lists">
+                                                        <li class="inrTable-btn-list">
+                                                            <button class="fill primary">선택</button>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
 
 </body>
 

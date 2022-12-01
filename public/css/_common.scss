@@ -69,6 +69,14 @@ button{
         }
     }
 }
+table{
+    thead{
+        th{
+            position: sticky;
+            left: 0; top: 0;
+        }
+    }
+}
 // AGREE CHECKBOX
 .custom-checkbox{
     position: relative;
@@ -273,6 +281,7 @@ button{
                 }
             }
         }
+        
     }
 }
 .radio-lists{
@@ -414,6 +423,77 @@ button{
                 background-color: $color-primary;
                 color: $color-white;
            }
+        }
+    }
+}
+
+// MODAL
+.custom-modal-type01{
+    .modal-dialog{
+        width: 100%;
+        max-width: 1000px;
+    }
+    .modal-header{
+        border: none;
+        padding: 25px 25px 10px;
+        h5{
+            font-size: 25px;
+            color: $color-grey;
+        }
+    }
+    .modal-body{
+        padding: 10px 25px 25px;
+        .modal-search{
+            max-width: 455px;
+            .input-with-btn{
+                display: flex;
+            }
+            input{
+                border: 1px solid #eee!important;
+                background-color: #fff;
+                width: 100%;
+                padding: 5px 15px;
+                font-size: 16px;
+                outline: none;
+                border: none;
+                border-radius: 5px;
+                height: 45px;
+
+            }
+            button{
+                max-width: 100px;
+                margin-left: 10px;
+                width: 100%;
+                padding: 16px;
+                outline: none;
+                font-weight: 500;
+                font-size: 16px;
+                height: 45px;
+                border: 1px solid $color-primary;
+                border-radius: 5px;
+                cursor: pointer;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .dashboard-table-wrap{
+            margin-bottom: 0;
+        }
+        .dashboard-table-contents{
+            max-height: 500px;
+            table {
+                td,th{
+                    padding: 10px;
+                }
+            }
+        }
+        >div{
+            padding: 0;
+            border-radius: 0;
+            & + div{
+                margin-top: 20px;
+            }
         }
     }
 }

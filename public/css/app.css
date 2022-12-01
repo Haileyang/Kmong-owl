@@ -137,6 +137,13 @@ button.line.light-grey:hover {
   color: #666;
 }
 
+table thead th {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  top: 0;
+}
+
 .custom-checkbox {
   position: relative;
   width: 120px;
@@ -536,6 +543,71 @@ button.line.light-grey:hover {
 #ui-datepicker-div .ui-datepicker-buttonpane button.ui-priority-primary {
   background-color: #0957C3;
   color: #fff;
+}
+
+.custom-modal-type01 .modal-dialog {
+  width: 100%;
+  max-width: 1000px;
+}
+.custom-modal-type01 .modal-header {
+  border: none;
+  padding: 25px 25px 10px;
+}
+.custom-modal-type01 .modal-header h5 {
+  font-size: 25px;
+  color: #666;
+}
+.custom-modal-type01 .modal-body {
+  padding: 10px 25px 25px;
+}
+.custom-modal-type01 .modal-body .modal-search {
+  max-width: 455px;
+}
+.custom-modal-type01 .modal-body .modal-search .input-with-btn {
+  display: flex;
+}
+.custom-modal-type01 .modal-body .modal-search input {
+  border: 1px solid #eee !important;
+  background-color: #fff;
+  width: 100%;
+  padding: 5px 15px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  height: 45px;
+}
+.custom-modal-type01 .modal-body .modal-search button {
+  max-width: 100px;
+  margin-left: 10px;
+  width: 100%;
+  padding: 16px;
+  outline: none;
+  font-weight: 500;
+  font-size: 16px;
+  height: 45px;
+  border: 1px solid #0957C3;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-modal-type01 .modal-body .dashboard-table-wrap {
+  margin-bottom: 0;
+}
+.custom-modal-type01 .modal-body .dashboard-table-contents {
+  max-height: 500px;
+}
+.custom-modal-type01 .modal-body .dashboard-table-contents table td, .custom-modal-type01 .modal-body .dashboard-table-contents table th {
+  padding: 10px;
+}
+.custom-modal-type01 .modal-body > div {
+  padding: 0;
+  border-radius: 0;
+}
+.custom-modal-type01 .modal-body > div + div {
+  margin-top: 20px;
 }
 
 #dashboard-header {
@@ -1214,7 +1286,8 @@ button.line.light-grey:hover {
   color: #444;
 }
 .dashboard-table-wrap .dashboard-table-contents {
-  overflow: scroll;
+  overflow-x: scroll;
+  max-height: 700px;
   margin-bottom: 40px;
 }
 .dashboard-table-wrap .dashboard-table-contents.two-columns {
