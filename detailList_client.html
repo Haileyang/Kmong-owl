@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원정보 관리 - 기본정보</title>
+    <title>회원정보 관리 - 사업자</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -93,10 +93,10 @@
             </div>
             <div class="dashboard-content">
                 <ul class="dashboard-tab-lists mb-0">
-                    <li class="dashboard-tab-list active">
+                    <li class="dashboard-tab-list">
                         <a href="/detailList_basic.html">기본정보</a>
                     </li>
-                    <li class="dashboard-tab-list">
+                    <li class="dashboard-tab-list active">
                         <a href="/detailList_client.html">사업자</a>
                     </li>
                     <li class="dashboard-tab-list">
@@ -111,108 +111,78 @@
                 </ul>
                 <div class="dashboard-table-wrap">
                     <div class="dashboard-table-header">
-                        <h2>기본정보</h2>
+                        <h2>사업자 정보</h2>
                     </div>
                     <div class="dashboard-table-contents two-columns">
                         <table class="dashboard-table-list">
                             <tbody class="table-flex">
                                 <tr>
-                                    <th>대행사 상태</th>
+                                    <th>사업자 유무</th>
+                                    <td>
+                                        <ul class="radio-lists">
+                                            <li class="radio-list">
+                                                <input type="radio" name="acc" id="acc1">
+                                                <label for="">법인</label>
+                                            </li>
+                                            <li class="radio-list">
+                                                <input type="radio" name="acc" id="acc2">
+                                                <label for="">개인</label>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>사업자 번호</th>
+                                    <td>
+                                        <input type="text" placeholder="사업자 번호를 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>상호명</th>
+                                    <td>
+                                        <input type="text" placeholder="상호명을 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>대표명</th>
+                                    <td>
+                                        <input type="text" placeholder="대표명을 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>업태</th>
                                     <td>
                                         <select name="" id="" class="table-full-select">
-                                            <option value="">활성</option>
+                                            <option value="">서비스업</option>
                                             <option value="">옵션 1</option>
                                             <option value="">옵션 2</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>비고</th>
+                                    <th>업종</th>
                                     <td>
-                                        <input type="text" placeholder="상세 설명을 입력하세요">
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">전자상거래</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>통장사본</th>
+                                    <th>청구횟수 (월)</th>
                                     <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn input-file-wrap">
-                                                <input type="file">
-                                                <label for="">사본을 첨부해주세요.</label>
-                                                <button class="btn fill primary">첨부하기</button>
-                                            </span>
-                                        </div>
+                                        <select name="" id="" class="table-full-select">
+                                            <option value="">2</option>
+                                            <option value="">옵션 1</option>
+                                            <option value="">옵션 2</option>
+                                        </select>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>대행사 아이디</th>
+                                    <th>세금계산서 이메일</th>
                                     <td>
-                                        <input type="text" placeholder="이메일을 입력하세요.">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="dashboard-table-wrap">
-                    <div class="dashboard-table-header">
-                        <h2>추가정보</h2>
-                    </div>
-                    <div class="dashboard-table-contents two-columns">
-                        <table class="dashboard-table-list">
-                            <tbody class="table-flex">
-                                <tr>
-                                    <th>이름</th>
-                                    <td>
-                                        <input type="text" placeholder="이름을 입력하세요">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>성별</th>
-                                    <td>
-                                        <ul class="radio-lists">
-                                            <li class="radio-list">
-                                                <input type="radio" name="acc" id="acc1">
-                                                <label for="">남자</label>
-                                            </li>
-                                            <li class="radio-list">
-                                                <input type="radio" name="acc" id="acc2">
-                                                <label for="">여자</label>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>주민등록번호</th>
-                                    <td>
-                                        <input type="text" placeholder="주민등록번호를 입력하세요">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>주민등록증</th>
-                                    <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn input-file-wrap">
-                                                <input type="file">
-                                                <label for="">사본을 첨부해주세요.</label>
-                                                <button class="btn fill primary">첨부하기</button>
-                                            </span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>생년월일</th>
-                                    <td>
-                                        <div class="datapicker-wrap">
-                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
-                                            <input type="text" name="start-date" value="2022-12-01" />
-                                        </div>
-                                    </td>
-                                </tr>
-                                 <tr>
-                                    <th>비고</th>
-                                    <td>
-                                        <input type="text" placeholder="상세 설명을 입력하세요">
+                                        <input type="text" placeholder="세금계산서 이메일를 입력하세요">
                                     </td>
                                 </tr>
                                 <tr class="table-address">
@@ -229,6 +199,10 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <th>최종 상태 변경 일시</th>
+                                    <td>
+                                        <input type="text" placeholder="최종 상태 변경 일시를 입력하세요">
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

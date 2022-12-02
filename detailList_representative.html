@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원정보 관리 - 기본정보</title>
+    <title>회원정보 관리 - 담당자</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -92,8 +92,8 @@
                 </ul>
             </div>
             <div class="dashboard-content">
-                <ul class="dashboard-tab-lists mb-0">
-                    <li class="dashboard-tab-list active">
+                <ul class="dashboard-tab-lists">
+                    <li class="dashboard-tab-list">
                         <a href="/detailList_basic.html">기본정보</a>
                     </li>
                     <li class="dashboard-tab-list">
@@ -102,7 +102,7 @@
                     <li class="dashboard-tab-list">
                         <a href="/detailList_cal.html">정산</a>
                     </li>
-                    <li class="dashboard-tab-list">
+                    <li class="dashboard-tab-list active">
                         <a href="/detailList_representative.html">담당자</a>
                     </li>
                     <li class="dashboard-tab-list">
@@ -111,135 +111,47 @@
                 </ul>
                 <div class="dashboard-table-wrap">
                     <div class="dashboard-table-header">
-                        <h2>기본정보</h2>
+                        <h2>담당자 정보</h2>
                     </div>
                     <div class="dashboard-table-contents two-columns">
                         <table class="dashboard-table-list">
                             <tbody class="table-flex">
                                 <tr>
-                                    <th>대행사 상태</th>
+                                    <th>담장자명</th>
                                     <td>
-                                        <select name="" id="" class="table-full-select">
-                                            <option value="">활성</option>
-                                            <option value="">옵션 1</option>
-                                            <option value="">옵션 2</option>
-                                        </select>
+                                        <input type="text" placeholder="담장자명을 입력하세요.">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>비고</th>
+                                    <th>직급</th>
                                     <td>
-                                        <input type="text" placeholder="상세 설명을 입력하세요">
+                                        <input type="text" placeholder="직급을 입력하세요.">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>통장사본</th>
+                                    <th>연락처</th>
                                     <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn input-file-wrap">
-                                                <input type="file">
-                                                <label for="">사본을 첨부해주세요.</label>
-                                                <button class="btn fill primary">첨부하기</button>
-                                            </span>
-                                        </div>
+                                        <input type="text" placeholder="연락처를 입력하세요.">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>대행사 아이디</th>
+                                    <th>이메일</th>
                                     <td>
-                                        <input type="text" placeholder="이메일을 입력하세요.">
+                                        <input type="text" placeholder="이메일를 입력하세요.">
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
-                <div class="dashboard-table-wrap">
-                    <div class="dashboard-table-header">
-                        <h2>추가정보</h2>
-                    </div>
-                    <div class="dashboard-table-contents two-columns">
-                        <table class="dashboard-table-list">
-                            <tbody class="table-flex">
-                                <tr>
-                                    <th>이름</th>
-                                    <td>
-                                        <input type="text" placeholder="이름을 입력하세요">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>성별</th>
-                                    <td>
-                                        <ul class="radio-lists">
-                                            <li class="radio-list">
-                                                <input type="radio" name="acc" id="acc1">
-                                                <label for="">남자</label>
-                                            </li>
-                                            <li class="radio-list">
-                                                <input type="radio" name="acc" id="acc2">
-                                                <label for="">여자</label>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>주민등록번호</th>
-                                    <td>
-                                        <input type="text" placeholder="주민등록번호를 입력하세요">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>주민등록증</th>
-                                    <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn input-file-wrap">
-                                                <input type="file">
-                                                <label for="">사본을 첨부해주세요.</label>
-                                                <button class="btn fill primary">첨부하기</button>
-                                            </span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>생년월일</th>
-                                    <td>
-                                        <div class="datapicker-wrap">
-                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
-                                            <input type="text" name="start-date" value="2022-12-01" />
-                                        </div>
-                                    </td>
-                                </tr>
-                                 <tr>
-                                    <th>비고</th>
-                                    <td>
-                                        <input type="text" placeholder="상세 설명을 입력하세요">
-                                    </td>
-                                </tr>
-                                <tr class="table-address">
-                                    <th>주소</th>
-                                    <td>
-                                        <div class="input-wrap input-add">
-                                            <label for="">업체주소</label>
-                                            <span class="input-with-btn">
-                                                <input type="text" placeholder="우편검색을 통해 주소를 입력해주세요.">
-                                                <button class="btn fill primary">우편검색</button>
-                                            </span>
-                                            <input type="text" placeholder="상세 주소를 입력해주세요.">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <ul class="line-btn-lists table-add-btn">
+                        <li class="line-btn-list">
+                            <button class="btn line primary">담당자 추가하기</button>
+                        </li>
+                    </ul>
                 </div>
                 <ul class="table-btn-lists">
                     <li class="table-btn-list">
-                        <button class="btn fill primary">저장</button>
-                    </li>
-                    <li class="table-btn-liLst">
-                        <button class="btn fill light-grey">취소</button>
+                        <button class="fill primary">결제완료</button>
                     </li>
                 </ul>
             </div>

@@ -245,6 +245,7 @@
             color: #666;
             border-radius: 10px 10px 0 0 ;
             transition: all 0.3s;
+            white-space: nowrap;
             a{
                 padding: 12px 50px;
                 color: inherit;
@@ -398,7 +399,6 @@
     }
     &.contactDetail_tab{
         .dashboard-tab-lists{
-            overflow: scroll;
             li {
                 white-space: nowrap;
                 a{
@@ -415,6 +415,24 @@
     border-radius: 15px;
     overflow: hidden;
     margin-bottom: 40px;
+    .textarea-wrap{
+        position: relative;
+        margin-bottom: 40px;
+        textarea{
+            width: 100%;
+            height: 150px;
+            border: none;
+            font-size: 16px;
+            padding: 20px;
+            outline: none;
+            border-radius: 20px;
+            background-color: #f7f7f7;
+        }
+        .textarea-nums{
+            position: absolute;
+            right: 20px; bottom: 20px;
+        }
+    }
     .input-wrap{
         margin-bottom: 0!important;
         input{
@@ -519,6 +537,11 @@
                 max-width: none;
                 padding: 0;
                 margin: 0;
+            }
+            .checkbox-wrap{
+                display: flex;
+                height: 55px;
+                align-items: center;
             }
             input{
                 border: none!important;
@@ -919,6 +942,7 @@
             }
         }
         .dashboard-tab-lists{
+            overflow-x: scroll;
             padding: 0;
             li {
                 a{
@@ -973,6 +997,9 @@
                     height: 40px;
                     padding: 0!important;
                 }
+            }
+            .checkbox-wrap{
+                height: 45px;
             }
             .account-info{
                 display: block;
@@ -1037,9 +1064,6 @@
                     margin-bottom: 20px;
                 }
             }
-        }
-        .dashboard-pagination-wrap{
-            margin-top: 0;
         }
         .dashboard-table-wrap {
             .dashboard-table-contents{
@@ -1502,6 +1526,32 @@
                         &::before{
                             content:'기능'
                         }
+                    }
+                }
+            }
+        }
+    }
+    .detailList_memo{
+        tbody{
+            tr{
+                &:before{
+                    content:"memo"!important;
+                }
+            }
+            td{
+                &:nth-child(1){
+                    &::before{
+                        content:'NO'
+                    }
+                }
+                &:nth-child(2){
+                    &::before{
+                        content:'메모 내용'
+                    }
+                }
+                &:nth-child(3){
+                    &::before{
+                        content:'등록일'
                     }
                 }
             }

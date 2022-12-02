@@ -1091,6 +1091,7 @@ input.datepicker {
   color: #666;
   border-radius: 10px 10px 0 0;
   transition: all 0.3s;
+  white-space: nowrap;
 }
 #dashboard-body .dashboard-tab-lists li a {
   padding: 12px 50px;
@@ -1239,9 +1240,6 @@ input.datepicker {
   background-color: #666;
   color: #fff;
 }
-#dashboard-body.contactDetail_tab .dashboard-tab-lists {
-  overflow: scroll;
-}
 #dashboard-body.contactDetail_tab .dashboard-tab-lists li {
   white-space: nowrap;
 }
@@ -1255,6 +1253,25 @@ input.datepicker {
   border-radius: 15px;
   overflow: hidden;
   margin-bottom: 40px;
+}
+.dashboard-table-wrap .textarea-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+.dashboard-table-wrap .textarea-wrap textarea {
+  width: 100%;
+  height: 150px;
+  border: none;
+  font-size: 16px;
+  padding: 20px;
+  outline: none;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+}
+.dashboard-table-wrap .textarea-wrap .textarea-nums {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 .dashboard-table-wrap .input-wrap {
   margin-bottom: 0 !important;
@@ -1362,6 +1379,11 @@ input.datepicker {
   max-width: none;
   padding: 0;
   margin: 0;
+}
+.dashboard-table-wrap .dashboard-table-contents.two-columns .checkbox-wrap {
+  display: flex;
+  height: 55px;
+  align-items: center;
 }
 .dashboard-table-wrap .dashboard-table-contents.two-columns input {
   border: none !important;
@@ -1727,6 +1749,7 @@ input.datepicker {
     font-size: 25px;
   }
   #dashboard-body .dashboard-tab-lists {
+    overflow-x: scroll;
     padding: 0;
   }
   #dashboard-body .dashboard-tab-lists li a {
@@ -1774,6 +1797,9 @@ input.datepicker {
     min-width: 100%;
     height: 40px;
     padding: 0 !important;
+  }
+  #dashboard-body .two-columns .checkbox-wrap {
+    height: 45px;
   }
   #dashboard-body .two-columns .account-info {
     display: block;
@@ -1837,9 +1863,6 @@ input.datepicker {
   }
   #dashboard-body .dashboard-table-wrap .dashboard-table-header p {
     margin-bottom: 20px;
-  }
-  #dashboard-body .dashboard-pagination-wrap {
-    margin-top: 0;
   }
   #dashboard-body .dashboard-table-wrap .dashboard-table-contents {
     margin: 0;
@@ -2110,6 +2133,18 @@ input.datepicker {
   }
   .contactDetail_tab.tab11 tbody td:nth-child(11)::before {
     content: "기능";
+  }
+  .detailList_memo tbody tr:before {
+    content: "memo" !important;
+  }
+  .detailList_memo tbody td:nth-child(1)::before {
+    content: "NO";
+  }
+  .detailList_memo tbody td:nth-child(2)::before {
+    content: "메모 내용";
+  }
+  .detailList_memo tbody td:nth-child(3)::before {
+    content: "등록일";
   }
   .dashboard-pagination-wrap img {
     max-height: 35px;

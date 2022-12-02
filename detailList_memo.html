@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원정보 관리 - 기본정보</title>
+    <title>회원정보 관리 - 메모</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -83,7 +83,7 @@
         <span class="mobile-hamberger-menu" onclick="mobileMenuHandler()">
             <img src="/public/img/icon-mobile-menu.png" alt="mobile-hamberger-menu">
         </span>
-        <section id="dashboard-body" class="riderRegister">
+        <section id="dashboard-body" class="detailList_memo">
             <div class="dashboard-title">
                 <h1>회원정보 관리</h1>
                 <ul class="bread-scrumbs">
@@ -92,8 +92,8 @@
                 </ul>
             </div>
             <div class="dashboard-content">
-                <ul class="dashboard-tab-lists mb-0">
-                    <li class="dashboard-tab-list active">
+                <ul class="dashboard-tab-lists">
+                    <li class="dashboard-tab-list">
                         <a href="/detailList_basic.html">기본정보</a>
                     </li>
                     <li class="dashboard-tab-list">
@@ -105,143 +105,123 @@
                     <li class="dashboard-tab-list">
                         <a href="/detailList_representative.html">담당자</a>
                     </li>
-                    <li class="dashboard-tab-list">
+                    <li class="dashboard-tab-list active">
                         <a href="/detailList_memo.html">메모</a>
                     </li>
                 </ul>
                 <div class="dashboard-table-wrap">
                     <div class="dashboard-table-header">
-                        <h2>기본정보</h2>
+                        <h2>메모 입력</h2>
+                        <button class="btn fill primary">등록</button>
                     </div>
-                    <div class="dashboard-table-contents two-columns">
-                        <table class="dashboard-table-list">
-                            <tbody class="table-flex">
-                                <tr>
-                                    <th>대행사 상태</th>
-                                    <td>
-                                        <select name="" id="" class="table-full-select">
-                                            <option value="">활성</option>
-                                            <option value="">옵션 1</option>
-                                            <option value="">옵션 2</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>비고</th>
-                                    <td>
-                                        <input type="text" placeholder="상세 설명을 입력하세요">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>통장사본</th>
-                                    <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn input-file-wrap">
-                                                <input type="file">
-                                                <label for="">사본을 첨부해주세요.</label>
-                                                <button class="btn fill primary">첨부하기</button>
-                                            </span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>대행사 아이디</th>
-                                    <td>
-                                        <input type="text" placeholder="이메일을 입력하세요.">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="textarea-wrap">
+                        <textarea name="" id="textbox" cols="30" rows="10" maxlength='200'></textarea>
+                        <span id="char_count" class="textarea-nums">200/200</span>
+                    </div>
+                    <div class="dashboard-table-header">
+                        <h2>메모 정보</h2>
+                    </div>
+                    <div class="dashboard-filter-wrap">
+                        <div class="dashboard-filter-content two-colum-filter">
+                            <div class="filter-element-wrap">
+                                <span class="filter-title">
+                                    <strong>키워드</strong>
+                                </span>
+                                <div>
+                                    <input type="text" placeholder="검색어를 입력하세요.">
+                                </div>
+                            </div>
+                            <div class="filter-element-wrap pay-amount">
+                                <span class="filter-title">
+                                    <strong>등록일</strong>
+                                </span>
+                                <div>
+                                    <div class="datapicker-wrap">
+                                        <!-- <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure> -->
+                                        <input type="text" name="start-date" value="2022-12-01" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button>조회</button>
                     </div>
                 </div>
                 <div class="dashboard-table-wrap">
                     <div class="dashboard-table-header">
-                        <h2>추가정보</h2>
+                        <p class="dashboard-table-summary">총 <span class="color-primary">1,234,566,890</span> 개의 목록이 있습니다.</p>
                     </div>
-                    <div class="dashboard-table-contents two-columns">
+                    <div class="dashboard-table-contents">
                         <table class="dashboard-table-list">
-                            <tbody class="table-flex">
+                            <thead>
                                 <tr>
-                                    <th>이름</th>
-                                    <td>
-                                        <input type="text" placeholder="이름을 입력하세요">
-                                    </td>
+                                    <th>NO</th>
+                                    <th style="min-width: 450px;">메모 내용</th>
+                                    <th>등록일</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
-                                    <th>성별</th>
-                                    <td>
-                                        <ul class="radio-lists">
-                                            <li class="radio-list">
-                                                <input type="radio" name="acc" id="acc1">
-                                                <label for="">남자</label>
-                                            </li>
-                                            <li class="radio-list">
-                                                <input type="radio" name="acc" id="acc2">
-                                                <label for="">여자</label>
-                                            </li>
-                                        </ul>
-                                    </td>
+                                    <td>9999</td>
+                                    <td style="text-align: left;">등록된 메모 내용 표시</td>
+                                    <td>2022.10.28</td>
                                 </tr>
                                 <tr>
-                                    <th>주민등록번호</th>
-                                    <td>
-                                        <input type="text" placeholder="주민등록번호를 입력하세요">
-                                    </td>
+                                    <td>9999</td>
+                                    <td style="text-align: left;">등록된 메모 내용 표시</td>
+                                    <td>2022.10.28</td>
                                 </tr>
                                 <tr>
-                                    <th>주민등록증</th>
-                                    <td>
-                                        <div class="input-wrap">
-                                            <span class="input-with-btn input-file-wrap">
-                                                <input type="file">
-                                                <label for="">사본을 첨부해주세요.</label>
-                                                <button class="btn fill primary">첨부하기</button>
-                                            </span>
-                                        </div>
-                                    </td>
+                                    <td>9999</td>
+                                    <td style="text-align: left;">등록된 메모 내용 표시</td>
+                                    <td>2022.10.28</td>
                                 </tr>
                                 <tr>
-                                    <th>생년월일</th>
-                                    <td>
-                                        <div class="datapicker-wrap">
-                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
-                                            <input type="text" name="start-date" value="2022-12-01" />
-                                        </div>
-                                    </td>
-                                </tr>
-                                 <tr>
-                                    <th>비고</th>
-                                    <td>
-                                        <input type="text" placeholder="상세 설명을 입력하세요">
-                                    </td>
-                                </tr>
-                                <tr class="table-address">
-                                    <th>주소</th>
-                                    <td>
-                                        <div class="input-wrap input-add">
-                                            <label for="">업체주소</label>
-                                            <span class="input-with-btn">
-                                                <input type="text" placeholder="우편검색을 통해 주소를 입력해주세요.">
-                                                <button class="btn fill primary">우편검색</button>
-                                            </span>
-                                            <input type="text" placeholder="상세 주소를 입력해주세요.">
-                                        </div>
-                                    </td>
+                                    <td>9999</td>
+                                    <td style="text-align: left;">등록된 메모 내용 표시</td>
+                                    <td>2022.10.28</td>
                                 </tr>
                                 <tr>
+                                    <td>9999</td>
+                                    <td style="text-align: left;">등록된 메모 내용 표시</td>
+                                    <td>2022.10.28</td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td style="text-align: left;">등록된 메모 내용 표시</td>
+                                    <td>2022.10.28</td>
+                                </tr>
+                                <tr>
+                                    <td>9999</td>
+                                    <td style="text-align: left;">등록된 메모 내용 표시</td>
+                                    <td>2022.10.28</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    <div class="dashboard-pagination-wrap">
+                        <div>
+                            <span class="p-prev">
+                                <figure><img src="/public/img/icon-p-prev.png" alt="p prev"></figure>
+                            </span>
+                            <span class="prev">
+                                <figure><img src="/public/img/icon-prev.png" alt="prev"></figure>
+                            </span>
+                            <ul class="pagination-nums">
+                                <li class="pagination-num">1</li>
+                                <li class="pagination-num">2</li>
+                                <li class="pagination-num">3</li>
+                                <li class="pagination-num">4</li>
+                                <li class="pagination-num">5</li>
+                            </ul>
+                            <span class="next">
+                                <figure><img src="/public/img/icon-p-prev.png" alt="next"></figure>
+                            </span>
+                            <span class="n-next">
+                                <figure><img src="/public/img/icon-prev.png" alt="n next"></figure>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <ul class="table-btn-lists">
-                    <li class="table-btn-list">
-                        <button class="btn fill primary">저장</button>
-                    </li>
-                    <li class="table-btn-liLst">
-                        <button class="btn fill light-grey">취소</button>
-                    </li>
-                </ul>
             </div>
         </section>
     </main>
