@@ -3,24 +3,25 @@ function mobileMenuHandler(){
     dashboardHeader.classList.toggle('active')
 }
 
-// let headerDropdownList = document.querySelectorAll('.nav-dropdown-header')
-// let currentMenu
-
-// // MOBILE MENU -TOGGLE LIST
-// function subMenuHandler() {
-//     if (currentMenu) {
-//         currentMenu.classList.remove('on')
-//     }
-//     this.classList.toggle('on');
-//     currentMenu = this
-// }
-// for (var i = 0; i < headerDropdownList.length; i++) {
-//     headerDropdownList[i].addEventListener('click', subMenuHandler)
-// }
-
 function dropdownOpener(){
-    const navDropdownHeader = document.querySelector('.nav-dropdown-header') 
+    const navDropdown = document.querySelector('.nav-dropdowns') 
     const navDropdownList = document.querySelector('.nav-dropdown-lists') 
-    navDropdownHeader.classList.toggle('active')
+    navDropdown.classList.toggle('active')
     navDropdownList.classList.toggle('active')
+    
 }
+
+const navList = document.querySelectorAll('.nav-list')
+for (let i=0; i<navList.length; i++){
+    navList[i].addEventListener('mouseover', function(){
+        navList[i].classList.add('hover')
+        console.log('hi')
+    })
+    navList[i].addEventListener('mouseout', function(){
+        navList[i].classList.remove('hover')
+        console.log('hi')
+    })
+}
+function headerNavModifier(){
+}
+headerNavModifier()

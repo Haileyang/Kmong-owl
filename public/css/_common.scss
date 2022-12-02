@@ -536,6 +536,8 @@ input.datepicker{
         .nav-list{
             background-color: $color-primary;
             position: relative;
+            transition: all 0.3s;
+            height: 60px;
             a{
                 padding: 15px 20px;
                 display: flex;
@@ -568,20 +570,53 @@ input.datepicker{
             .active-icon{
                display: none;
             }
-            // &:hover{
-            //     background-color: $color-white;
-            //     .nav-title{
-            //         color: $color-primary;
-            //     }
-            //     .default-icon{
-            //         display: none;
-            //     }
-            //     .active-icon{
-            //         display: block;
-            //     }
-            // }
+            &.hover{
+                background-color: $color-white;
+                .nav-title{
+                    color: $color-primary;
+                }
+                .default-icon{
+                    display: none;
+                }
+                .active-icon{
+                    display: block;
+                }
+                .nav-dropdown-bar{
+                    color: $color-primary;
+                    &:before,
+                    &:after{
+                        background-color: $color-primary;
+                    }
+                }
+            }
         }
         .nav-dropdowns{
+            &.active{
+                height: auto;
+                background-color: $color-white;
+                .nav-dropdown-bar{
+                    &::before{
+                        transform: rotate(90deg);
+                    }
+                }
+                .nav-dropdown-bar{
+                    color: $color-primary;
+                    &:before,
+                    &:after{
+                        background-color: $color-primary;
+                    }
+                }
+                .nav-title{
+                    color: $color-primary;
+                }
+                .default-icon{
+                    display: none;
+                }
+                .active-icon{
+                    display: block;
+                }
+            }
+            
             .nav-dropdown-header{
                 padding: 15px 20px;
                 display: flex;
@@ -589,13 +624,6 @@ input.datepicker{
                 width: 100%;
                 position: relative;
                 cursor: pointer;
-                &.active{
-                    .nav-dropdown-bar{
-                        &::before{
-                            transform: rotate(90deg);
-                        }
-                    }
-                }
             }
             .nav-dropdown-lists{
                 display: none;
@@ -636,14 +664,6 @@ input.datepicker{
                     left: 0; top: 0;
                     transform: rotate(90deg);
                     transition: all 0.3s;
-                }
-            }
-            &:hover{
-                .nav-dropdown-bar{
-                    &:before,
-                    &:after{
-                        background-color: $color-primary;
-                    }
                 }
             }
            
