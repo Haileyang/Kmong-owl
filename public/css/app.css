@@ -1296,7 +1296,7 @@ input.datepicker {
 #dashboard-body .dashboard-filter-content .datapicker-wrap figure {
   position: absolute;
   left: 10px;
-  top: 12px;
+  top: 15px;
 }
 #dashboard-body .dashboard-filter-content .datapicker-wrap img {
   max-height: 25px;

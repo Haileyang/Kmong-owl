@@ -136,9 +136,16 @@
                                     <strong>등록일</strong>
                                 </span>
                                 <div>
-                                    <div class="datapicker-wrap">
-                                        <!-- <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure> -->
-                                        <input type="text" name="start-date" value="2022-12-01" />
+                                    <div class="datapickers-wrap">
+                                        <div class="datapicker-wrap">
+                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
+                                            <input type="text" name="start-date" value="2022-12-01" />
+                                        </div>
+                                        <span>~</span>
+                                        <div class="datapicker-wrap">
+                                            <figure><img src="/public/img/icon-calendar.png" alt="calendar"></figure>
+                                            <input type="text" name="end-date" value="2022-12-01" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -149,6 +156,11 @@
                 <div class="dashboard-table-wrap">
                     <div class="dashboard-table-header">
                         <p class="dashboard-table-summary">총 <span class="color-primary">1,234,566,890</span> 개의 목록이 있습니다.</p>
+                        <div class="dashboard-right-contents">
+                            <span class="btn fill primary">
+                                <a href="">엑셀다운</a>
+                            </span>
+                        </div>
                     </div>
                     <div class="dashboard-table-contents">
                         <table class="dashboard-table-list">
