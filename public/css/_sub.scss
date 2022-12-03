@@ -274,11 +274,19 @@
             background-color: #fff;
             border-radius: 15px;
             padding: 35px 30px;
+            &.predict-amount{
+                background-color: $color-primary;
+                color: $color-white;
+                display: flex;
+                align-items: center;
+            }
             img{
                 max-height: 65px;
             }
+            figure{
+                margin-right: 20px;
+            }
             >span{
-                margin-left: 20px;
                 small{
                     display: block;
                     font-size: 15px;
@@ -287,11 +295,127 @@
                 strong{
                     display: block;
                     font-size: 20px;
+                    white-space: nowrap;
                     .num{
                         font-size: 35px;
                     }
                 }
             }
+        }
+    }
+    .dashboard-main-contents{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        li{
+            width: calc(100%/2 - 20px);
+            .dashboard-table-header{
+                h2{
+                    font-size: 18px!important;
+                }
+                small{
+                    font-size: 12px;
+                    color: $color-grey;
+                }
+            }
+            .dashboard-table-wrap{
+                padding: 40px;
+                margin-bottom: 0;
+                height: 100%;
+            }
+            .dashboard-table-contents{
+                overflow-x: visible;
+                overflow-x: scroll;
+                margin-bottom: 0;
+                max-height: 350px;
+                table{
+                    th,td{
+                        width: 20%;
+                        min-width: auto;
+                        white-space: nowrap;
+                        border-bottom: 1px solid #eee;
+                    }
+                }
+            }
+        }
+        .dashboard-amount-wrap{
+            .dashboard-amount-summary{
+                background-color: #F3F7FC;
+                padding: 25px 40px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                >span{
+                    display: flex;
+                    align-items: center;
+                    figure{
+                        margin-right: 20px;
+                        img{
+                            max-height: 46px;
+                            vertical-align: middle;
+                        }
+                    }
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: $color-primary;
+                }
+                strong{
+                    color: $color-primary;
+                    font-size: 16px;
+                    .num{
+                        font-size: 30px;
+                        font-weight: 500;
+                    }
+                }
+            }
+            table, td, th{
+                background-color: transparent;
+                font-size: 16px;
+                color: #222;
+            }
+            tbody{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            tr{
+                width:  calc(100%/2);
+                min-width:  calc(100%/2);
+                display: flex;
+            }
+            th{
+                text-align: left;
+                padding-right: 10px;
+            }
+            td{
+                text-align: right;
+                flex: 1;
+            }
+    
+        }
+        .dashboard-main-tab-lists{
+            display: flex;
+            li{
+                width: auto;
+                padding: 10px 20px;
+                background-color: #f7f7f7;
+                color: $color-grey;
+                border-radius: 5px 5px 0 0;
+                transition: all 0.3s;
+                cursor: pointer;
+                &:hover{
+                    background-color: $color-grey;
+                    color: $color-white;
+                }
+                &.active{
+                    background-color: $color-primary;
+                    color: $color-white;
+                }
+            }
+        }
+        .dashboard-chart-wrap{
+            padding: 20px 0;
         }
     }
     .dashboard-filter-wrap{
@@ -397,6 +521,7 @@
             }
         }
     }
+    
     &.contactDetail_tab{
         .dashboard-tab-lists{
             li {
@@ -748,7 +873,7 @@
         }
     }
 }
-@media (max-width: 1400px){
+@media (max-width: 1600px){
     #dashboard-body {
         .dashboard-summary-cards{
             gap: 20px;
@@ -761,6 +886,20 @@
                     strong{
                         .num{
                             font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        .dashboard-main-contents{
+            gap: 20px;
+            li{
+                width: calc(100%/2 - 10px);
+                .dashboard-table-wrap{
+                    padding: 25px 22px;
+                    table{
+                        th,td{
+                            padding: 12px;
                         }
                     }
                 }
@@ -786,6 +925,21 @@
         }
     }
 }
+@media (max-width: 1400px){
+    #dashboard-body{
+        .dashboard-main-contents{
+            li{
+                .dashboard-table-wrap{
+                    table{
+                        td,th{
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media (max-width: 1200px){
     #dashboard-body {
         .dashboard-summary-cards{
@@ -801,6 +955,15 @@
             .filter-element-wrap{
                 flex: auto;
                 width: 100%;
+            }
+        }
+        .dashboard-main-contents{
+            display: block;
+            li{
+                width: 100%;
+            }
+            .dashboard-main-content{
+                margin-bottom: 20px;
             }
         }
         .two-columns{
@@ -851,7 +1014,7 @@
 @media (max-width: 1000px){
     #dashboard-body{
         margin-left: 0;
-        padding: 100px 20px 50px 20px;
+        padding: 100px 16px 50px 16px;
         .dashboard-filter-wrap{
             text-align: right;
             display: block;
@@ -922,20 +1085,30 @@
         background-color: #fff;
         .dashboard-summary-cards{
             flex-wrap: wrap;
-            gap: 0;
+            gap: 5px;
             li{
-                min-width: 50%;
+                width: calc(100%/2 - 2.5px);
+                max-width: calc(100%/2 - 2.5px);
                 display: flex;
                 padding: 0;
-                margin-bottom: 25px;
+                margin-bottom: 15px;
+                flex: auto;
+                figure{
+                    margin-right: 10px;
+                }
+                &.predict-amount{
+                    padding: 15px;
+                
+                }
                 > span {
                     small{
-                        font-size: 14px;
+                        font-size: 12px;
                     }
                     strong{
-                        font-size: 16px;
+                        font-size: 14px;
                         .num{
-                            font-size: 25px;
+                            font-size: 20px;
+                            margin-right: 2px;
                         }
                     }
                 }
@@ -1057,15 +1230,13 @@
                 font-size: 14px;
             }
         }
-        .dashboard-table-wrap{
+        .dashboard-table-wrap {
             padding: 20px 0;
             .dashboard-table-header{
                 p{
                     margin-bottom: 20px;
                 }
             }
-        }
-        .dashboard-table-wrap {
             .dashboard-table-contents{
                 margin: 0;
                 & + .dashboard-table-contents{
@@ -1080,6 +1251,7 @@
                         width: 100%;
                         th{
                             display: none;
+                            border: none;
                         }
                         tbody{
                             tr{
@@ -1103,6 +1275,7 @@
                                     justify-content: space-between;
                                     align-items: center;  
                                     width: 100%;  
+                                    border: none;
                                     &::before{
                                         display: inline-block;
                                         color: $color-primary;
@@ -1120,8 +1293,189 @@
                 }
             }
         }
+        .dashboard-main-content{
+            .dashboard-table-wrap{
+                box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.05);
+                border-radius: 20px;
+                &.two-column{
+                    box-shadow: none;
+                    border-radius: 0;
+                }
+                .dashboard-table-header{
+                    display: block;
+                    h2{
+                        font-size: 20px;
+                    }
+                    small{
+                        margin-top: 10px;
+                        display: block;
+                    }
+                }
+                .dashboard-amount-wrap{
+                    .dashboard-amount-summary{
+                        padding: 15px 20px;
+                        >span{
+                            strong{
+                                font-size: 16px;
+                            }
+                            figure{
+                                margin-right: 10px;
+                                img{
+                                    height: 28px;
+                                }
+                            }
+                        }
+                        >strong{
+                            font-size: 14px;
+                            .num{
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                    table{
+                        tbody{
+                            display: block;
+                        }
+                        tr{
+                            width: 100%;
+                        }
+                        td,th{
+                            width: 50%;
+                            min-width: 50%;
+                        }
+                        th{
+                            color: $color-primary;
+                        }
+                    }
+                }
+                .dashboard-main-tab-lists{
+                    li{
+                        padding: 10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .dashboard-table-contents{
+                max-height: 200px!important;
+            }
+        }
     }
-    
+    .mainDashboard{
+        td{
+            br{
+                display: none;
+            }
+        }
+        .table01{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:"업체"
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:"청구금액"
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:"연락처"
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            content:"상세보기"
+                        }
+                    }
+                }
+            }
+        }
+        .table02{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:"차량번호"
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:"만기일자"
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:"잔여채권"
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            content:"보증금"
+                        }
+                    }
+                    &:nth-child(5){
+                        &::before{
+                            content:"상세보기"
+                        }
+                    }
+                }
+            }
+        }
+        .table03{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:"업체"
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:"청구금액"
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:"연락처"
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            content:"상세보기"
+                        }
+                    }
+                }
+            }
+        }
+        .table04{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:"차량번호"
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:"만기일자"
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:"계약자명"
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            content:"상세보기"
+                        }
+                    }
+                }
+            }
+        }
+    }
     .shortermList{
         tbody{
             td{

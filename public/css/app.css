@@ -1121,11 +1121,17 @@ input.datepicker {
   border-radius: 15px;
   padding: 35px 30px;
 }
+#dashboard-body .dashboard-summary-cards li.predict-amount {
+  background-color: #0957C3;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
 #dashboard-body .dashboard-summary-cards li img {
   max-height: 65px;
 }
-#dashboard-body .dashboard-summary-cards li > span {
-  margin-left: 20px;
+#dashboard-body .dashboard-summary-cards li figure {
+  margin-right: 20px;
 }
 #dashboard-body .dashboard-summary-cards li > span small {
   display: block;
@@ -1135,9 +1141,118 @@ input.datepicker {
 #dashboard-body .dashboard-summary-cards li > span strong {
   display: block;
   font-size: 20px;
+  white-space: nowrap;
 }
 #dashboard-body .dashboard-summary-cards li > span strong .num {
   font-size: 35px;
+}
+#dashboard-body .dashboard-main-contents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+#dashboard-body .dashboard-main-contents li {
+  width: calc(50% - 20px);
+}
+#dashboard-body .dashboard-main-contents li .dashboard-table-header h2 {
+  font-size: 18px !important;
+}
+#dashboard-body .dashboard-main-contents li .dashboard-table-header small {
+  font-size: 12px;
+  color: #666;
+}
+#dashboard-body .dashboard-main-contents li .dashboard-table-wrap {
+  padding: 40px;
+  margin-bottom: 0;
+  height: 100%;
+}
+#dashboard-body .dashboard-main-contents li .dashboard-table-contents {
+  overflow-x: visible;
+  overflow-x: scroll;
+  margin-bottom: 0;
+  max-height: 350px;
+}
+#dashboard-body .dashboard-main-contents li .dashboard-table-contents table th, #dashboard-body .dashboard-main-contents li .dashboard-table-contents table td {
+  width: 20%;
+  min-width: auto;
+  white-space: nowrap;
+  border-bottom: 1px solid #eee;
+}
+#dashboard-body .dashboard-main-contents .dashboard-amount-wrap .dashboard-amount-summary {
+  background-color: #F3F7FC;
+  padding: 25px 40px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+#dashboard-body .dashboard-main-contents .dashboard-amount-wrap .dashboard-amount-summary > span {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: #0957C3;
+}
+#dashboard-body .dashboard-main-contents .dashboard-amount-wrap .dashboard-amount-summary > span figure {
+  margin-right: 20px;
+}
+#dashboard-body .dashboard-main-contents .dashboard-amount-wrap .dashboard-amount-summary > span figure img {
+  max-height: 46px;
+  vertical-align: middle;
+}
+#dashboard-body .dashboard-main-contents .dashboard-amount-wrap .dashboard-amount-summary strong {
+  color: #0957C3;
+  font-size: 16px;
+}
+#dashboard-body .dashboard-main-contents .dashboard-amount-wrap .dashboard-amount-summary strong .num {
+  font-size: 30px;
+  font-weight: 500;
+}
+#dashboard-body .dashboard-main-contents .dashboard-amount-wrap table, #dashboard-body .dashboard-main-contents .dashboard-amount-wrap td, #dashboard-body .dashboard-main-contents .dashboard-amount-wrap th {
+  background-color: transparent;
+  font-size: 16px;
+  color: #222;
+}
+#dashboard-body .dashboard-main-contents .dashboard-amount-wrap tbody {
+  display: flex;
+  flex-wrap: wrap;
+}
+#dashboard-body .dashboard-main-contents .dashboard-amount-wrap tr {
+  width: 50%;
+  min-width: 50%;
+  display: flex;
+}
+#dashboard-body .dashboard-main-contents .dashboard-amount-wrap th {
+  text-align: left;
+  padding-right: 10px;
+}
+#dashboard-body .dashboard-main-contents .dashboard-amount-wrap td {
+  text-align: right;
+  flex: 1;
+}
+#dashboard-body .dashboard-main-contents .dashboard-main-tab-lists {
+  display: flex;
+}
+#dashboard-body .dashboard-main-contents .dashboard-main-tab-lists li {
+  width: auto;
+  padding: 10px 20px;
+  background-color: #f7f7f7;
+  color: #666;
+  border-radius: 5px 5px 0 0;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+#dashboard-body .dashboard-main-contents .dashboard-main-tab-lists li:hover {
+  background-color: #666;
+  color: #fff;
+}
+#dashboard-body .dashboard-main-contents .dashboard-main-tab-lists li.active {
+  background-color: #0957C3;
+  color: #fff;
+}
+#dashboard-body .dashboard-main-contents .dashboard-chart-wrap {
+  padding: 20px 0;
 }
 #dashboard-body .dashboard-filter-wrap {
   display: flex;
@@ -1588,7 +1703,7 @@ input.datepicker {
   color: #fff;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
   #dashboard-body .dashboard-summary-cards {
     gap: 20px;
   }
@@ -1600,6 +1715,18 @@ input.datepicker {
   }
   #dashboard-body .dashboard-summary-cards li span strong .num {
     font-size: 30px;
+  }
+  #dashboard-body .dashboard-main-contents {
+    gap: 20px;
+  }
+  #dashboard-body .dashboard-main-contents li {
+    width: calc(50% - 10px);
+  }
+  #dashboard-body .dashboard-main-contents li .dashboard-table-wrap {
+    padding: 25px 22px;
+  }
+  #dashboard-body .dashboard-main-contents li .dashboard-table-wrap table th, #dashboard-body .dashboard-main-contents li .dashboard-table-wrap table td {
+    padding: 12px;
   }
   #dashboard-body .dashboard-summary-cards,
 #dashboard-body .dashboard-filter-wrap {
@@ -1620,6 +1747,11 @@ input.datepicker {
     min-width: 145px;
   }
 }
+@media (max-width: 1400px) {
+  #dashboard-body .dashboard-main-contents li .dashboard-table-wrap table td, #dashboard-body .dashboard-main-contents li .dashboard-table-wrap table th {
+    font-size: 16px;
+  }
+}
 @media (max-width: 1200px) {
   #dashboard-body .dashboard-summary-cards li {
     display: block;
@@ -1631,6 +1763,15 @@ input.datepicker {
   #dashboard-body .dashboard-filter-content .filter-element-wrap {
     flex: auto;
     width: 100%;
+  }
+  #dashboard-body .dashboard-main-contents {
+    display: block;
+  }
+  #dashboard-body .dashboard-main-contents li {
+    width: 100%;
+  }
+  #dashboard-body .dashboard-main-contents .dashboard-main-content {
+    margin-bottom: 20px;
   }
   #dashboard-body .two-columns .table-flex {
     display: block;
@@ -1666,7 +1807,7 @@ input.datepicker {
 @media (max-width: 1000px) {
   #dashboard-body {
     margin-left: 0;
-    padding: 100px 20px 50px 20px;
+    padding: 100px 16px 50px 16px;
   }
   #dashboard-body .dashboard-filter-wrap {
     text-align: right;
@@ -1731,22 +1872,31 @@ input.datepicker {
   }
   #dashboard-body .dashboard-summary-cards {
     flex-wrap: wrap;
-    gap: 0;
+    gap: 5px;
   }
   #dashboard-body .dashboard-summary-cards li {
-    min-width: 50%;
+    width: calc(50% - 2.5px);
+    max-width: calc(50% - 2.5px);
     display: flex;
     padding: 0;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+    flex: auto;
+  }
+  #dashboard-body .dashboard-summary-cards li figure {
+    margin-right: 10px;
+  }
+  #dashboard-body .dashboard-summary-cards li.predict-amount {
+    padding: 15px;
   }
   #dashboard-body .dashboard-summary-cards li > span small {
-    font-size: 14px;
+    font-size: 12px;
   }
   #dashboard-body .dashboard-summary-cards li > span strong {
-    font-size: 16px;
+    font-size: 14px;
   }
   #dashboard-body .dashboard-summary-cards li > span strong .num {
-    font-size: 25px;
+    font-size: 20px;
+    margin-right: 2px;
   }
   #dashboard-body .dashboard-tab-lists {
     overflow-x: scroll;
@@ -1879,6 +2029,7 @@ input.datepicker {
   }
   #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table th {
     display: none;
+    border: none;
   }
   #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table tbody tr {
     display: block;
@@ -1902,6 +2053,7 @@ input.datepicker {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    border: none;
   }
   #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table tbody tr td::before {
     display: inline-block;
@@ -1910,6 +2062,116 @@ input.datepicker {
   #dashboard-body .dashboard-table-wrap .table-add-btn button {
     padding: 5px 10px;
     font-size: 16px;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap {
+    box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap.two-column {
+    box-shadow: none;
+    border-radius: 0;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-table-header {
+    display: block;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-table-header h2 {
+    font-size: 20px;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-table-header small {
+    margin-top: 10px;
+    display: block;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-amount-wrap .dashboard-amount-summary {
+    padding: 15px 20px;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-amount-wrap .dashboard-amount-summary > span strong {
+    font-size: 16px;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-amount-wrap .dashboard-amount-summary > span figure {
+    margin-right: 10px;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-amount-wrap .dashboard-amount-summary > span figure img {
+    height: 28px;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-amount-wrap .dashboard-amount-summary > strong {
+    font-size: 14px;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-amount-wrap .dashboard-amount-summary > strong .num {
+    font-size: 25px;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-amount-wrap table tbody {
+    display: block;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-amount-wrap table tr {
+    width: 100%;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-amount-wrap table td, #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-amount-wrap table th {
+    width: 50%;
+    min-width: 50%;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-amount-wrap table th {
+    color: #0957C3;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-main-tab-lists li {
+    padding: 10px;
+    font-size: 14px;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-contents {
+    max-height: 200px !important;
+  }
+  .mainDashboard td br {
+    display: none;
+  }
+  .mainDashboard .table01 tbody td:nth-child(1)::before {
+    content: "업체";
+  }
+  .mainDashboard .table01 tbody td:nth-child(2)::before {
+    content: "청구금액";
+  }
+  .mainDashboard .table01 tbody td:nth-child(3)::before {
+    content: "연락처";
+  }
+  .mainDashboard .table01 tbody td:nth-child(4)::before {
+    content: "상세보기";
+  }
+  .mainDashboard .table02 tbody td:nth-child(1)::before {
+    content: "차량번호";
+  }
+  .mainDashboard .table02 tbody td:nth-child(2)::before {
+    content: "만기일자";
+  }
+  .mainDashboard .table02 tbody td:nth-child(3)::before {
+    content: "잔여채권";
+  }
+  .mainDashboard .table02 tbody td:nth-child(4)::before {
+    content: "보증금";
+  }
+  .mainDashboard .table02 tbody td:nth-child(5)::before {
+    content: "상세보기";
+  }
+  .mainDashboard .table03 tbody td:nth-child(1)::before {
+    content: "업체";
+  }
+  .mainDashboard .table03 tbody td:nth-child(2)::before {
+    content: "청구금액";
+  }
+  .mainDashboard .table03 tbody td:nth-child(3)::before {
+    content: "연락처";
+  }
+  .mainDashboard .table03 tbody td:nth-child(4)::before {
+    content: "상세보기";
+  }
+  .mainDashboard .table04 tbody td:nth-child(1)::before {
+    content: "차량번호";
+  }
+  .mainDashboard .table04 tbody td:nth-child(2)::before {
+    content: "만기일자";
+  }
+  .mainDashboard .table04 tbody td:nth-child(3)::before {
+    content: "계약자명";
+  }
+  .mainDashboard .table04 tbody td:nth-child(4)::before {
+    content: "상세보기";
   }
   .shortermList tbody td:nth-child(1)::before {
     content: "선택";
