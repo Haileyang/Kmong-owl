@@ -335,6 +335,11 @@
                         white-space: nowrap;
                         border-bottom: 1px solid #eee;
                     }
+                    .second-th{
+                        th{
+                            background-color: #3173CE;
+                        }
+                    }
                 }
             }
         }
@@ -416,6 +421,18 @@
         }
         .dashboard-chart-wrap{
             padding: 20px 0;
+            display: flex;
+            align-items: center;
+            .chart-wrap{
+                flex: 1;
+                height: auto!important;
+                &:nth-child(3){
+                    max-width: 300px;
+                }
+                & + .chart-wrap{
+                    margin-left: 40px;
+                }
+            }
         }
     }
     .dashboard-filter-wrap{
@@ -808,7 +825,15 @@
         
     }
 }
-
+.mainDashboard{
+    .table07{
+        thead{
+            th{
+                left: unset;
+            }
+        }
+    }
+}
 .table-btn-lists{
     display: flex;
     align-items: center;
@@ -893,6 +918,9 @@
         }
         .dashboard-main-contents{
             gap: 20px;
+            &.w-100{
+                min-width: 100%;
+            }
             li{
                 width: calc(100%/2 - 10px);
                 .dashboard-table-wrap{
@@ -934,6 +962,20 @@
                         td,th{
                             font-size: 16px;
                         }
+                    }
+                }
+            }
+            .dashboard-chart-wrap{
+                display: block;
+                .chart-wrap{
+                    width: 100%;
+                    display: block;
+                    &:last-child{
+                        max-width: 100%;
+                    }
+                    & + .chart-wrap{
+                        margin-top: 40px;
+                        margin-left: 0;
                     }
                 }
             }
@@ -1470,6 +1512,98 @@
                     &:nth-child(4){
                         &::before{
                             content:"상세보기"
+                        }
+                    }
+                }
+            }
+        }
+        .table05{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:"납부 할 총 금액"
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:"납부한 총 금액"
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:"청구수"
+                        }
+                    }
+                }
+            }
+        }
+        .table06{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:"만기차량"
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:"미 처리건"
+                        }
+                    }
+                }
+            }
+        }
+        .table07{
+            table{
+                th{
+                    display: block!important;
+                }
+                tr{
+                    display: flex!important;
+                    margin-bottom: 0!important;;
+                }
+                thead{
+                    th{
+                        width: 50%!important;
+                    }
+                }
+                tbody{
+                    th{
+                        width: calc(100%/7)!important;
+                    }
+                    td{
+                        justify-content: center!important;;
+                    }
+                }
+                tr{
+                    &::before{
+                        display: none!important;
+                    }
+                }
+            }
+        }
+        .table08{
+            tbody{
+                td{
+                    &:nth-child(1){
+                        &::before{
+                            content:"NO"
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content:"출고일"
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            content:"차량"
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            content:"가격"
                         }
                     }
                 }

@@ -1178,6 +1178,9 @@ input.datepicker {
   white-space: nowrap;
   border-bottom: 1px solid #eee;
 }
+#dashboard-body .dashboard-main-contents li .dashboard-table-contents table .second-th th {
+  background-color: #3173CE;
+}
 #dashboard-body .dashboard-main-contents .dashboard-amount-wrap .dashboard-amount-summary {
   background-color: #F3F7FC;
   padding: 25px 40px;
@@ -1253,6 +1256,18 @@ input.datepicker {
 }
 #dashboard-body .dashboard-main-contents .dashboard-chart-wrap {
   padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+#dashboard-body .dashboard-main-contents .dashboard-chart-wrap .chart-wrap {
+  flex: 1;
+  height: auto !important;
+}
+#dashboard-body .dashboard-main-contents .dashboard-chart-wrap .chart-wrap:nth-child(3) {
+  max-width: 300px;
+}
+#dashboard-body .dashboard-main-contents .dashboard-chart-wrap .chart-wrap + .chart-wrap {
+  margin-left: 40px;
 }
 #dashboard-body .dashboard-filter-wrap {
   display: flex;
@@ -1638,6 +1653,10 @@ input.datepicker {
   text-decoration: underline;
 }
 
+.mainDashboard .table07 thead th {
+  left: unset;
+}
+
 .table-btn-lists {
   display: flex;
   align-items: center;
@@ -1719,6 +1738,9 @@ input.datepicker {
   #dashboard-body .dashboard-main-contents {
     gap: 20px;
   }
+  #dashboard-body .dashboard-main-contents.w-100 {
+    min-width: 100%;
+  }
   #dashboard-body .dashboard-main-contents li {
     width: calc(50% - 10px);
   }
@@ -1750,6 +1772,20 @@ input.datepicker {
 @media (max-width: 1400px) {
   #dashboard-body .dashboard-main-contents li .dashboard-table-wrap table td, #dashboard-body .dashboard-main-contents li .dashboard-table-wrap table th {
     font-size: 16px;
+  }
+  #dashboard-body .dashboard-main-contents .dashboard-chart-wrap {
+    display: block;
+  }
+  #dashboard-body .dashboard-main-contents .dashboard-chart-wrap .chart-wrap {
+    width: 100%;
+    display: block;
+  }
+  #dashboard-body .dashboard-main-contents .dashboard-chart-wrap .chart-wrap:last-child {
+    max-width: 100%;
+  }
+  #dashboard-body .dashboard-main-contents .dashboard-chart-wrap .chart-wrap + .chart-wrap {
+    margin-top: 40px;
+    margin-left: 0;
   }
 }
 @media (max-width: 1200px) {
@@ -2172,6 +2208,52 @@ input.datepicker {
   }
   .mainDashboard .table04 tbody td:nth-child(4)::before {
     content: "상세보기";
+  }
+  .mainDashboard .table05 tbody td:nth-child(1)::before {
+    content: "납부 할 총 금액";
+  }
+  .mainDashboard .table05 tbody td:nth-child(2)::before {
+    content: "납부한 총 금액";
+  }
+  .mainDashboard .table05 tbody td:nth-child(3)::before {
+    content: "청구수";
+  }
+  .mainDashboard .table06 tbody td:nth-child(1)::before {
+    content: "만기차량";
+  }
+  .mainDashboard .table06 tbody td:nth-child(2)::before {
+    content: "미 처리건";
+  }
+  .mainDashboard .table07 table th {
+    display: block !important;
+  }
+  .mainDashboard .table07 table tr {
+    display: flex !important;
+    margin-bottom: 0 !important;
+  }
+  .mainDashboard .table07 table thead th {
+    width: 50% !important;
+  }
+  .mainDashboard .table07 table tbody th {
+    width: 14.2857142857% !important;
+  }
+  .mainDashboard .table07 table tbody td {
+    justify-content: center !important;
+  }
+  .mainDashboard .table07 table tr::before {
+    display: none !important;
+  }
+  .mainDashboard .table08 tbody td:nth-child(1)::before {
+    content: "NO";
+  }
+  .mainDashboard .table08 tbody td:nth-child(2)::before {
+    content: "출고일";
+  }
+  .mainDashboard .table08 tbody td:nth-child(3)::before {
+    content: "차량";
+  }
+  .mainDashboard .table08 tbody td:nth-child(4)::before {
+    content: "가격";
   }
   .shortermList tbody td:nth-child(1)::before {
     content: "선택";

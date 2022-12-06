@@ -649,7 +649,7 @@
                                 </li>
                             </ul>
                             <div class="dashboard-chart-wrap">
-                                <canvas id="chart01"></canvas>
+                                <span class="chart-wrap"><canvas id="chart01"></canvas></span>
                             </div>
                         </div>
                     </li>
@@ -711,7 +711,135 @@
                                 </li>
                             </ul>
                             <div class="dashboard-chart-wrap">
-                                <canvas id="chart02"></canvas>
+                                <span class="chart-wrap"><canvas id="chart02"></canvas></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dashboard-main-content">
+                        <div class="dashboard-table-wrap">
+                            <div class="dashboard-table-header">
+                                <h2>통계</h2>
+                                <small>2022년 10월 1회차</small>
+                            </div>
+                            <div class="dashboard-table-contents table05">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>납부 할 총 금액</th>
+                                            <th>납부한 총 금액</th>
+                                            <th>청구수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1,000,000</td>
+                                            <td>1,000,000</td>
+                                            <td>10건</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dashboard-main-content">
+                        <div class="dashboard-table-wrap">
+                            <div class="dashboard-table-header">
+                                <h2>만기현황</h2>
+                                <small>2022년 10월 1회차</small>
+                            </div>
+                            <div class="dashboard-table-contents table06">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>만기차량</th>
+                                            <th>미 처리건</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>10건</td>
+                                            <td>10건</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dashboard-main-content">
+                        <div class="dashboard-table-wrap">
+                            <div class="dashboard-table-header">
+                                <h2>재고현황</h2>
+                            </div>
+                            <div class="dashboard-table-contents table07">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4">화성진바이크</th>
+                                            <th colspan="4">부산 CS 바이크</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="second-th">
+                                            <th>VF100</th>
+                                            <th>PCX125</th>
+                                            <th>A.PCX125</th>
+                                            <th>NMAX</th>
+                                            <th>VF100</th>
+                                            <th>PCX125</th>
+                                            <th>A.PCX125</th>
+                                            <th>NMAX</th>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>5</td>
+                                            <td>5</td>
+                                            <td>5</td>
+                                            <td>5</td>
+                                            <td>5</td>
+                                            <td>5</td>
+                                            <td>5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dashboard-main-content">
+                        <div class="dashboard-table-wrap">
+                            <div class="dashboard-table-header">
+                                <h2>출고 현황</h2>
+                            </div>
+                            <div class="dashboard-table-contents table08">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>NO</th>
+                                            <th>출고일</th>
+                                            <th>차량</th>
+                                            <th>가격</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>22.10.10</td>
+                                            <td>A.PCX 125</td>
+                                            <td>300,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dashboard-main-content w-100">
+                        <div class="dashboard-table-wrap">
+                            <div class="dashboard-table-header">
+                                <h2>영업현황</h2>
+                            </div>
+                            <div class="dashboard-chart-wrap">
+                                <span class="chart-wrap"><canvas id="chart03"></canvas></span>
+                                <span class="chart-wrap"><canvas id="chart04"></canvas></span>
+                                <span class="chart-wrap"><canvas id="chart05"></canvas></span>
                             </div>
                         </div>
                     </li>
@@ -722,6 +850,9 @@
     <script>
         const chart01 = document.getElementById('chart01');
         const chart02 = document.getElementById('chart02');
+        const chart03 = document.getElementById('chart03');
+        const chart04 = document.getElementById('chart04');
+        const chart05 = document.getElementById('chart05');
 
         new Chart(chart01, {
             type: 'bar',
@@ -744,7 +875,7 @@
                         topRight: 20,
                     }
                 },
-                // responsive: true,
+                responsive: true,
                 plugins: {
                     legend: {
                         display: false,
@@ -778,7 +909,7 @@
                         topRight: 20,
                     }
                 },
-                // responsive: true,
+                responsive: true,
                 plugins: {
                     legend: {
                         display: false,
@@ -786,6 +917,113 @@
                     },
                     title: {
                         display: false,
+                    }
+                }
+            },
+        });
+
+        new Chart(chart03, {
+            type: 'bar',
+            data: {
+                labels: ['인천', '부산', '기타'],
+                datasets: [{
+                    data: [1000, 5000, 10000],
+                    borderWidth: 1,
+                    borderColor: 'rgba(9, 87, 195, 0.6)',
+                    backgroundColor: 'rgba(9, 87, 195, 0.6)',
+                    borderRadius: 10
+                }]
+            },
+            options: {
+                indexAxis: 'x',
+                elements: {
+                    bar: {
+                        borderWidth: 1,
+                        topLeft: 20,
+                        topRight: 20,
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Custom Chart Title'
+                    }
+                }
+            },
+        });
+
+        new Chart(chart04, {
+            type: 'line',
+            data: {
+                labels: ['인천', '부산', '기타'],
+                datasets: [{
+                    data: [1000, 5000, 10000],
+                    borderWidth: 1,
+                    borderColor: 'rgba(9, 87, 195, 0.6)',
+                    backgroundColor: 'rgba(9, 87, 195, 0.6)',
+                    borderRadius: 10
+                }]
+            },
+            options: {
+                indexAxis: 'x',
+                elements: {
+                    bar: {
+                        borderWidth: 1,
+                        topLeft: 20,
+                        topRight: 20,
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Custom Chart Title'
+                    }
+                }
+            },
+        });
+
+        new Chart(chart05, {
+            type: 'doughnut',
+            data: {
+                labels: ['인천', '부산', '기타'],
+                datasets: [{
+                    data: [1000, 5000, 10000],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ],
+                    borderRadius: 10
+                }]
+            },
+            options: {
+                indexAxis: 'x',
+                elements: {
+                    bar: {
+                        borderWidth: 1,
+                        topLeft: 20,
+                        topRight: 20,
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Custom Chart Title'
                     }
                 }
             },
