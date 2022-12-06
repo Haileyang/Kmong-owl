@@ -423,7 +423,7 @@
         .dashboard-chart-wrap{
             padding: 20px 0;
             display: flex;
-            align-items: center;
+            align-items: start;
             .chart-wrap{
                 flex: 1;
                 height: auto!important;
@@ -926,6 +926,7 @@
                 width: calc(100%/2 - 10px);
                 .dashboard-table-wrap{
                     padding: 25px 22px;
+                    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 10%);
                     table{
                         th,td{
                             padding: 12px;
@@ -1274,6 +1275,7 @@
         }
         .dashboard-table-wrap {
             padding: 20px 0;
+            overflow: visible!important;
             .dashboard-table-header{
                 p{
                     margin-bottom: 20px;
@@ -1289,6 +1291,7 @@
                     max-width: 140px!important;
                 }
                 &:not(.two-columns){
+                    padding: 10px;
                     table{
                         width: 100%;
                         th{
@@ -1299,7 +1302,12 @@
                             tr{
                                 display: block;
                                 width: 100%;
-                                margin-bottom: 35px;
+                                border-radius: 20px;
+                                padding: 20px 20px;
+                                box-shadow: 0px 2px 14px 1px rgb(9 87 195 / 16%);
+                                & + tr{
+                                    margin-top: 35px;
+                                }
                                 &::before{
                                     content:"Client";
                                     display: block;
@@ -1308,7 +1316,7 @@
                                     padding-bottom: 10px;
                                     margin-bottom: 10px;
                                     width: 100%;
-                                    border-bottom: 1px solid #eee;
+                                    border-bottom: 1px solid #ddd;
                                     text-transform: uppercase;
                                 }
                                 td{
@@ -1342,6 +1350,16 @@
                 &.two-column{
                     box-shadow: none;
                     border-radius: 0;
+                }
+                &:not(.two-column){
+                    table{
+                        tbody{
+                            tr{
+                                box-shadow: none;
+                                padding: 0;
+                            }
+                        }
+                    }
                 }
                 .dashboard-table-header{
                     display: block;
@@ -1398,7 +1416,8 @@
                 }
             }
             .dashboard-table-contents{
-                max-height: 200px!important;
+                max-height: 230px!important;
+                padding: 0!important;
             }
         }
     }

@@ -1262,7 +1262,7 @@ input.datepicker {
 #dashboard-body .dashboard-main-contents .dashboard-chart-wrap {
   padding: 20px 0;
   display: flex;
-  align-items: center;
+  align-items: start;
 }
 #dashboard-body .dashboard-main-contents .dashboard-chart-wrap .chart-wrap {
   flex: 1;
@@ -1751,6 +1751,7 @@ input.datepicker {
   }
   #dashboard-body .dashboard-main-contents li .dashboard-table-wrap {
     padding: 25px 22px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   }
   #dashboard-body .dashboard-main-contents li .dashboard-table-wrap table th, #dashboard-body .dashboard-main-contents li .dashboard-table-wrap table td {
     padding: 12px;
@@ -2050,6 +2051,7 @@ input.datepicker {
   }
   #dashboard-body .dashboard-table-wrap {
     padding: 20px 0;
+    overflow: visible !important;
   }
   #dashboard-body .dashboard-table-wrap .dashboard-table-header p {
     margin-bottom: 20px;
@@ -2064,6 +2066,9 @@ input.datepicker {
     margin: 0 !important;
     max-width: 140px !important;
   }
+  #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) {
+    padding: 10px;
+  }
   #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table {
     width: 100%;
   }
@@ -2074,7 +2079,12 @@ input.datepicker {
   #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table tbody tr {
     display: block;
     width: 100%;
-    margin-bottom: 35px;
+    border-radius: 20px;
+    padding: 20px 20px;
+    box-shadow: 0px 2px 14px 1px rgba(9, 87, 195, 0.16);
+  }
+  #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table tbody tr + tr {
+    margin-top: 35px;
   }
   #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table tbody tr::before {
     content: "Client";
@@ -2084,7 +2094,7 @@ input.datepicker {
     padding-bottom: 10px;
     margin-bottom: 10px;
     width: 100%;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
     text-transform: uppercase;
   }
   #dashboard-body .dashboard-table-wrap .dashboard-table-contents:not(.two-columns) table tbody tr td {
@@ -2110,6 +2120,10 @@ input.datepicker {
   #dashboard-body .dashboard-main-content .dashboard-table-wrap.two-column {
     box-shadow: none;
     border-radius: 0;
+  }
+  #dashboard-body .dashboard-main-content .dashboard-table-wrap:not(.two-column) table tbody tr {
+    box-shadow: none;
+    padding: 0;
   }
   #dashboard-body .dashboard-main-content .dashboard-table-wrap .dashboard-table-header {
     display: block;
@@ -2157,7 +2171,8 @@ input.datepicker {
     font-size: 14px;
   }
   #dashboard-body .dashboard-main-content .dashboard-table-contents {
-    max-height: 200px !important;
+    max-height: 230px !important;
+    padding: 0 !important;
   }
   .dashboard-pagination-wrap img {
     max-height: 35px;
