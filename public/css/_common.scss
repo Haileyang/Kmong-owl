@@ -18,6 +18,9 @@ body, a{
 .color-primary{
     color: $color-primary;
 }
+.color-error{
+    color: $color-error;
+}
 select,
 input{
     outline: none;
