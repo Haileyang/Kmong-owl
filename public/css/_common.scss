@@ -639,7 +639,8 @@ input.datepicker{
                 }
             }
             .nav-dropdown-list{
-                &:hover{
+                &:hover,
+                &.hover{
                     background: rgba(9, 87, 195, 0.05);
                 }
             }

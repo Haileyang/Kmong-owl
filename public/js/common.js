@@ -6,10 +6,21 @@ function mobileMenuHandler(){
 function dropdownOpener(){
     const navDropdown = document.querySelector('.nav-dropdowns') 
     const navDropdownList = document.querySelector('.nav-dropdown-lists') 
-    navDropdown.classList.toggle('active')
-    navDropdownList.classList.toggle('active')
-    
+    navDropdown.addEventListener('click', function(){
+        navDropdown.classList.toggle('active')
+        if(navDropdown.classList.contains('active')){
+            navDropdownList.classList.add('active')
+        }else{
+            navDropdownList.classList.remove('active')
+        }
+    })
+    if(navDropdown.classList.contains('active')){
+        navDropdownList.classList.add('active')
+    }else{
+        navDropdownList.classList.remove('active')
+    }
 }
+dropdownOpener()
 
 function headerNavModifier(){
     const navList = document.querySelectorAll('.nav-list')

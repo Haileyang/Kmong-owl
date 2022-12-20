@@ -26,7 +26,8 @@
             <nav>
                 <strong class="nav-category">general</strong>
                 <ul class="nav-lists">
-                    <li class="nav-list">
+                    <!-- raon 221220 : nav-list 에  hover을 추가하시면 hover 효과를 얻으실 수 있습니다.  -->
+                    <li class="nav-list hover">
                         <a href="/index.html">
                             <figure class="nav-icon-wrap">
                                 <img class="default-icon" src="/public/img/icon-header-home.png" alt="Dashboard">
@@ -36,8 +37,9 @@
                             <span class="nav-list-bar"></span>
                         </a>
                     </li>
-                    <li class="nav-list nav-dropdowns">
-                        <span class="nav-dropdown-header" onclick="dropdownOpener()">
+                    <!-- raon 221220 : nav-list 중 nav-dropdowns에 hover을 추가하시면 hover 효과를 얻으실 수 있습니다. 드랍다운 펼침은 active 클래스로 컨트롤됩니다. -->
+                    <li class="nav-list nav-dropdowns active">
+                        <span class="nav-dropdown-header">
                             <figure class="nav-icon-wrap">
                                 <img class="default-icon" src="/public/img/icon-header-rider-manage.png" alt="라이더 관리">
                                 <img class="active-icon" src="/public/img/icon-header-rider-manage-active.png"
@@ -47,6 +49,7 @@
                             <span class="nav-dropdown-bar"></span>
                         </span>
                         <ul class="nav-dropdown-lists">
+                            <!-- raon 221220 : nav-dropdown-list에 hover을 추가하시면 hover 효과를 얻으실 수 있습니다. -->
                             <li class="nav-dropdown-list">
                                 <a href="/shortermList.html">
                                     <figure class="nav-icon-wrap">
