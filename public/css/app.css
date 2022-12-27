@@ -747,7 +747,10 @@ input.datepicker {
 #dashboard-header nav .nav-dropdowns .nav-dropdown-lists.active {
   display: block;
 }
-#dashboard-header nav .nav-dropdowns .nav-dropdown-list:hover, #dashboard-header nav .nav-dropdowns .nav-dropdown-list.active, #dashboard-header nav .nav-dropdowns .nav-dropdown-list.hover {
+#dashboard-header nav .nav-dropdowns .nav-dropdown-list:hover, #dashboard-header nav .nav-dropdowns .nav-dropdown-list.hover {
+  background: rgba(9, 87, 195, 0.2);
+}
+#dashboard-header nav .nav-dropdowns .nav-dropdown-list.active {
   background: rgba(9, 87, 195, 0.05);
 }
 #dashboard-header nav .nav-dropdowns .nav-dropdown-bar {
