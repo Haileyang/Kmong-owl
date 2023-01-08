@@ -3,35 +3,32 @@ function mobileMenuHandler(){
     dashboardHeader.classList.toggle('active')
 }
 
-function dropdownOpener(){
-    const navDropdown = document.querySelector('.nav-dropdowns') 
-    const navDropdownList = document.querySelector('.nav-dropdown-lists') 
-    navDropdown.addEventListener('click', function(){
-        navDropdown.classList.toggle('active')
-        if(navDropdown.classList.contains('active')){
-            navDropdownList.classList.add('active')
-        }else{
-            navDropdownList.classList.remove('active')
-        }
-    })
-    if(navDropdown.classList.contains('active')){
-        navDropdownList.classList.add('active')
-    }else{
-        navDropdownList.classList.remove('active')
+// MOBILE NAV SCRIPT - TOGGLE BTN
+const navDropdownList = document.querySelectorAll('.nav-dropdown-lists') 
+const navDropdown = document.querySelectorAll('.nav-dropdowns') 
+let  currentMenu
+
+// MOBILE MENU -TOGGLE LIST
+function subMenuHandler() {
+    if (currentMenu) {
+        currentMenu.classList.remove('active')
     }
+    this.classList.toggle('active');
+    navDropdownList.classList.add('active')
+    currentMenu = this
 }
-dropdownOpener()
+for (var i = 0; i < navDropdown.length; i++) {
+    navDropdown[i].addEventListener('click', subMenuHandler)
+}
 
 function headerNavModifier(){
     const navList = document.querySelectorAll('.nav-list')
     for (let i=0; i<navList.length; i++){
         navList[i].addEventListener('mouseover', function(){
             navList[i].classList.add('hover')
-            console.log('hi')
         })
         navList[i].addEventListener('mouseout', function(){
             navList[i].classList.remove('hover')
-            console.log('hi')
         })
     }
 }

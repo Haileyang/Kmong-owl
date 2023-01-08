@@ -100,6 +100,22 @@ input {
   display: none;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
 button {
   cursor: pointer;
   border-radius: 5px;
@@ -257,11 +273,9 @@ table thead th {
 }
 #login select,
 #dashboard select {
-  -webkit-appearance: none;
   background-repeat: no-repeat;
   background-size: 12px 7px;
   background-position: 90% center;
-  background-image: url(/public/img/select-arrow.png);
   background-color: #fff;
   border: 1px solid #eee;
   border-radius: 5px;
@@ -641,6 +655,12 @@ input.datepicker {
 }
 #dashboard-header nav {
   margin-top: 65px;
+  height: 75vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#dashboard-header nav::-webkit-scrollbar {
+  display: none;
 }
 #dashboard-header nav .nav-category {
   font-weight: 400;
@@ -649,7 +669,7 @@ input.datepicker {
   color: #fff;
   padding: 0 20px;
   display: block;
-  margin-bottom: 10px;
+  margin: 10px 0;
   text-transform: uppercase;
 }
 #dashboard-header nav .nav-list {
@@ -663,6 +683,7 @@ input.datepicker {
   display: flex;
   align-items: center;
   width: 100%;
+  height: 100%;
 }
 #dashboard-header nav .nav-list .nav-icon-wrap img {
   max-height: 25px;
@@ -671,13 +692,12 @@ input.datepicker {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
-  margin-left: 15px;
 }
 #dashboard-header nav .nav-list .nav-list-bar {
   width: 4px;
   height: 30px;
   display: inline-block;
-  background-image: url(/public/img/nav-list-bar.png);
+  background-image: url(/public/img/nav-list-bar-white.png);
   background-repeat: no-repeat;
   background-size: 4px 30px;
   background-position: center;
@@ -689,45 +709,63 @@ input.datepicker {
 #dashboard-header nav .nav-list .active-icon {
   display: none;
 }
-#dashboard-header nav .nav-list.hover, #dashboard-header nav .nav-list.active {
+#dashboard-header nav .nav-list.hover {
   background-color: #fff;
 }
-#dashboard-header nav .nav-list.hover .nav-title, #dashboard-header nav .nav-list.active .nav-title {
+#dashboard-header nav .nav-list.hover .nav-title {
   color: #0957C3;
 }
-#dashboard-header nav .nav-list.hover .default-icon, #dashboard-header nav .nav-list.active .default-icon {
+#dashboard-header nav .nav-list.hover .nav-list-bar {
+  background-image: url(/public/img/nav-list-bar.png);
+}
+#dashboard-header nav .nav-list.active {
+  background-color: #00419B;
+}
+#dashboard-header nav .nav-list.active .nav-title {
+  color: #fff;
+}
+#dashboard-header nav .nav-list.active .default-icon {
   display: none;
 }
-#dashboard-header nav .nav-list.hover .active-icon, #dashboard-header nav .nav-list.active .active-icon {
+#dashboard-header nav .nav-list.active .active-icon {
   display: block;
 }
-#dashboard-header nav .nav-list.hover .nav-dropdown-bar, #dashboard-header nav .nav-list.active .nav-dropdown-bar {
+#dashboard-header nav .nav-list.active .nav-dropdown-bar {
   color: #0957C3;
 }
-#dashboard-header nav .nav-list.hover .nav-dropdown-bar:before, #dashboard-header nav .nav-list.hover .nav-dropdown-bar:after, #dashboard-header nav .nav-list.active .nav-dropdown-bar:before, #dashboard-header nav .nav-list.active .nav-dropdown-bar:after {
+#dashboard-header nav .nav-list.active .nav-dropdown-bar:before, #dashboard-header nav .nav-list.active .nav-dropdown-bar:after {
+  background-color: #0957C3;
+}
+#dashboard-header nav .nav-dropdowns:hover .nav-dropdown-bar {
+  color: #fff;
+}
+#dashboard-header nav .nav-dropdowns:hover .nav-dropdown-bar:before, #dashboard-header nav .nav-dropdowns:hover .nav-dropdown-bar:after {
   background-color: #0957C3;
 }
 #dashboard-header nav .nav-dropdowns.active {
   height: auto;
-  background-color: #fff;
+  background-color: #00419B;
 }
 #dashboard-header nav .nav-dropdowns.active .nav-dropdown-bar::before {
   transform: rotate(90deg);
 }
 #dashboard-header nav .nav-dropdowns.active .nav-dropdown-bar {
-  color: #0957C3;
+  color: #fff;
 }
 #dashboard-header nav .nav-dropdowns.active .nav-dropdown-bar:before, #dashboard-header nav .nav-dropdowns.active .nav-dropdown-bar:after {
-  background-color: #0957C3;
+  background-color: #fff;
 }
 #dashboard-header nav .nav-dropdowns.active .nav-title {
-  color: #0957C3;
+  color: #fff;
 }
 #dashboard-header nav .nav-dropdowns.active .default-icon {
   display: none;
 }
 #dashboard-header nav .nav-dropdowns.active .active-icon {
   display: block;
+}
+#dashboard-header nav .nav-dropdowns.active .nav-dropdown-lists {
+  display: block !important;
 }
 #dashboard-header nav .nav-dropdowns .nav-dropdown-header {
   padding: 15px 20px;
@@ -736,6 +774,7 @@ input.datepicker {
   width: 100%;
   position: relative;
   cursor: pointer;
+  height: 100%;
 }
 #dashboard-header nav .nav-dropdowns .nav-dropdown-lists {
   display: none;
@@ -744,19 +783,19 @@ input.datepicker {
 #dashboard-header nav .nav-dropdowns .nav-dropdown-lists a {
   padding-left: 40px;
 }
-#dashboard-header nav .nav-dropdowns .nav-dropdown-lists.active {
-  display: block;
-}
 #dashboard-header nav .nav-dropdowns .nav-dropdown-list:hover, #dashboard-header nav .nav-dropdowns .nav-dropdown-list.hover {
-  background: rgba(9, 87, 195, 0.2);
+  background: rgba(83, 135, 208, 0.39);
 }
 #dashboard-header nav .nav-dropdowns .nav-dropdown-list.active {
-  background: rgba(9, 87, 195, 0.05);
+  background: #fff;
+}
+#dashboard-header nav .nav-dropdowns .nav-dropdown-list.active .nav-title {
+  color: #0957C3;
 }
 #dashboard-header nav .nav-dropdowns .nav-dropdown-bar {
   position: absolute;
   right: 20px;
-  top: 18px;
+  top: 20px;
 }
 #dashboard-header nav .nav-dropdowns .nav-dropdown-bar:before {
   content: "";

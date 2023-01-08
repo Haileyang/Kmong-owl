@@ -24,64 +24,245 @@
         <header id="dashboard-header">
             <figure class="logo"><img src="/public/img/login-logo.png" alt="logo"></figure>
             <nav>
-                <strong class="nav-category">general</strong>
                 <ul class="nav-lists">
-                    <!-- raon 221220 : nav-list 에  hover을 추가하시면 hover 효과를 얻으실 수 있습니다.  -->
-                    <li class="nav-list hover">
+                    <li class="nav-list">
                         <a href="/index.html">
-                            <figure class="nav-icon-wrap">
-                                <img class="default-icon" src="/public/img/icon-header-home.png" alt="Dashboard">
-                                <img class="active-icon" src="/public/img/icon-header-home-active.png" alt="Dashboard">
-                            </figure>
                             <strong class="nav-title">Dashboard</strong>
                             <span class="nav-list-bar"></span>
                         </a>
                     </li>
-                    <!-- raon 221220 : nav-list 중 nav-dropdowns에 hover을 추가하시면 hover 효과를 얻으실 수 있습니다. 드랍다운 펼침은 active 클래스로 컨트롤됩니다. -->
-                    <li class="nav-list nav-dropdowns active">
+                    <li class="nav-list nav-dropdowns">
                         <span class="nav-dropdown-header">
-                            <figure class="nav-icon-wrap">
-                                <img class="default-icon" src="/public/img/icon-header-rider-manage.png" alt="라이더 관리">
-                                <img class="active-icon" src="/public/img/icon-header-rider-manage-active.png"
-                                    alt="라이더 관리">
-                            </figure>
-                            <strong class="nav-title">라이더 관리</strong>
+                            <strong class="nav-title">계약 관리</strong>
                             <span class="nav-dropdown-bar"></span>
                         </span>
                         <ul class="nav-dropdown-lists">
-                            <!-- raon 221220 : nav-dropdown-list에 hover을 추가하시면 hover 효과를 얻으실 수 있습니다. -->
-                            <li class="nav-dropdown-list active">
-                                <a href="/shortermList.html">
-                                    <figure class="nav-icon-wrap">
-                                        <img class="default-icon" src="/public/img/icon-header-rider.png" alt="라이더 정보">
-                                        <img class="active-icon" src="/public/img/icon-header-rider-active.png"
-                                            alt="라이더 정보">
-                                    </figure>
-                                    <strong class="nav-title">라이더 정보</strong>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">계약 목록</strong>
                                 </a>
                             </li>
-                            <li class="nav-dropdown-list hover">
-                                <a href="/riderRegister.html">
-                                    <figure class="nav-icon-wrap">
-                                        <img class="default-icon" src="/public/img/icon-header-form.png"
-                                            alt="라이더 신규 신청">
-                                        <img class="active-icon" src="/public/img/icon-header-form-active.png"
-                                            alt="라이더 신규 신청">
-                                    </figure>
-                                    <strong class="nav-title">라이더 신규 신청</strong>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">계약서 발급 목록</strong>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-list active">
-                        <a href="/detailList_basic.html">
-                            <figure class="nav-icon-wrap">
-                                <img class="default-icon" src="/public/img/icon-header-setting.png" alt="업체설정">
-                                <img class="active-icon" src="/public/img/icon-header-setting-active.png" alt="업체설정">
-                            </figure>
-                            <strong class="nav-title">회원정보 관리</strong>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header">
+                            <strong class="nav-title">업체 관리</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">총판</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">협력업체</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">배달대행사</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">보험대리점</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">오토바이 판매점</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">오토바이 보관소</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header">
+                            <strong class="nav-title">만기 관리</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">만기 목록</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">만기 이력</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">보증금 환급 목록</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">불량채권 목록</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list">
+                        <a href="/">
+                            <strong class="nav-title">입금 관리</strong>
                             <span class="nav-list-bar"></span>
                         </a>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header">
+                            <strong class="nav-title">정산 관리</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">정산 관리</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">청구 이력</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">과태료 관리</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header">
+                            <strong class="nav-title">오토바이 관리</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">오토바이 목록</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">오토바이 판매 금액 목록</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header">
+                            <strong class="nav-title">이력 관리</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">CS 이력</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">보험 조회 이력</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">유지 활동 이력</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">계약서 발급 이력</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header">
+                            <strong class="nav-title">통계</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">CS 이력</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">현황판(기본)</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">현황판(영엽용)</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">월별 매출 통계</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">월별수지합계표</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header">
+                            <strong class="nav-title">나의 정보</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">프로필 정보</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">근태 관리</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header">
+                            <strong class="nav-title">관리자</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">근무 현황판</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">근태 관리(기간)</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="">
+                                    <strong class="nav-title">시스템 설정</strong>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </nav>

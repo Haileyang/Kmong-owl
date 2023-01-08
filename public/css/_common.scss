@@ -32,6 +32,19 @@ input{
 .mobile-hidden{
     display: none;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}   
 button{
     cursor: pointer;
     border-radius: 5px;
@@ -174,11 +187,11 @@ table{
     }
     select{
         // width: 105px;
-        -webkit-appearance: none;
+        // -webkit-appearance: none;
         background-repeat: no-repeat;
         background-size: 12px 7px;
         background-position: 90% center;
-        background-image: url(/public/img/select-arrow.png);
+        // background-image: url(/public/img/select-arrow.png);
         background-color: #fff;
         border: 1px solid #eee;
         border-radius: 5px;
@@ -526,6 +539,12 @@ input.datepicker{
     }
     nav{
         margin-top: 65px;
+        height: 75vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        &::-webkit-scrollbar{
+            display: none;
+        }
         .nav-category{
             font-weight: 400;
             font-size: 12px;
@@ -533,7 +552,7 @@ input.datepicker{
             color: $color-white;
             padding: 0 20px;
             display: block;
-            margin-bottom: 10px;
+            margin: 10px 0;
             text-transform: uppercase;
         }
         .nav-list{
@@ -546,6 +565,7 @@ input.datepicker{
                 display: flex;
                 align-items: center;
                 width: 100%;
+                height: 100%;
             }
             .nav-icon-wrap{
                 img{
@@ -556,13 +576,12 @@ input.datepicker{
                 font-size: 16px;
                 font-weight: 500;
                 color: $color-white;
-                margin-left: 15px;
             }
             .nav-list-bar{
                 width: 4px;
                 height: 30px;
                 display: inline-block;
-                background-image: url(/public/img/nav-list-bar.png);
+                background-image: url(/public/img/nav-list-bar-white.png);
                 background-repeat: no-repeat;
                 background-size: 4px 30px;
                 background-position: center ;
@@ -573,11 +592,19 @@ input.datepicker{
             .active-icon{
                display: none;
             }
-            &.hover,
-            &.active{
+            &.hover{
                 background-color: $color-white;
                 .nav-title{
                     color: $color-primary;
+                }
+                .nav-list-bar{
+                    background-image: url(/public/img/nav-list-bar.png);
+                }
+            }
+            &.active{
+                background-color: #00419B;
+                .nav-title{
+                    color: $color-white;
                 }
                 .default-icon{
                     display: none;
@@ -595,29 +622,41 @@ input.datepicker{
             }
         }
         .nav-dropdowns{
+            &:hover{
+                .nav-dropdown-bar{
+                    color: $color-white;
+                    &:before,
+                    &:after{
+                        background-color: $color-primary;
+                    }
+                }
+            }
             &.active{
                 height: auto;
-                background-color: $color-white;
+                background-color: #00419B;
                 .nav-dropdown-bar{
                     &::before{
                         transform: rotate(90deg);
                     }
                 }
                 .nav-dropdown-bar{
-                    color: $color-primary;
+                    color: $color-white;
                     &:before,
                     &:after{
-                        background-color: $color-primary;
+                        background-color: $color-white;
                     }
                 }
                 .nav-title{
-                    color: $color-primary;
+                    color: $color-white;
                 }
                 .default-icon{
                     display: none;
                 }
                 .active-icon{
                     display: block;
+                }
+                .nav-dropdown-lists{
+                    display: block!important;
                 }
             }
             
@@ -628,6 +667,7 @@ input.datepicker{
                 width: 100%;
                 position: relative;
                 cursor: pointer;
+                height: 100%;
             }
             .nav-dropdown-lists{
                 display: none;
@@ -635,23 +675,24 @@ input.datepicker{
                 a{
                     padding-left: 40px;
                 }
-                &.active{
-                    display: block;
-                }
+               
             }
             .nav-dropdown-list{
                 &:hover,
                 &.hover{
-                    background: rgba(9, 87, 195, 0.2);
+                    background: rgb(83 135 208 / 39%);
                 }
                 &.active{
-                    background: rgba(9, 87, 195, 0.05);
+                    background: $color-white;
+                    .nav-title{
+                        color: $color-primary
+                    }
                 }
             }
             .nav-dropdown-bar{
                 position: absolute;
                 right: 20px;
-                top: 18px;
+                top: 20px;
                 &:before{
                     content:"";
                     width: 2px;
