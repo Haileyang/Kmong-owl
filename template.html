@@ -79,7 +79,46 @@
                         버튼</button>
                 </span>
             </div>
+
+            <div class="input-wrap">
+                <span class="input-with-btn">
+                    <input type="text" placeholder="정보를 입력하세요.">
+                    <button class="btn fill primary" data-bs-toggle="modal" data-bs-target="#Message"> 문자 전송을 위한 모달 팝업</button>
+                </span>
+            </div>
            
+            <!-- Modal -->
+            <div class="modal fade custom-modal-type01" id="Message" tabindex="-1" aria-labelledby="MessageLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="MessageLabel">만기 안내 문자 발송</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <div class="modal-message-content">
+                                    <div class="input-wrap textarea-wrap">
+                                        <label for="">씨에스 바이크</label>
+                                        <button class="btn fill primary">문자 발송</button>
+                                        <textarea name="" id="textbox" cols="30" rows="10" maxlength='200'></textarea>
+                                        <span id="char_count" class="textarea-nums">200/200</span>
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="">연락처</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label for="">만기일</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Modal -->
             <div class="modal fade custom-modal-type01" id="motorCycle" tabindex="-1" aria-labelledby="motorCycleLabel"
                 aria-hidden="true">
