@@ -681,7 +681,7 @@ input.datepicker {
   height: 32px;
 }
 #dashboard-header nav {
-  margin-top: 65px;
+  margin-top: 20px;
   height: 75vh;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -901,9 +901,12 @@ input.datepicker {
     left: 200px;
   }
   #dashboard-header {
-    padding-top: 105px;
+    padding-top: 100px;
     left: -9999px;
     transition: all 0.3s;
+  }
+  #dashboard-header nav {
+    height: 64vh;
   }
   #dashboard-header.active {
     left: 0;
