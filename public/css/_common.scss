@@ -153,10 +153,10 @@ table{
     input[type="checkbox"] + label:before {
         content: '';
         display: inline-block;
-        width: 3px;
-        height: 10px;
-        border-right: 3px solid $color-primary;
-        border-bottom: 3px solid $color-primary;
+        width: 8px;
+        height: 13px;
+        border-right: 2px solid $color-primary;
+        border-bottom: 2px solid $color-primary;
         line-height: 3px;font-size: 17px;text-align: center;
         vertical-align: middle;
         position: absolute;left: 7px;top: 37%;

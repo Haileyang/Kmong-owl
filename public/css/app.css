@@ -159,7 +159,6 @@ button.line.light-grey:hover {
 }
 
 table thead th {
-  position: -webkit-sticky;
   position: sticky;
   left: 0;
   top: 0;
@@ -234,10 +233,10 @@ table thead th {
 .custom-checkbox input[type=checkbox] + label:before {
   content: "";
   display: inline-block;
-  width: 3px;
-  height: 10px;
-  border-right: 3px solid #0957C3;
-  border-bottom: 3px solid #0957C3;
+  width: 8px;
+  height: 13px;
+  border-right: 2px solid #0957C3;
+  border-bottom: 2px solid #0957C3;
   line-height: 3px;
   font-size: 17px;
   text-align: center;
@@ -1490,7 +1489,6 @@ input.datepicker {
 }
 .dashboard-table-wrap .input-wrap button {
   padding: 10px 10px !important;
-  max-width: -webkit-fit-content !important;
   max-width: -moz-fit-content !important;
   max-width: fit-content !important;
   white-space: nowrap;
@@ -1644,7 +1642,6 @@ input.datepicker {
   max-height: 75px;
 }
 .dashboard-table-wrap .dashboard-table-contents.two-columns tr.table-address {
-  max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
   display: flex !important;
@@ -1829,15 +1826,15 @@ input.datepicker {
     padding: 12px;
   }
   #dashboard-body .dashboard-summary-cards,
-#dashboard-body .dashboard-filter-wrap {
+  #dashboard-body .dashboard-filter-wrap {
     margin-bottom: 20px;
   }
   #dashboard-body .dashboard-summary-cards .two-colum-filter,
-#dashboard-body .dashboard-filter-wrap .two-colum-filter {
+  #dashboard-body .dashboard-filter-wrap .two-colum-filter {
     display: block;
   }
   #dashboard-body .dashboard-summary-cards .two-colum-filter .filter-element-wrap,
-#dashboard-body .dashboard-filter-wrap .two-colum-filter .filter-element-wrap {
+  #dashboard-body .dashboard-filter-wrap .two-colum-filter .filter-element-wrap {
     width: 100%;
   }
   #dashboard-body .dashboard-table-wrap {
@@ -1894,7 +1891,7 @@ input.datepicker {
     width: 100%;
   }
   #dashboard-body .two-columns .table-flex th,
-#dashboard-body .two-columns .table-flex td {
+  #dashboard-body .two-columns .table-flex td {
     padding: 15px 20px;
   }
   #dashboard-body .dashboard-table-header .dashboard-right-contents .btn {
@@ -2045,8 +2042,8 @@ input.datepicker {
     display: block;
   }
   #dashboard-body .two-columns input,
-#dashboard-body .two-columns select,
-#dashboard-body .two-columns button {
+  #dashboard-body .two-columns select,
+  #dashboard-body .two-columns button {
     max-height: 45px;
     height: 45px;
     padding: 0;
@@ -2092,12 +2089,11 @@ input.datepicker {
   }
   #dashboard-body .two-columns .table-flex tr {
     width: 100%;
-    max-height: -webkit-fit-content;
     max-height: -moz-fit-content;
     max-height: fit-content;
   }
   #dashboard-body .two-columns .table-flex th,
-#dashboard-body .two-columns .table-flex td {
+  #dashboard-body .two-columns .table-flex td {
     padding: 10px 0 10px 20px;
   }
   #dashboard-body .two-columns .table-flex th {
@@ -2637,5 +2633,206 @@ input.datepicker {
   }
   .detailList_memo tbody td:nth-child(3)::before {
     content: "등록일";
+  }
+}
+.invoice-before-table-radio {
+  margin-bottom: 60px;
+}
+.invoice-before-table-radio > div > div {
+  flex: 1;
+}
+.invoice-before-table-radio h3 {
+  font-size: 20px;
+  margin-right: 30px;
+  white-space: nowrap;
+}
+
+.th-style {
+  background-color: #0957C3;
+  color: #fff;
+}
+
+#dashboard.invoice #invoice01-table01 {
+  display: flex;
+  justify-self: start;
+  width: 100%;
+}
+#dashboard.invoice #invoice01-table01 th {
+  width: 16%;
+  min-width: 16%;
+  text-align: left;
+}
+#dashboard.invoice #invoice01-table01 .narrow-th-style {
+  width: 30px;
+}
+#dashboard.invoice #invoice01-table03 th,
+#dashboard.invoice #invoice01-table04 th {
+  min-width: auto;
+}
+#dashboard.invoice .radio-lists {
+  height: 35px;
+}
+#dashboard.invoice .input-border-style {
+  height: 40px;
+  border: 1px solid #eee !important;
+}
+
+#dashboard.invoice02 .radio-lists {
+  height: 55px;
+}
+
+.modal-summary-content textarea {
+  padding: 20px;
+  min-width: 50%;
+  border-color: #eee;
+}
+.modal-summary-content textarea, .modal-summary-content table {
+  flex: 1;
+  width: 50%;
+}
+.modal-summary-content table {
+  margin-left: 50px;
+}
+.modal-summary-content tr {
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal-summary-content tr th, .modal-summary-content tr td {
+  width: 50%;
+}
+
+@media (max-width: 1400px) {
+  #dashboard.invoice #invoice01-table01 {
+    display: block;
+  }
+  #dashboard.invoice #invoice01-table01 td {
+    width: 35%;
+  }
+}
+@media (max-width: 1000px) {
+  .invoice-before-table-radio > div {
+    display: block !important;
+  }
+  .invoice-before-table-radio > div > div {
+    margin-left: 0 !important;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 860px) {
+  .modal-summary-content {
+    display: block !important;
+  }
+  .modal-summary-content textarea, .modal-summary-content table {
+    width: 100%;
+  }
+  .modal-summary-content table {
+    margin: 20px 0 0 0;
+  }
+}
+@media (max-width: 767px) {
+  .invoice-before-table-radio {
+    margin-bottom: 30px;
+  }
+  .invoice-before-table-radio > div > div {
+    display: block !important;
+  }
+  #dashboard.invoice .mobile-full-width {
+    width: 100% !important;
+  }
+  #dashboard.invoice .dashboard-table-wrap table td, #dashboard.invoice .dashboard-table-wrap table th {
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+  #dashboard.invoice h3 {
+    font-size: 16px;
+  }
+  #dashboard.invoice .custom-checkbox {
+    height: 30px;
+  }
+  #dashboard.invoice label, #dashboard.invoice input,
+  #dashboard.invoice .custom-checkbox .label-txt small {
+    font-size: 14px;
+  }
+  #dashboard.invoice #invoice01-table01 tr {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  #dashboard.invoice #invoice01-table01 .narrow-th-style {
+    width: 100%;
+    text-align: center;
+  }
+  #dashboard.invoice #invoice01-table01 .narrow-th-style br {
+    display: none;
+  }
+  #dashboard.invoice #invoice01-table01 th {
+    width: 35%;
+    padding: 10px;
+  }
+  #dashboard.invoice #invoice01-table01 td {
+    width: 65%;
+    padding: 5px;
+  }
+  #dashboard.invoice #invoice01-table02 tbody {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  #dashboard.invoice #invoice01-table02 tr:first-child {
+    display: flex;
+  }
+  #dashboard.invoice #invoice01-table02 tr:first-child th {
+    width: 33.3333333333%;
+    min-width: 33.3333333333%;
+    height: 38px;
+  }
+  #dashboard.invoice #invoice01-table02 tr:nth-child(3), #dashboard.invoice #invoice01-table02 tr:nth-child(4) {
+    display: flex;
+    text-align: center;
+  }
+  #dashboard.invoice #invoice01-table02 tr:nth-child(3) th, #dashboard.invoice #invoice01-table02 tr:nth-child(3) td, #dashboard.invoice #invoice01-table02 tr:nth-child(4) th, #dashboard.invoice #invoice01-table02 tr:nth-child(4) td {
+    width: 100%;
+  }
+  #dashboard.invoice #invoice01-table02 .writeForm {
+    display: flex;
+    flex-direction: column;
+  }
+  #dashboard.invoice #invoice01-table02 .writeForm th, #dashboard.invoice #invoice01-table02 .writeForm td {
+    width: 100%;
+  }
+  #dashboard.invoice #invoice01-table03 th {
+    min-width: 88px;
+  }
+  #dashboard.invoice .invoice01-table03-wrap {
+    overflow: scroll;
+  }
+  #dashboard.invoice #invoice01-table04 tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #dashboard.invoice #invoice01-table04 th {
+    width: 20%;
+  }
+  #dashboard.invoice #invoice01-table04 th:last-child {
+    display: none;
+  }
+  #dashboard.invoice #invoice01-table04 td {
+    width: 20%;
+  }
+  #dashboard.invoice #invoice01-table04 td:last-child {
+    width: 100%;
+  }
+  #dashboard.invoice .button-wrap {
+    display: block !important;
+  }
+  #dashboard.invoice .table-btn-lists button {
+    height: 45px;
+    width: 81px;
+  }
+  #dashboard.invoice .table-btn-lists li + li {
+    margin-left: 5px;
+  }
+  #dashboard.invoice02 .button-wrap {
+    display: flex !important;
   }
 }/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정발행 작성</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/css/app.css">
+    <script defer src="/public/js/common.js"></script>
+</head>
+<body>
+    <main id="dashboard" class="invoice">
+        <header id="dashboard-header">
+            <figure class="logo"><img src="/public/img/login-logo.png" alt="logo"></figure>
+            <nav>
+                <strong class="nav-category">general</strong>
+                <ul class="nav-lists">
+                    <li class="nav-list">
+                        <a href="/index.html">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-home.png" alt="Dashboard">
+                                <img class="active-icon" src="/public/img/icon-header-home-active.png" alt="Dashboard">
+                            </figure>
+                            <strong class="nav-title">Dashboard</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                    <li class="nav-list nav-dropdowns">
+                        <span class="nav-dropdown-header" onclick="dropdownOpener()">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-rider-manage.png" alt="라이더 관리">
+                                <img class="active-icon" src="/public/img/icon-header-rider-manage-active.png" alt="라이더 관리">
+                            </figure>
+                            <strong class="nav-title">라이더 관리</strong>
+                            <span class="nav-dropdown-bar"></span>
+                        </span>
+                        <ul class="nav-dropdown-lists">
+                            <li class="nav-dropdown-list">
+                                <a href="/shortermList.html">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-rider.png" alt="라이더 정보">
+                                        <img class="active-icon" src="/public/img/icon-header-rider-active.png" alt="라이더 정보">
+                                    </figure>
+                                    <strong class="nav-title">라이더 정보</strong>
+                                </a>
+                            </li>
+                            <li class="nav-dropdown-list">
+                                <a href="/riderRegister.html">
+                                    <figure class="nav-icon-wrap">
+                                        <img class="default-icon" src="/public/img/icon-header-form.png" alt="라이더 신규 신청">
+                                        <img class="active-icon" src="/public/img/icon-header-form-active.png" alt="라이더 신규 신청">
+                                    </figure>
+                                    <strong class="nav-title">라이더 신규 신청</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-list">
+                        <a href="/detailList_basic.html">
+                            <figure class="nav-icon-wrap">
+                                <img class="default-icon" src="/public/img/icon-header-setting.png" alt="업체설정">
+                                <img class="active-icon" src="/public/img/icon-header-setting-active.png" alt="업체설정">
+                            </figure>
+                            <strong class="nav-title">회원정보 관리</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                </ul>
+                <strong class="nav-category">Invoice : <br>해당 메뉴는 임의로 달아두었습니다</strong>
+                <ul class="nav-lists">
+                    <li class="nav-list">
+                        <a href="/invoice01.html">
+                            <strong class="nav-title">정발행 작성</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="/invoice02.html">
+                            <strong class="nav-title">승인 현금영수증 작성</strong>
+                            <span class="nav-list-bar"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-profile-wrap">
+                <figure class="profile-img-wrap"><img src="/public/img/img-sample-profile.png" alt="sample-profile"></figure>
+                <span>
+                    <strong class="profile-name">Harrison Smith</strong>
+                    <a href="" class="logout">Logout</a>
+                </span>
+            </div>
+        </header>
+        <span class="mobile-hamberger-menu" onclick="mobileMenuHandler()">
+            <img src="/public/img/icon-mobile-menu.png" alt="mobile-hamberger-menu">
+        </span>
+    
+        <section id="dashboard-body" class="contactDetail_tab tab04">
+            <div class="dashboard-title">
+                <h1>정발행 작성</h1>
+                <ul class="bread-scrumbs">
+                    <li class="bread-scrumb">Home</li>
+                    <li class="bread-scrumb">전자세금계산서</li>
+                    <li class="bread-scrumb">정발행 작성</li>
+                </ul>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-table-wrap">
+                    <div class="invoice-before-table-radio">
+                        <div class="d-flex">
+                            <div class="d-flex">
+                                <h3>과세형태</h3>
+                                <ul class="radio-lists">
+                                    <li class="radio-list">
+                                        <input type="radio" name="tax" id="tax1">
+                                        <label for="">과세 (10%)</label>
+                                    </li>
+                                    <li class="radio-list">
+                                        <input type="radio" name="tax" id="tax2">
+                                        <label for="">영세 (0%)</label>
+                                    </li>
+                                    <li class="radio-list">
+                                        <input type="radio" name="tax" id="tax3">
+                                        <label for="">면세 (세액없음)</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="d-flex" style="margin-left: 30px">
+                                <h3>거래처 유형</h3>
+                                <ul class="radio-lists">
+                                    <li class="radio-list">
+                                        <input type="radio" name="clientType" id="clientType1">
+                                        <label for="">사업자</label>
+                                    </li>
+                                    <li class="radio-list">
+                                        <input type="radio" name="clientType" id="clientType2">
+                                        <label for="">개인</label>
+                                    </li>
+                                    <li class="radio-list">
+                                        <input type="radio" name="clientType" id="clientType3">
+                                        <label for="">외국인</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-table-header">
+                        <h2>세금계산서</h2>
+                    </div>
+                    <div class="">
+                        <table id="invoice01-table01">
+                            <tbody>
+                                <tbody>
+                                    <tr>
+                                      <th rowspan="6" class="narrow-th-style">공<br>급<br>자</th>
+                                      <th>등록번호</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                      <th>종사업장</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                      <th>상호</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                      <th>성명</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                      <th>사업장 주소</th>
+                                      <td colspan="3"><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                      <th>업태</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                      <th>종목</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                      <th>담당자</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                      <th>연락처</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                      <th>이메일</th>
+                                      <td colspan="3"><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                      <th rowspan="6" class="narrow-th-style">공<br>급<br>받<br>는<br>자</th>
+                                      <th>등록번호</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                      <th>종사업장</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                      <th>상호</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                      <th>성명</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                      <th>사업장 주소</th>
+                                      <td colspan="3"><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                      <th>업태</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                      <th>종목</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                      <th>담당자</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                      <th>연락처</th>
+                                      <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                      <th>이메일</th>
+                                      <td colspan="3"><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                </tbody>
+                            </tbody>
+                        </table>
+                        <table id="invoice01-table02">
+                            <tbody>
+                                <tr>
+                                    <th>작성일자</th>
+                                    <th>공급가액</th>
+                                    <th>새액</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" class="input-border-style"></td>
+                                    <td><input type="text" class="input-border-style"></td>
+                                    <td><input type="text" class="input-border-style"></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="3">비고</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><input type="text" class="input-border-style"></td>
+                                </tr>
+                                <tr class="writeForm">
+                                    <th>작성방법</th>
+                                    <td>
+                                        <ul class="radio-lists">
+                                            <li class="radio-list">
+                                                <input type="radio" name="writeForm" id="writeForm1">
+                                                <label for="">단가 부가세 포함</label>
+                                            </li>
+                                            <li class="radio-list">
+                                                <input type="radio" name="writeForm" id="writeForm2">
+                                                <label for="">합계금액</label>
+                                            </li>
+                                            <li class="radio-list">
+                                                <input type="radio" name="writeForm" id="writeForm3">
+                                                <label for="">집적입력</label>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="invoice01-table03-wrap">
+                            <table id="invoice01-table03">
+                                <thead>
+                                    <tr>
+                                        <th>월</th>
+                                        <th>일</th>
+                                        <th>품목</th>
+                                        <th>규격</th>
+                                        <th>수량</th>
+                                        <th>단가</th>
+                                        <th>공급가액</th>
+                                        <th>세액</th>
+                                        <th>비고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                        <td><input type="text" class="input-border-style"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table id="invoice01-table04">
+                            <thead>
+                                <tr>
+                                    <th>합계금액</th>
+                                    <th>현금</th>
+                                    <th>수표</th>
+                                    <th>어음</th>
+                                    <th>외상미수금</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="text" class="input-border-style"></td>
+                                    <td><input type="text" class="input-border-style"></td>
+                                    <td><input type="text" class="input-border-style"></td>
+                                    <td><input type="text" class="input-border-style"></td>
+                                    <td><input type="text" class="input-border-style"></td>
+                                    <td class="d-flex" style="white-space: nowrap;">
+                                        이 금액을
+                                        <ul class="radio-lists" style="margin: 0 10px">
+                                            <li class="radio-list">
+                                                <input type="radio" name="pay" id="pay1">
+                                                <label for="">영수</label>
+                                            </li>
+                                            <li class="radio-list">
+                                                <input type="radio" name="pay" id="pay2">
+                                                <label for="">청구</label>
+                                            </li>
+                                            <li class="radio-list">
+                                                <input type="radio" name="pay" id="pay3">
+                                                <label for="">없음</label>
+                                            </li>
+                                        </ul>
+                                        함
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="dashboard-table-contents two-columns">
+                            <table class="dashboard-table-list">
+                                <tbody class="table-flex">
+                                    <tr>
+                                        <th>문자 알림</th>
+                                        <td class="">
+                                            <div class="custom-checkbox" style="display: inline-block">
+                                                <input type="checkbox" name="" id="check01" required="">
+                                                <label for="check01">
+                                                    <span class="label-txt">
+                                                        <small>수신번호</small>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <input class="input-border-style mobile-full-width" style="display: inline-block; width: 55%; padding: 0 10px" type="text" placeholder="수신번호를 입력해주세요">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>첨부문서</th>
+                                        <td>
+                                            <div class="custom-checkbox" style="margin-bottom: 10px;">
+                                                <input type="checkbox" name="" id="check02" required="">
+                                                <label for="check02">
+                                                    <span class="label-txt">
+                                                        <small>사업자 등록증을 첨부합니다</small>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="custom-checkbox">
+                                                <input type="checkbox" name="" id="check03" required="">
+                                                <label for="check03">
+                                                    <span class="label-txt">
+                                                        <small>통장사본을 첨부합니다.</small>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-wrap d-flex" style="justify-content: space-between;">
+                    <ul class="table-btn-lists">
+                        <li class="table-btn-list">
+                            <button class="btn line primary" style="background-color: transparent; width: auto">임시저장</button>
+                        </li>
+                        <li class="table-btn-list">
+                            <button class="btn line primary" style="background-color: transparent; width: auto">작성취소</button>
+                        </li>
+                        <li class="table-btn-list">
+                            <button class="btn line primary" style="background-color: transparent; width: auto">발행예정</button>
+                        </li>
+                    </ul>
+                    <ul class="table-btn-lists">
+                        <li class="table-btn-list">
+                            <div class="d-flex">
+                                <div class="custom-checkbox" style="width: 180px;" >
+                                    <input type="checkbox" name="" id="auto" required="">
+                                    <label for="auto">
+                                        <span class="label-txt">
+                                            <small>거래명세서  동시 작성</small>
+                                        </span>
+                                    </label>
+                                </div>
+                                <button class="btn fill primary">발행</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
