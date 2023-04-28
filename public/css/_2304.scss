@@ -16,6 +16,21 @@
 }
 
 #dashboard.invoice{
+    .document-info{
+        span{
+            white-space: nowrap;
+            margin-right: 20px;
+            display: inline-block;
+            min-width: 80px;
+        }
+        input{
+            border-radius: 0;
+            height: 40px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+    }
     #invoice01-table01{
         display: flex;
         justify-self: start;
@@ -103,6 +118,9 @@
     }
 }
 @media (max-width: 767px){
+    .document-info{
+        margin-top: 30px;
+    }
     .invoice-before-table-radio{
         margin-bottom: 30px;
     }
